@@ -1,10 +1,12 @@
 import VantaBackground from "./VantaBackground";
 import { spaceGrotesk, outfit, montserrat } from "../fonts";
+import Button from "./Button";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Main() {
   return (
     <VantaBackground>
-      <div className="flex flex-col justify-center text-white h-screen px-5 md:pl-[250px]">
+      <div className="flex flex-col justify-center text-white h-screen px-5 md:pl-[70px] lg:pl-[220px]">
         <h1
           className={`text-[50px] md:text-[100px] font-bold ${outfit.className}`}
         >
@@ -20,6 +22,10 @@ export default function Main() {
         >
           Creating fast, responsive, and intuitive web experiences.
         </p>
+        <div className="md:pt-7 pt-5">
+          <Button text="Github" icon={FaGithub} link="https://github.com/diegocarmn" />
+          <Button text="LinkedIn" icon={FaLinkedin} link="https://www.linkedin.com/in/diegocarmn/" />
+        </div>
       </div>
     </VantaBackground>
   );
