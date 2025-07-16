@@ -1,14 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
+import { outfit } from '../fonts'
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="z-20 fixed top-0 left-0 bg-white/20 w-full py-5 md:py-0 md:flex">
+    <nav className="z-20 fixed top-0 left-0 bg-white/20 md:bg-transparent w-full py-3 md:py-0 md:flex">
       <div className="flex items-center justify-between px-4">
-        <h1 className="text-center text-white whitespace-nowrap">Diego Carmona</h1>
+        <h1 className={`text-center text-white whitespace-nowrap ${outfit.className}`}>Diego Carmona</h1>
         <button
           className="md:hidden flex flex-col gap-1"
           onClick={() => setOpen(!open)}
@@ -32,22 +33,22 @@ export default function Header() {
       >
         <li>
           <a href="#main" className="block px-4 py-5 hover:underline text-white">
-            Sobre
+            About
           </a>
         </li>
         <li>
           <a href="#main" className="block px-4 py-5 hover:underline text-white">
-            Projetos
+            Projects
           </a>
         </li>
         <li>
           <a href="#main" className="block px-4 py-5 hover:underline text-white">
-            Tecnologias
+            Skills
           </a>
         </li>
         <li>
           <a href="#main" className="block px-4 py-5 hover:underline text-white">
-            Contato
+            Contact
           </a>
         </li>
       </ul>
