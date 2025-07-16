@@ -1,19 +1,24 @@
 import VantaBackground from "./VantaBackground";
-import { spaceGrotesk, outfit } from "../fonts";
+import { spaceGrotesk, outfit, montserrat } from "../fonts";
 
 export default function Main() {
   return (
     <VantaBackground>
-      <div className="flex flex-col justify-center text-white h-screen px-5">
+      <div className="flex flex-col justify-center text-white h-screen px-5 md:pl-[250px]">
         <h1
-          className={`text-[40px] md:text-[100px] md:pl-50 font-bold ${outfit.className}`}
+          className={`text-[50px] md:text-[100px] font-bold ${outfit.className}`}
         >
           Hey, I&apos;m Diego
         </h1>
         <p
-          className={`mt-4 md:text-[40px] md:pl-50 text-lg ${spaceGrotesk.className}`}
+          className={`mt-0 md:text-[45px] text-[20px] font-extralight md:font-extralight ${montserrat.className}`}
         >
           A Front-End Developer
+        </p>
+        <p
+          className={`mt-2 md:text-xl text-sm text-white/70 ${outfit.className}`}
+        >
+          Creating fast, responsive, and intuitive web experiences.
         </p>
       </div>
     </VantaBackground>
