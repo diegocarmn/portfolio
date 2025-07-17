@@ -1,7 +1,11 @@
+ "use client"
+
 import VantaBackground from "./VantaBackground";
 import { spaceGrotesk, outfit, montserrat } from "../fonts";
 import Button from "./Button";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import React from 'react'
+import { Typewriter } from 'react-simple-typewriter'
 
 export default function Main() {
   return (
@@ -15,7 +19,8 @@ export default function Main() {
         <p
           className={`mt-0 md:text-[45px] text-[20px] font-medium md:font-extralight ${montserrat.className}`}
         >
-          A Front-End Developer
+          A 
+          <Typewriter words={[" Front-End Developer"]} loop={3} cursor cursorStyle='|' />
         </p>
         <p
           className={`mt-2 md:text-xl text-sm text-black/70 dark:text-white/70 ${outfit.className}`}
