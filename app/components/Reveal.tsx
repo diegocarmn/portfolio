@@ -33,7 +33,7 @@ export default function Reveal({ children, delay = 0, className }: RevealProps) 
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      transition={{ delay }} // 👈 O delay vai aqui fora agora!
+      transition={{ delay }}
     >
       {children}
     </motion.div>
