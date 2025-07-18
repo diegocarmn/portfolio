@@ -2,7 +2,7 @@
 
 import React from "react";
 import VantaBackground from "./VantaBackground";
-import { outfit, montserrat } from "../fonts";
+import { outfit, montserrat, spaceGrotesk } from "../fonts";
 import Button from "./Button";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
@@ -21,36 +21,48 @@ import Logo from "./Logo";
 
 export default function Main() {
   const logos = [
-    {
-      Icon: ReactIcon,
-      color: "text-black/20 dark:text-white/20",
-    },
-    {
-      Icon: JSIcon,
-      color: "text-black/20 dark:text-white/20",
-    },
-    {
-      Icon: BootstrapIcon,
-      color: "text-black/20 dark:text-white/20",
-    },
-    { Icon: GitIcon, color: "text-black/20 dark:text-white/20" },
-    {
-      Icon: HtmlIcon,
-      color: "text-black/20 dark:text-white/20",
-    },
-    {
-      Icon: NextIcon,
-      color: "text-black/20 dark:text-white/20",
-    },
-    {
-      Icon: TailwindIcon,
-      color: "text-black/20 dark:text-white/20",
-    },
-    {
-      Icon: ViteIcon,
-      color: "text-black/20 dark:text-white/20",
-    },
-  ];
+  {
+    Icon: ReactIcon,
+    color:
+      "text-black/20 dark:text-white/20 hover:text-black dark:hover:text-white transition-colors duration-300",
+  },
+  {
+    Icon: JSIcon,
+    color:
+      "text-black/20 dark:text-white/20 hover:text-black dark:hover:text-white transition-colors duration-300",
+  },
+  {
+    Icon: BootstrapIcon,
+    color:
+      "text-black/20 dark:text-white/20 hover:text-black dark:hover:text-white transition-colors duration-300",
+  },
+  {
+    Icon: GitIcon,
+    color:
+      "text-black/20 dark:text-white/20 hover:text-black dark:hover:text-white transition-colors duration-300",
+  },
+  {
+    Icon: HtmlIcon,
+    color:
+      "text-black/20 dark:text-white/20 hover:text-black dark:hover:text-white transition-colors duration-300",
+  },
+  {
+    Icon: NextIcon,
+    color:
+      "text-black/20 dark:text-white/20 hover:text-black dark:hover:text-white transition-colors duration-300",
+  },
+  {
+    Icon: TailwindIcon,
+    color:
+      "text-black/20 dark:text-white/20 hover:text-black dark:hover:text-white transition-colors duration-300",
+  },
+  {
+    Icon: ViteIcon,
+    color:
+      "text-black/20 dark:text-white/20 hover:text-black dark:hover:text-white transition-colors duration-300",
+  },
+];
+
 
   return (
     <VantaBackground>
@@ -61,13 +73,13 @@ export default function Main() {
               className={`text-[50px] md:text-[100px] font-bold ${outfit.className}`}
             >
               Hey, I&apos;m{" "}
-              <span className="animate-gradient bg-gradient-to-r from-[#4a00e0] via-[#ff0080] to-[#ffae00] dark:from-[#00ffff] dark:via-[#a875ff] dark:to-[#ff4fbd] bg-clip-text text-transparent drop-shadow-xs">
+              <span className="">
                 Diego
               </span>
             </h1>
 
             <p
-              className={`mt-0 md:text-[45px] text-2xl font-light md:font-extralight ${montserrat.className}`}
+              className={`mt-0 md:text-[45px] text-2xl font-light md:font-normal ${spaceGrotesk.className}`}
             >
               A
               <Typewriter

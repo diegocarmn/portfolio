@@ -12,10 +12,12 @@ export default function Header() {
     <nav className="z-20 fixed top-0 left-0 flex bg-white md:bg-transparent dark:bg-black md:dark:bg-transparent w-full py-3 md:py-0 md:flex">
       <div className="flex items-center justify-between px-4">
         <h1
-          className={`order-2 md:order1 pl-3 text-center font-semibold text-black/90 dark:text-white whitespace-nowrap md:pl-4 ${outfit.className}`}
+          className={`order-2 md:order-1 pl-3 text-center font-semibold text-black/50 dark:text-white whitespace-nowrap md:pl-4
+          ${outfit.className}`}
         >
           Diego Carmona
         </h1>
+
         <button
           className="md:hidden flex flex-col gap-1"
           onClick={() => setOpen(!open)}
