@@ -60,7 +60,7 @@ export default function Main() {
             <h1
               className={`text-[50px] md:text-[100px] font-bold ${outfit.className}`}
             >
-              Hey, I'm{" "}
+              Hey, I&apos;m{" "}
               <span className="animate-gradient bg-gradient-to-r from-[#4a00e0] via-[#ff0080] to-[#ffae00] dark:from-[#00ffff] dark:via-[#a875ff] dark:to-[#ff4fbd] bg-clip-text text-transparent">
                 Diego
               </span>
