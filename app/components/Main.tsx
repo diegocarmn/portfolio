@@ -60,7 +60,10 @@ export default function Main() {
             <h1
               className={`text-[50px] md:text-[100px] font-bold ${outfit.className}`}
             >
-              Hey, I&apos;m Diego
+              Hey, I'm{" "}
+              <span className="animate-gradient bg-gradient-to-r from-[#4a00e0] via-[#ff0080] to-[#ffae00] dark:from-[#00ffff] dark:via-[#a875ff] dark:to-[#ff4fbd] bg-clip-text text-transparent">
+                Diego
+              </span>
             </h1>
 
             <p
@@ -77,8 +80,16 @@ export default function Main() {
             <p
               className={`mt-2 md:text-xl text-sm text-black/70 dark:text-white/70 ${outfit.className}`}
             >
-              Creating beautiful, responsive, and intuitive web experiences.
+              I create{" "}
+              <span
+                className="font-semibold animate-gradient bg-gradient-to-r from-[#4a00e0] via-[#ff0080] to-[#ffae00] 
+                bg-clip-text text-transparent dark:from-[#00ffff] dark:via-[#a875ff] dark:to-[#ff4fbd]"
+              >
+                beautiful
+              </span>
+              , responsive, and modern web experiences.
             </p>
+
             <div className="md:pt-7 pt-5">
               <Button
                 text="LinkedIn"
