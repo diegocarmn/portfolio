@@ -9,7 +9,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="z-20 fixed top-0 left-0 flex bg-white md:bg-transparent dark:bg-gray-900 md:dark:bg-transparent w-full py-3 md:py-0 md:flex">
+    <nav className="z-20 fixed top-0 left-0 flex bg-white md:bg-transparent dark:bg-black md:dark:bg-transparent w-full py-3 md:py-0 md:flex">
       <div className="flex items-center justify-between px-4">
         <h1
           className={`order-2 md:order1 pl-3 text-center font-semibold text-black/90 dark:text-white whitespace-nowrap md:pl-4 ${outfit.className}`}
@@ -30,52 +30,54 @@ export default function Header() {
         className={`
                     flex-col md:flex-row md:flex
                     ${open ? "flex" : "hidden"} font-medium
-                    md:static absolute top-full left-0 w-full bg-white dark:bg-gray-900 md:bg-transparent md:dark:bg-transparent text-black md:text-white md:justify-end md:pr-4 ${
+                    md:static absolute top-full left-0 w-full bg-white dark:bg-black md:bg-transparent md:dark:bg-transparent text-black md:text-white md:justify-end md:pr-4 md:py-3 pb-2 ${
                       outfit.className
                     }`}
       >
-        <li>
-          <a
-            href="#main"
-            className="block px-4 py-5 text-black dark:text-white"
-          >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            href="#main"
-            className="block px-4 py-5  text-black/50 dark:text-white/50"
-          >
-            About
-          </a>
-        </li>
-        <li>
-          <a
-            href="#main"
-            className="block px-4 py-5 dark:text-white/50 text-black/50 "
-          >
-            Projects
-          </a>
-        </li>
-        <li>
-          <a
-            href="#main"
-            className="block px-4 py-5 text-black/50 dark:text-white/50"
-          >
-            Skills
-          </a>
-        </li>
-        <li>
-          <a
-            href="#main"
-            className="block px-4 py-5  text-black/50 dark:text-white/50"
-          >
-            Contact
-          </a>
-        </li>
+        <div className="flex flex-col md:flex-row md:items-center md:gap-4">
+          <li>
+            <a
+              href="#main"
+              className="block mx-4 md:mx-0 px-4 py-2 text-white dark:text-black dark:bg-white/80 bg-black/70 rounded-4xl border border-white/20 shadow-lg hover:bg-black dark:hover:bg-white dark:hover:shadow-white/30 active:scale-95 transition-all duration-150"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="#main"
+              className="block mx-4 md:mx-0 px-4 py-2 rounded-4xl hover:shadow-lg dark:hover:text-bl text-black/50 hover:text-white dark:text-white/50 hover:bg-black dark:hover:bg-white dark:hover:shadow-white/30 dark:hover:text-black active:scale-95 transition-all duration-150"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="#main"
+              className="block mx-4 md:mx-0 px-4 py-2 rounded-4xl hover:shadow-lg dark:hover:text-bl text-black/50 hover:text-white dark:text-white/50 hover:bg-black dark:hover:bg-white dark:hover:shadow-white/30 dark:hover:text-black active:scale-95 transition-all duration-150"
+            >
+              Projects
+            </a>
+          </li>
+          <li>
+            <a
+              href="#main"
+              className="block mx-4 md:mx-0 px-4 py-2 rounded-4xl hover:shadow-lg dark:hover:text-bl text-black/50 hover:text-white dark:text-white/50 hover:bg-black dark:hover:bg-white dark:hover:shadow-white/30 dark:hover:text-black active:scale-95 transition-all duration-150"
+            >
+              Skills
+            </a>
+          </li>
+          <li>
+            <a
+              href="#main"
+              className="block mx-4 md:mx-0 px-4 py-2 rounded-4xl hover:shadow-lg dark:hover:text-bl text-black/50 hover:text-white dark:text-white/50 hover:bg-black dark:hover:bg-white dark:hover:shadow-white/30 dark:hover:text-black active:scale-95 transition-all duration-150"
+            >
+              Contact
+            </a>
+          </li>
+        </div>
       </ul>
-      <div className="w-full md:w-fit md:mr-4 text-right flex justify-end">
+      <div className="w-full md:w-fit mr-2 md:mr-4 text-right flex justify-end items-center">
         <DarkModeToggle />
       </div>
     </nav>
