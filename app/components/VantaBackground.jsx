@@ -11,12 +11,11 @@ const lightColors = {
   baseColor: 0xffffff,
 };
 const darkColors = {
-  highlightColor: 0xd1ff,
-  midtoneColor: 0xdc1c84,
-  lowlightColor: 0x2c00ff,
-  baseColor: 0x0,
+  highlightColor: 0x8be9fd,
+  midtoneColor: 0xbd93f9,
+  lowlightColor: 0xff79c6,
+  baseColor: 0x000000,
 };
-
 export default function VantaBackground({ children, className = "" }) {
   const vantaRef = useRef(null);
   const vantaEffect = useRef(null);
@@ -33,7 +32,10 @@ export default function VantaBackground({ children, className = "" }) {
     updateColors();
 
     const observer = new MutationObserver(updateColors);
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
 
     return () => observer.disconnect();
   }, []);
@@ -61,7 +63,10 @@ export default function VantaBackground({ children, className = "" }) {
   }, [colors]);
 
   return (
-    <div ref={vantaRef} className={`relative w-full h-screen overflow-visible  ${className}`}>
+    <div
+      ref={vantaRef}
+      className={`relative w-full h-screen overflow-visible  ${className}`}
+    >
       <div className="relative z-10">{children}</div>
     </div>
   );
