@@ -10,7 +10,7 @@ export default function Logo({
   return (
     <div className="relative flex items-center justify-center h-20 w-20 md:mx-6">
       <Icon
-        className={`h-10 w-10 transition-transform hover:scale-120 ${className}`}
+        className={`h-10 w-10 ${className}`}
       />
     </div>
   );

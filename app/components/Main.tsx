@@ -17,20 +17,41 @@ import NextIcon from "./icons/nextdotjs.svg";
 import TailwindIcon from "./icons/tailwindcss.svg";
 import ViteIcon from "./icons/vite.svg";
 
-
 import Logo from "./Logo";
 
 export default function Main() {
-   const logos = [
-    { Icon: ReactIcon, color: "text-black/20 dark:text-white/20" },
-    { Icon: JSIcon, color: "text-black/20 dark:text-white/20" },
-    { Icon: BootstrapIcon, color: "text-black/20 dark:text-white/20" },
+  const logos = [
+    {
+      Icon: ReactIcon,
+      color: "text-black/20 dark:text-white/20",
+    },
+    {
+      Icon: JSIcon,
+      color: "text-black/20 dark:text-white/20",
+    },
+    {
+      Icon: BootstrapIcon,
+      color: "text-black/20 dark:text-white/20",
+    },
     { Icon: GitIcon, color: "text-black/20 dark:text-white/20" },
-    { Icon: HtmlIcon, color: "text-black/20 dark:text-white/20" },
-    { Icon: NextIcon, color: "text-black/20 dark:text-white/20" },
-    { Icon: TailwindIcon, color: "text-black/20 dark:text-white/20" },
-    { Icon: ViteIcon, color: "text-black/20 dark:text-white/20" },
+    {
+      Icon: HtmlIcon,
+      color: "text-black/20 dark:text-white/20",
+    },
+    {
+      Icon: NextIcon,
+      color: "text-black/20 dark:text-white/20",
+    },
+    {
+      Icon: TailwindIcon,
+      color: "text-black/20 dark:text-white/20",
+    },
+    {
+      Icon: ViteIcon,
+      color: "text-black/20 dark:text-white/20",
+    },
   ];
+
   return (
     <VantaBackground>
       <main className="flex flex-col h-screen text-black/90 dark:text-white">
@@ -72,12 +93,14 @@ export default function Main() {
             </div>
           </Reveal>
         </div>
-        <div className="my-2">
-          <Marquee gradient={false} speed={40} autoFill={true} pauseOnHover>
-            {logos.map(({ Icon, color }, idx) => (
-              <Logo key={idx} Icon={Icon} className={color} />
-            ))}
-          </Marquee>
+        <div className="relative my-2 overflow-visible">
+          <div className="fade-mask">
+            <Marquee gradient={false} speed={40} autoFill={true} pauseOnHover>
+              {logos.map(({ Icon, color }, idx) => (
+                <Logo key={idx} Icon={Icon} className={color} />
+              ))}
+            </Marquee>
+          </div>
         </div>
       </main>
     </VantaBackground>
