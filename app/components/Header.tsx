@@ -11,12 +11,25 @@ export default function Header() {
   return (
     <nav className="z-20 fixed top-0 left-0 flex bg-white md:bg-transparent dark:bg-black md:dark:bg-transparent w-full py-3 md:py-0 md:flex">
       <div className="flex items-center justify-between px-4">
-        <h1
-          className={`order-2 md:order-1 pl-3 text-center font-semibold text-black/50 dark:text-white whitespace-nowrap md:pl-4
-          ${outfit.className}`}
-        >
-          Diego Carmona
-        </h1>
+        <div className="flex items-center gap-2 order-2 md:order-1 pl-3 md:pl-4">
+          {/* Logo Light */}
+          <img
+            src="/dc-light-nobg.png"
+            alt="Logo claro"
+            className="h-8 w-8 object-contain block dark:hidden"
+          />
+          {/* Logo Dark */}
+          <img
+            src="/dc-dark-nobg.png"
+            alt="Logo escuro"
+            className="h-8 w-8 object-contain hidden dark:block"
+          />
+          <h1
+            className={`text-center font-semibold text-black/50 dark:text-white whitespace-nowrap ${outfit.className}`}
+          >
+            Diego Carmona
+          </h1>
+        </div>
 
         <button
           className="md:hidden flex flex-col gap-1"

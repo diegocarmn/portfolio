@@ -45,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link rel="icon" href="/website-logo.png" />
+      <link rel="icon" href="/dc-dark-nobg.png" />
       <body className={montserrat.className}>{children}</body>
     </html>
   );
