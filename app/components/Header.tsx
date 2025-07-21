@@ -50,14 +50,6 @@ export default function Header() {
               href="#main"
               className="block mx-4 md:mx-0 px-4 py-2 rounded-4xl hover:shadow-lg dark:hover:text-bl text-black/50 hover:text-white dark:text-white/50 hover:bg-black dark:hover:bg-white dark:hover:shadow-white/30 dark:hover:text-black active:scale-95 transition-all duration-150"
             >
-              About
-            </a>
-          </li>
-          <li>
-            <a
-              href="#main"
-              className="block mx-4 md:mx-0 px-4 py-2 rounded-4xl hover:shadow-lg dark:hover:text-bl text-black/50 hover:text-white dark:text-white/50 hover:bg-black dark:hover:bg-white dark:hover:shadow-white/30 dark:hover:text-black active:scale-95 transition-all duration-150"
-            >
               Projects
             </a>
           </li>
@@ -66,7 +58,7 @@ export default function Header() {
               href="#main"
               className="block mx-4 md:mx-0 px-4 py-2 rounded-4xl hover:shadow-lg dark:hover:text-bl text-black/50 hover:text-white dark:text-white/50 hover:bg-black dark:hover:bg-white dark:hover:shadow-white/30 dark:hover:text-black active:scale-95 transition-all duration-150"
             >
-              Skills
+              About
             </a>
           </li>
           <li>

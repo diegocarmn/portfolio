@@ -5,12 +5,12 @@ import VantaBackground from "./VantaBackground";
 import { outfit, montserrat, spaceGrotesk } from "../fonts";
 import Button from "./Button";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { GrProjects } from "react-icons/gr";
 import { Typewriter } from "react-simple-typewriter";
 import Reveal from "./Reveal";
 import Marquee from "react-fast-marquee";
 import ReactIcon from "./icons/react.svg";
 import JSIcon from "./icons/javascript.svg";
-import BootstrapIcon from "./icons/bootstrap.svg";
 import GitIcon from "./icons/git.svg";
 import HtmlIcon from "./icons/html5.svg";
 import NextIcon from "./icons/nextdotjs.svg";
@@ -28,11 +28,6 @@ export default function Main() {
   },
   {
     Icon: JSIcon,
-    color:
-      "text-black/20 dark:text-white/20 hover:text-black dark:hover:text-white transition-colors duration-300",
-  },
-  {
-    Icon: BootstrapIcon,
     color:
       "text-black/20 dark:text-white/20 hover:text-black dark:hover:text-white transition-colors duration-300",
   },
@@ -63,7 +58,6 @@ export default function Main() {
   },
 ];
 
-
   return (
     <VantaBackground>
       <main className="flex flex-col h-screen text-black/90 dark:text-white">
@@ -83,7 +77,7 @@ export default function Main() {
             >
               A
               <Typewriter
-                words={[" Front-End Developer"]}
+                words={[" Full-Stack Developer"]}
                 loop={1}
                 cursor
                 cursorStyle="|"
@@ -92,25 +86,13 @@ export default function Main() {
             <p
               className={`mt-2 md:text-xl text-md text-black/70 dark:text-white/90 ${outfit.className}`}
             >
-              I create{" "}
-              <span
-                className="font-semibold animate-gradient bg-gradient-to-r from-[#4a00e0] via-[#ff0080] to-[#ffae00] 
-                bg-clip-text text-transparent dark:from-[#00ffff] dark:via-[#a875ff] dark:to-[#ff4fbd] drop-shadow-sm"
-              >
-                beautiful
-              </span>
-              , responsive, and modern web experiences.
+              I develop complete digital solutions that solve real-world problems.
             </p>
 
             <div className="md:pt-7 pt-5">
               <Button
-                text="LinkedIn"
-                icon={FaLinkedin}
-                link="https://www.linkedin.com/in/diegocarmn/"
-              />
-              <Button
-                text="Github"
-                icon={FaGithub}
+                text="View Projects"
+                icon={GrProjects}
                 link="https://github.com/diegocarmn"
               />
             </div>
