@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="text-black bg-white">
+      <main className="text-black dark:text-white bg-white">
         <VantaBackground>
           <section className="flex flex-col w-screen h-screen justify-center sm:max-w-6xl sm:mx-auto">
             <h1 className="text-7xl">Diego Carmona</h1>
