@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import DarkModeToggle from "./DarkModeToggle";
 import { useState } from "react";
 import NavbarButton from "./NavbarButton";
@@ -84,35 +83,39 @@ const Navbar = ({
         {/* Mobile Menu Full Screen */}
         {isOpen && (
           <div className="fixed inset-0 z-50 bg-white dark:bg-black backdrop-blur-md flex flex-col items-center justify-center gap-8">
-            <div className="flex flex-col gap-8 font-sans font-medium text-4xl text-black dark:text-white text-center">
-              <Link
-                href="/"
+            <div className="flex flex-col gap-8 font-sans text-black dark:text-white text-center">
+              <NavbarButton
+                variant="mobile"
+                targetRef={homeRef}
+                active={activeSection === "home"}
                 onClick={() => setIsOpen(false)}
-                className="hover:opacity-70 transition-opacity"
               >
                 Home
-              </Link>
-              <Link
-                href="/"
+              </NavbarButton>
+              <NavbarButton
+                variant="mobile"
+                targetRef={projectsRef}
+                active={activeSection === "projects"}
                 onClick={() => setIsOpen(false)}
-                className="hover:opacity-70 transition-opacity"
               >
                 Projects
-              </Link>
-              <Link
-                href="/"
+              </NavbarButton>
+              <NavbarButton
+                variant="mobile"
+                targetRef={aboutRef}
+                active={activeSection === "about"}
                 onClick={() => setIsOpen(false)}
-                className="hover:opacity-70 transition-opacity"
               >
                 About
-              </Link>
-              <Link
-                href="/"
+              </NavbarButton>
+              <NavbarButton
+                variant="mobile"
+                targetRef={contactRef}
+                active={activeSection === "contact"}
                 onClick={() => setIsOpen(false)}
-                className="hover:opacity-70 transition-opacity"
               >
                 Contact
-              </Link>
+              </NavbarButton>
             </div>
             <DarkModeToggle />
           </div>
