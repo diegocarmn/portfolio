@@ -11,9 +11,9 @@ const lightColors = {
   baseColor: 0xffffff,
 };
 const darkColors = {
-  highlightColor: 0x8be9fd,
-  midtoneColor: 0xbd93f9,
-  lowlightColor: 0xff79c6,
+  highlightColor: 0x000000,
+  midtoneColor: 0x74008e,
+  lowlightColor: 0x2c00ff,
   baseColor: 0x000000,
 };
 export default function VantaBackground({ children, className = "" }) {
@@ -52,8 +52,8 @@ export default function VantaBackground({ children, className = "" }) {
         gyroControls: false,
         minHeight: 200,
         minWidth: 200,
-        blurFactor: 0.71,
-        zoom: 0.7,
+        blurFactor: 0.85,
+        zoom: 0.6,
         speed: 0.4,
         ...colors,
       });
