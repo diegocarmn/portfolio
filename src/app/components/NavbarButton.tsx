@@ -4,7 +4,7 @@ type NavbarButtonVariant = "desktop" | "mobile";
 
 interface NavbarButtonProps {
   children: React.ReactNode;
-  targetRef: React.RefObject<HTMLDivElement | null>;
+  targetRef: React.RefObject<HTMLElement | null>;
   active?: boolean;
   variant?: NavbarButtonVariant;
   onClick?: () => void;
@@ -31,7 +31,8 @@ const NavbarButton = ({
 
   const activeStyles = {
     desktop: "drop-shadow-[0_0_6px_rgba(255,255,255,0.35)] opacity-100",
-    mobile: "opacity-100 drop-shadow-[0_0_6px_rgba(255,255,255,0.35)] dark:drop-shadow-none",
+    mobile:
+      "opacity-100 drop-shadow-[0_0_6px_rgba(255,255,255,0.35)] dark:drop-shadow-none",
   };
 
   const inactiveStyles = {

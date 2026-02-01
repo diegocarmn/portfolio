@@ -7,10 +7,10 @@ import StatusBadge from "./components/StatusBadge";
 import HeroButton from "./components/HeroButton";
 
 export default function Home() {
-  const homeRef = React.useRef<HTMLDivElement | null>(null);
-  const projectsRef = React.useRef<HTMLDivElement | null>(null);
-  const aboutRef = React.useRef<HTMLDivElement | null>(null);
-  const contactRef = React.useRef<HTMLDivElement | null>(null);
+  const homeRef = React.useRef<HTMLElement | null>(null);
+  const projectsRef = React.useRef<HTMLElement | null>(null);
+  const aboutRef = React.useRef<HTMLElement | null>(null);
+  const contactRef = React.useRef<HTMLElement | null>(null);
 
   const [activeSection, setActiveSection] = React.useState<string | null>(null);
 
@@ -31,7 +31,7 @@ export default function Home() {
         });
       },
       {
-        threshold: 0.6, 
+        threshold: 0.6,
       },
     );
 
@@ -65,7 +65,7 @@ export default function Home() {
               Front-end developer.
             </h1>
 
-            <p className="py-5 text-sm sm:text-lg text-balance font-medium">
+            <p className="py-5 text-sm sm:text-lg text-balance font-medium opacity-80">
               Focused on the JavaScript ecosystem, I’m a problem-solver who
               enjoys learning through building.
             </p>
@@ -73,7 +73,10 @@ export default function Home() {
               <HeroButton link="https://github.com/diegocarmn" target="_blank">
                 Github
               </HeroButton>
-              <HeroButton link="https://www.linkedin.com/in/diegocarmn/" target="_blank">
+              <HeroButton
+                link="https://www.linkedin.com/in/diegocarmn/"
+                target="_blank"
+              >
                 Linkedin
               </HeroButton>
               <HeroButton link="mailto:diegoncarmona@gmail.com">
@@ -82,27 +85,31 @@ export default function Home() {
             </div>
           </section>
         </VantaBackground>
-        <div
+        <section
           ref={projectsRef}
-          className="h-screen bg-blue-200 dark:bg-gray-900"
+          className="h-screen bg-blue-200 dark:bg-gray-900 px-2"
           id="projects"
         >
-          <p className="text-black">Projects</p>
-        </div>
-        <div
+          <div className="sm:px-10 sm:mx-auto md:max-w-5xl lg:max-w-6xl md:px-20">
+            <h2 className="text-black font-serif text-4xl tracking-tight font-medium pt-4 md:pt-20 md:text-6xl ">
+              Projects
+            </h2>
+          </div>
+        </section>
+        <section
           ref={aboutRef}
           className="h-screen bg-green-200 dark:bg-gray-800"
           id="about"
         >
           <p className="text-black">About</p>
-        </div>
-        <div
+        </section>
+        <section
           ref={contactRef}
           className="h-screen bg-red-200 dark:bg-gray-700"
           id="contact"
         >
           <p className="text-black">Contact</p>
-        </div>
+        </section>
       </main>
     </>
   );
