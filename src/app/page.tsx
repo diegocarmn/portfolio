@@ -4,7 +4,9 @@ import Navbar from "./components/Navbar";
 import VantaBackground from "./components/VantaBackground";
 import React from "react";
 import StatusBadge from "./components/StatusBadge";
-import HeroButton from "./components/HeroButton";
+import Button from "./components/Button";
+import ProjectsCard from "./components/ProjectsCard";
+import { IoIosArrowForward } from "react-icons/io";
 
 export default function Home() {
   const homeRef = React.useRef<HTMLElement | null>(null);
@@ -70,31 +72,40 @@ export default function Home() {
               enjoys learning through building.
             </p>
             <div className="flex gap-2 sm:gap-4">
-              <HeroButton link="https://github.com/diegocarmn" target="_blank">
+              <Button
+                link="https://github.com/diegocarmn"
+                target="_blank"
+                icon={<IoIosArrowForward className="h-4 w-4" />}
+              >
                 Github
-              </HeroButton>
-              <HeroButton
+              </Button>
+              <Button
                 link="https://www.linkedin.com/in/diegocarmn/"
                 target="_blank"
+                icon={<IoIosArrowForward className="h-4 w-4" />}
               >
                 Linkedin
-              </HeroButton>
-              <HeroButton link="mailto:diegoncarmona@gmail.com">
+              </Button>
+              <Button
+                link="mailto:diegoncarmona@gmail.com"
+                icon={<IoIosArrowForward className="h-4 w-4" />}
+              >
                 Email
-              </HeroButton>
+              </Button>
             </div>
           </section>
         </VantaBackground>
         <section
           ref={projectsRef}
-          className="h-screen bg-blue-200 dark:bg-gray-900 px-2"
+          className="h-fit bg-gray-50 dark:bg-gray-950 px-2 pb-4 flex flex-col items-center"
           id="projects"
         >
-          <div className="sm:px-10 sm:mx-auto md:max-w-5xl lg:max-w-6xl md:px-20">
-            <h2 className="text-black font-serif text-4xl tracking-tight font-medium pt-4 md:pt-20 md:text-6xl ">
-              Projects
+          <div className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center ">
+            <h2 className="text-black dark:text-white font-serif text-4xl sm:text-5xl tracking-tight font-medium pt-4 sm:pt-20 md:text-6xl ">
+              Projects.
             </h2>
           </div>
+          <ProjectsCard />
         </section>
         <section
           ref={aboutRef}
