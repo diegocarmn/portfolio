@@ -29,17 +29,22 @@
   .animation-delay-4000 {
     animation-delay: 4000ms;
   }
-  /* Texto padrão */
+  /* Standard text */
   .font-sans {
     font-family: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
   }
-  /* Títulos */
+  /* Titles */
   .font-serif {
     font-family: var(--font-geist), ui-serif, Georgia, serif;
   }
 }
 
 @layer base {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   body {
     @apply font-sans;
   }

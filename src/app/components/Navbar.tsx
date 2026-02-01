@@ -5,10 +5,10 @@ import { useState } from "react";
 import NavbarButton from "./NavbarButton";
 
 interface NavbarProps {
-  homeRef: React.RefObject<HTMLDivElement | null>;
-  projectsRef: React.RefObject<HTMLDivElement | null>;
-  aboutRef: React.RefObject<HTMLDivElement | null>;
-  contactRef: React.RefObject<HTMLDivElement | null>;
+  homeRef: React.RefObject<HTMLElement | null>;
+  projectsRef: React.RefObject<HTMLElement | null>;
+  aboutRef: React.RefObject<HTMLElement | null>;
+  contactRef: React.RefObject<HTMLElement | null>;
   activeSection: string | null;
 }
 
@@ -49,7 +49,7 @@ const Navbar = ({
 
       {/* Mobile Navbar */}
       <nav className="sm:hidden">
-        <div className="fixed top-4 right-4 z-60">
+        <div className="fixed top-4 right-4 z-60 flex gap-2 items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="p-2 dark:bg-white/5 rounded-2xl border border-black/10 dark:border-white/10 backdrop-blur-md text-black dark:text-white"
@@ -83,7 +83,7 @@ const Navbar = ({
         {/* Mobile Menu Full Screen */}
         {isOpen && (
           <div className="fixed inset-0 z-50 bg-white dark:bg-black backdrop-blur-md flex flex-col items-center justify-center gap-8">
-            <div className="flex flex-col gap-8 font-sans text-black dark:text-white text-center">
+            <nav className="flex flex-col gap-8 font-sans text-black dark:text-white text-center items-center">
               <NavbarButton
                 variant="mobile"
                 targetRef={homeRef}
@@ -116,8 +116,8 @@ const Navbar = ({
               >
                 Contact
               </NavbarButton>
-            </div>
-            <DarkModeToggle />
+              <DarkModeToggle />
+            </nav>
           </div>
         )}
       </nav>
