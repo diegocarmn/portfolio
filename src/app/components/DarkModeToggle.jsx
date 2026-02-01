@@ -6,21 +6,35 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function DarkModeToggle() {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [mounted, setMounted] = useState(false);
   const iconSize = 20;
 
+  // Initialize state from DOM on mount only
   useEffect(() => {
-    if (isDarkMode) {
+    const isDark = document.documentElement.classList.contains("dark");
+    setIsDarkMode(isDark);
+    setMounted(true);
+  }, []);
+
+  // Update DOM when state changes
+  const handleToggle = () => {
+    const newState = !isDarkMode;
+    setIsDarkMode(newState);
+    
+    if (newState) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-  }, [isDarkMode]);
+  };
+
+  if (!mounted) return null;
 
   return (
     <button
       className="inline-flex items-center rounded-full px-2 py-2
         active:scale-95 transition-all duration-150 cursor-pointer text-black dark:text-white"
-      onClick={() => setIsDarkMode((d) => !d)}
+      onClick={handleToggle}
       aria-label="Toggle Dark Mode"
       title={isDarkMode ? "Light Mode" : "Dark Mode"}
     >
@@ -32,7 +46,7 @@ export default function DarkModeToggle() {
           exit={{ opacity: 0, y: -4 }}
           transition={{
             duration: 0.25,
-            ease: [0.4, 0, 0.2, 1], // ease-in-out suave
+            ease: [0.4, 0, 0.2, 1],
           }}
           className="flex items-center justify-center"
         >
