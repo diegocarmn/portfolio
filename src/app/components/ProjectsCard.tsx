@@ -39,14 +39,14 @@ const ProjectsCard = ({
         src={mockupImage}
         alt={`${title} project screenshot`}
         width={500}
-        height={300}
+        height={500}
         className="w-full aspect-video rounded-t-3xl object-cover"
       />
       <Image
         src={logoImage}
         alt={`${title} project logo`}
-        width={40}
-        height={40}
+        width={500}
+        height={500}
         className="border-white dark:border-darkgray border-4 md:border-5 relative -top-6 md:-top-9 left-4 md:left-6 rounded-2xl bg-white dark:bg-darkgray w-13 h-13
             sm:w-16 sm:h-16
             lg:w-18 lg:h-18"

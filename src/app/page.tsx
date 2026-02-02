@@ -6,7 +6,10 @@ import React from "react";
 import StatusBadge from "./components/StatusBadge";
 import Button from "./components/Button";
 import ProjectsCard from "./components/ProjectsCard";
-import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
+import { RxDoubleArrowDown } from "react-icons/rx";
+import { count } from "console";
+import { delay } from "framer-motion";
 
 export default function Home() {
   const homeRef = React.useRef<HTMLElement | null>(null);
@@ -56,51 +59,84 @@ export default function Home() {
       <main className="text-black dark:text-white bg-white font-sans">
         <VantaBackground>
           <section
+            className="w-full h-screen p-3 sm:p-4 md:p-5 flex items-center justify-center relative"
             id="home"
             ref={homeRef}
-            className="flex flex-col w-screen h-screen justify-center px-4 sm:px-10 sm:mx-auto md:max-w-5xl lg:max-w-6xl md:px-20"
           >
-            <StatusBadge />
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-serif font-medium tracking-tight ">
-              Diego Carmona.
-              <br />
-              Front-end developer.
-            </h1>
+            <div className="w-full h-full rounded-4xl outline-50 outline-gray-50 dark:outline-black">
+              <section
+                className="
+                w-full h-full md:max-w-6xl 
+                flex flex-col justify-center
+                px-4 sm:px-10 md:px-20 md:mx-auto
+                "
+              >
+                <StatusBadge />
 
-            <p className="py-5 text-sm sm:text-lg text-balance font-medium opacity-80">
-              Focused on the JavaScript ecosystem, I’m a problem-solver who
-              enjoys learning through building.
-            </p>
-            <div className="flex gap-2 sm:gap-4">
-              <Button
-                link="https://github.com/diegocarmn"
-                target="_blank"
-                icon={<IoIosArrowForward className="h-4 w-4" />}
-                variant="primarySmall"
-              >
-                Github
-              </Button>
-              <Button
-                link="https://www.linkedin.com/in/diegocarmn/"
-                target="_blank"
-                icon={<IoIosArrowForward className="h-4 w-4" />}
-                variant="primarySmall"
-              >
-                Linkedin
-              </Button>
-              <Button
-                link="mailto:diegoncarmona@gmail.com"
-                icon={<IoIosArrowForward className="h-4 w-4" />}
-                variant="primarySmall"
-              >
-                Email
-              </Button>
+                <h1 className="text-3xl sm:text-5xl md:text-6xl font-serif font-medium tracking-tight">
+                  Diego Carmona.
+                  <br />
+                  Front-end developer.
+                </h1>
+
+                <p className="py-5 text-sm sm:text-lg text-balance font-medium opacity-80">
+                  Focused on the JavaScript ecosystem, I’m a problem-solver who
+                  enjoys learning through building.
+                </p>
+
+                <div className="flex gap-2 sm:gap-4">
+                  <Button
+                    link="https://github.com/diegocarmn"
+                    target="_blank"
+                    icon={<IoIosArrowForward className="h-4 w-4" />}
+                    variant="primarySmall"
+                  >
+                    Github
+                  </Button>
+
+                  <Button
+                    link="https://www.linkedin.com/in/diegocarmn/"
+                    target="_blank"
+                    icon={<IoIosArrowForward className="h-4 w-4" />}
+                    variant="primarySmall"
+                  >
+                    Linkedin
+                  </Button>
+
+                  <Button
+                    link="mailto:diegoncarmona@gmail.com"
+                    icon={<IoIosArrowForward className="h-4 w-4" />}
+                    variant="primarySmall"
+                  >
+                    Email
+                  </Button>
+                </div>
+
+                <button
+                  className="
+                  flex items-center justify-center
+                   w-25 h-12 absolute
+                  bottom-7 sm:bottom-10
+                  left-1/2
+                  -translate-x-1/2
+                  animate-bounce
+                  cursor-pointer"
+                  onClick={() => {
+                    projectsRef.current?.scrollIntoView({
+                      behavior: "smooth",
+                    });
+                  }}
+                  aria-label="Scroll to Projects section"
+                >
+                  <IoIosArrowDown className="h-8 w-8 sm:h-10 sm:w-10 opacity-70" />
+                </button>
+              </section>
             </div>
           </section>
         </VantaBackground>
         <section
           ref={projectsRef}
-          className="h-fit bg-gray-50 dark:bg-black px-2 pb-4 flex flex-col items-center"
+          className="h-fit bg-gray-50 dark:bg-black px-2 pb-10 flex flex-col items-center"
           id="projects"
         >
           <div className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center ">
@@ -140,7 +176,7 @@ export default function Home() {
               mockupImage="/mockuppitada.png"
               logoImage="/logo-pitada.png"
               title="Pitada."
-              description="Pitada helps people figure out what to cook by transforming the ingredients they have at home into simple, personalized recipes using AI."
+              description="Pitada helps people figure out what to cook by transforming the ingredients they already have at home into simple, personalized recipes using AI."
               subtitle="Smart Recipe Generator App"
               overview="Pitada is a lightweight, full-stack web application that generates AI-powered recipes from user-provided ingredients. The project focuses on performance, accessibility, and modern web standards, delivering a fast and inclusive cooking assistant experience."
               features={[
@@ -149,7 +185,7 @@ export default function Home() {
                 "Serverless API endpoint for recipe inference (/api/ai/recipe)",
                 "Light/Dark theme support with CSS variables",
                 "Fully accessible UI (ARIA, keyboard navigation, semantic HTML)",
-                "PWA-ready with installable app experience"
+                "PWA-ready with installable app experience",
               ]}
               tags={[
                 "Next.js",
