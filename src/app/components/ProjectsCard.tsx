@@ -2,60 +2,149 @@ import Image from "next/image";
 import ProjectsCardTag from "./ProjectsCardTag";
 import Button from "./Button";
 import { IoIosArrowForward } from "react-icons/io";
-import { FiGithub } from "react-icons/fi";
-import IconButton from "./IconButton";
+import { useState } from "react";
+import { FaCheckCircle } from "react-icons/fa";
+import { IoMdArrowRoundDown, IoMdArrowRoundUp } from "react-icons/io";
 
-const ProjectsCard = () => {
+interface ProjectsCardProps {
+  mockupImage: string;
+  logoImage: string;
+  title: string;
+  description: string;
+  subtitle?: string;
+  overview?: string;
+  features?: string[];
+  tags: string[];
+  websiteLink: string;
+  githubLink: string;
+}
+
+const ProjectsCard = ({
+  mockupImage,
+  logoImage,
+  title,
+  description,
+  subtitle,
+  overview,
+  features,
+  tags,
+  websiteLink,
+  githubLink,
+}: ProjectsCardProps) => {
+  const [isCardExpanded, setIsCardExpanded] = useState(false);
+
   return (
-    <div className="flex flex-col bg-white rounded-4xl border border-black/10 dark:bg-black dark:border-white/10 shadow-md p-3 md:p-4 mt-4 mx-4 text-left sm:max-w-140">
+    <div className="flex flex-col bg-white rounded-4xl border border-black/10 dark:bg-darkgray  dark:border-white/10 shadow-md p-3 md:p-4 mt-4 mx-4 text-left w-fit sm:h-fit sm:max-w-140 hover:scale-105 transition-transform duration-300">
       <Image
-        src="/mockupcineai.png"
-        alt="CineAI project screenshot"
+        src={mockupImage}
+        alt={`${title} project screenshot`}
         width={500}
         height={300}
-        className="w-full h-auto rounded-t-3xl object-cover"
+        className="w-full aspect-video rounded-t-3xl object-cover"
       />
       <Image
-        src="/logo-cineai.png"
-        alt="CineAI project logo"
+        src={logoImage}
+        alt={`${title} project logo`}
         width={40}
         height={40}
-        className="outline-white outline-4 relative -top-6 left-4 md:left-5 rounded bg-white w-10 h-10
-            sm:w-12 sm:h-12
-            md:w-12 md:h-12"
+        className="border-white dark:border-darkgray border-4 md:border-5 relative -top-6 md:-top-9 left-4 md:left-6 rounded-2xl bg-white dark:bg-darkgray w-13 h-13
+            sm:w-16 sm:h-16
+            lg:w-18 lg:h-18"
       />
-      <h3 className="pb-4 font-serif font-medium tracking-tight text-3xl sm:text-4xl">
-        CineAI.
+
+      <h3 className="pb-4 font-serif font-medium tracking-tight text-3xl sm:text-4xl sm:mx-2 -top-2 relative">
+        {title}
       </h3>
-      <p className="text-sm text-balance opacity-90 sm:text-base">
-        CineAI is a movie discovery platform that uses Artificial Intelligence
-        to make recommendations based on user behavior, taste and mood.
+
+      <p className="sm:mx-2 text-sm opacity-90 sm:text-base sm:font-medium sm:opacity-80">
+        {description}
       </p>
-      <span className="w-full border-t border-black/30 mt-2"></span>
-      <span className="py-4">
-        <ProjectsCardTag text="Next.js" />
-        <ProjectsCardTag text="TypeScript" />
-        <ProjectsCardTag text="React" />
-        <ProjectsCardTag text="Tailwind CSS" />
-        <ProjectsCardTag text="AI API" />
-        <ProjectsCardTag text="Auth.js" />
-        <ProjectsCardTag text="PostgreSQL" />
+
+      <div className="flex flex-row items-center my-2 md:mt-4 sm:mx-2">
+        <span className="w-full border-t border-black/30 dark:border-white/30 mt-4 mb-2"></span>
+        <button
+          onClick={() => setIsCardExpanded(!isCardExpanded)}
+          className="
+          mx-auto flex-none
+          grid place-items-center
+          w-9 h-9 sm:w-10 sm:h-10
+          rounded-full
+          bg-white dark:bg-darkgray  
+          text-black dark:text-white
+          border border-black/30 dark:border-white/30
+          hover:scale-110 active:scale-90
+          transition-transform duration-200
+          cursor-pointer
+          "
+          title={
+            isCardExpanded ? "Collapse card details" : "Expand card details"
+          }
+        >
+          {isCardExpanded ? (
+            <IoMdArrowRoundUp className="w-5 h-5" />
+          ) : (
+            <IoMdArrowRoundDown className="w-5 h-5" />
+          )}
+        </button>
+        <span className="w-full border-t border-black/30 dark:border-white/30 mt-4 mb-2"></span>
+      </div>
+
+      {isCardExpanded && (
+        <div className="flex flex-col gap-2 md:gap-4 sm:mx-2 md:mt-2">
+          {subtitle && (
+            <h4 className="font-serif tracking-tight font-semibold text-lg sm:text-xl">
+              {subtitle}
+            </h4>
+          )}
+          {overview && (
+            <p className="text-sm opacity-90 sm:text-base sm:font-medium sm:opacity-80">
+              {overview}
+            </p>
+          )}
+          {features && features.length > 0 && (
+            <div className="flex flex-col gap-2 md:gap-4">
+              <h4 className="font-serif tracking-tight font-semibold text-lg sm:text-xl">
+                Features
+              </h4>
+
+              <ul className="text-sm sm:text-base font-bold flex flex-col gap-3 px-3 sm:px-3">
+                {features.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <FaCheckCircle className="mt-0.5 text-primary shrink-0" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <span className="w-full border-t border-black/30 dark:border-white/30 mt-2 mb-2"></span>
+            </div>
+          )}
+        </div>
+      )}
+
+      <span className="mt-4 mb-auto sm:mx-2">
+        {tags.map((tag) => (
+          <ProjectsCardTag key={tag} text={tag} />
+        ))}
       </span>
-      <span className="grid grid-cols-[1fr_auto] items-center gap-2 pt-2">
+      <div className="flex flex-col sm:flex-row items-center gap-3 mt-4 text-center">
         <Button
-          link="https://aicine.vercel.app"
+          link={githubLink}
+          target="_blank"
+          icon={<IoIosArrowForward className="h-4 w-4" />}
+          variant="primary"
+        >
+          GitHub
+        </Button>
+        <Button
+          link={websiteLink}
           target="_blank"
           icon={<IoIosArrowForward className="h-4 w-4" />}
           variant="secondary"
         >
           View website
         </Button>
-        <IconButton
-          link="https://github.com/diegocarmn/cineai"
-          target="_blank"
-          icon={<FiGithub className="h-4 w-4" />}
-        />
-      </span>
+      </div>
     </div>
   );
 };

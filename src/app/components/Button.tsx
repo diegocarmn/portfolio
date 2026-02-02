@@ -5,7 +5,7 @@ interface ButtonProps {
   link: string;
   target?: string;
   icon?: React.ReactNode;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "primarySmall" | "secondarySmall";
   className?: string;
 }
 
@@ -18,24 +18,34 @@ const Button = ({
   className = "",
 }: ButtonProps) => {
   const baseStyles =
-    "relative overflow-hidden group rounded-full border active:scale-95 transition-transform duration-200";
+    "relative overflow-hidden group rounded-full border active:scale-95 transition-transform duration-200 whitespace-nowrap text-center border-black/30 ";
 
   const variantStyles = {
     primary:
-      "dark:bg-black bg-white w-fit dark:text-white text-black font-bold text-sm sm:text-base pl-3 pr-2 py-1 sm:pl-4 sm:pr-3 sm:py-2 border-black/30 dark:border-white/30",
+      "inline-block dark:bg-black bg-white dark:text-white text-black font-bold text-sm sm:text-base w-full py-2 px-4 dark:border-white/30",
     secondary:
-      "bg-black dark:bg-white text-white py-2 px-4 text-center dark:text-black w-full border-black/30 dark:border-white/30",
+      "inline-block bg-black dark:bg-white text-white dark:text-black font-bold w-full py-2 px-4 dark:border-black/30",
+    primarySmall:
+      "dark:bg-black bg-white dark:text-white text-black font-bold text-sm sm:text-base min-w-fit text-sm sm:text-base pl-3 pr-2 py-1 sm:pl-4 sm:pr-3 sm:py-2 dark:border-white/30",
+    secondarySmall:
+      "bg-black dark:bg-white text-white dark:text-black w-fit py-2 px-4 dark:border-white/30 dark:border-white/30",
   };
 
   const hoverBgStyles = {
     primary: "bg-black dark:bg-white",
     secondary: "bg-white dark:bg-black",
+    primarySmall: "bg-black dark:bg-white",
+    secondarySmall: "bg-white dark:bg-black",
   };
 
   const textColorStyles = {
     primary:
       "text-black dark:text-white group-hover:text-white group-hover:dark:text-black",
     secondary:
+      "text-white dark:text-black group-hover:text-black group-hover:dark:text-white",
+    primarySmall:
+      "text-black dark:text-white group-hover:text-white group-hover:dark:text-black",
+    secondarySmall:
       "text-white dark:text-black group-hover:text-black group-hover:dark:text-white",
   };
 

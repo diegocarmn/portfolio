@@ -5,6 +5,7 @@
 @theme {
   --animate-blob: blob 7s infinite;
   --animate-blob-slow: blob 10s infinite;
+  --color-darkgray: #141517;
 
   @keyframes blob {
     0% {

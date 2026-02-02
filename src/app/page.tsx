@@ -76,6 +76,7 @@ export default function Home() {
                 link="https://github.com/diegocarmn"
                 target="_blank"
                 icon={<IoIosArrowForward className="h-4 w-4" />}
+                variant="primarySmall"
               >
                 Github
               </Button>
@@ -83,12 +84,14 @@ export default function Home() {
                 link="https://www.linkedin.com/in/diegocarmn/"
                 target="_blank"
                 icon={<IoIosArrowForward className="h-4 w-4" />}
+                variant="primarySmall"
               >
                 Linkedin
               </Button>
               <Button
                 link="mailto:diegoncarmona@gmail.com"
                 icon={<IoIosArrowForward className="h-4 w-4" />}
+                variant="primarySmall"
               >
                 Email
               </Button>
@@ -97,15 +100,69 @@ export default function Home() {
         </VantaBackground>
         <section
           ref={projectsRef}
-          className="h-fit bg-gray-50 dark:bg-gray-950 px-2 pb-4 flex flex-col items-center"
+          className="h-fit bg-gray-50 dark:bg-black px-2 pb-4 flex flex-col items-center"
           id="projects"
         >
           <div className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center ">
-            <h2 className="text-black dark:text-white font-serif text-4xl sm:text-5xl tracking-tight font-medium pt-4 sm:pt-20 md:text-6xl ">
+            <h2 className="text-black dark:text-white font-serif text-4xl sm:text-5xl tracking-tight font-medium pt-4 sm:pt-20 md:text-6xl md:pb-4">
               Projects.
             </h2>
           </div>
-          <ProjectsCard />
+          <div className="flex flex-col md:flex-row">
+            <ProjectsCard
+              mockupImage="/mockupcineai.png"
+              logoImage="/logo-cineai.png"
+              title="CineAI."
+              description="CineAI is a movie discovery platform that uses Artificial Intelligence to make recommendations based on user behavior, taste and mood."
+              subtitle="AI-Powered Movie Discovery Platform"
+              overview="CineAI is a full-stack web application focused on AI-driven movie recommendations, combining LLM-based inference with real-time movie data and persistent user state.
+              The system adapts recommendations based on user favorites, interaction history, and mood input."
+              features={[
+                "LLM-powered recommendation engine using Groq (LLaMA models)",
+                "Server-side movie search and trending feeds via TMDB API",
+                "OAuth authentication with Auth.js (Google provider)",
+                "Real-time UI updates, loading states, and resilient error handling",
+              ]}
+              tags={[
+                "Next.js",
+                "TypeScript",
+                "React",
+                "Node.js",
+                "Tailwind CSS",
+                "AI API",
+                "Auth.js",
+                "PostgreSQL",
+              ]}
+              websiteLink="https://aicine.vercel.app"
+              githubLink="https://github.com/diegocarmn/cineai"
+            />
+            <ProjectsCard
+              mockupImage="/mockuppitada.png"
+              logoImage="/logo-pitada.png"
+              title="Pitada."
+              description="Pitada helps people figure out what to cook by transforming the ingredients they have at home into simple, personalized recipes using AI."
+              subtitle="Smart Recipe Generator App"
+              overview="Pitada is a lightweight, full-stack web application that generates AI-powered recipes from user-provided ingredients. The project focuses on performance, accessibility, and modern web standards, delivering a fast and inclusive cooking assistant experience."
+              features={[
+                "AI-based recipe generation using Groq LLMs",
+                "Ingredient-driven input flow with clean state management",
+                "Serverless API endpoint for recipe inference (/api/ai/recipe)",
+                "Light/Dark theme support with CSS variables",
+                "Fully accessible UI (ARIA, keyboard navigation, semantic HTML)",
+                "PWA-ready with installable app experience"
+              ]}
+              tags={[
+                "Next.js",
+                "TypeScript",
+                "React",
+                "Tailwind CSS",
+                "AI API",
+                "PWA",
+              ]}
+              websiteLink="https://pitada.vercel.app"
+              githubLink="https://github.com/diegocarmn/pitada"
+            />
+          </div>
         </section>
         <section
           ref={aboutRef}
