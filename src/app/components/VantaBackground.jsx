@@ -5,8 +5,8 @@ import * as THREE from "three";
 import FOG from "vanta/dist/vanta.fog.min";
 
 const lightColors = {
-  highlightColor: 0x9ebfff,
-  midtoneColor: 0xcdd8ff,
+  highlightColor: 0x9f9eff,
+  midtoneColor: 0xccfffd,
   lowlightColor: 0xffffff,
   baseColor: 0xffffff,
 };

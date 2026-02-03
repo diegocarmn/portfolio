@@ -63,7 +63,7 @@ export default function Home() {
             id="home"
             ref={homeRef}
           >
-            <div className="w-full h-full rounded-4xl outline-50 outline-gray-50 dark:outline-black">
+            <div className="w-full h-full rounded-4xl outline-50 outline-primarylight dark:outline-black">
               <section
                 className="
                 w-full h-full md:max-w-6xl 
@@ -117,7 +117,7 @@ export default function Home() {
                   flex items-center justify-center
                    w-25 h-12 absolute
                   bottom-7 sm:bottom-10
-                  left-1/2
+                  left-1/2 rounded-4xl
                   -translate-x-1/2
                   animate-bounce
                   cursor-pointer"
@@ -136,7 +136,7 @@ export default function Home() {
         </VantaBackground>
         <section
           ref={projectsRef}
-          className="h-fit bg-gray-50 dark:bg-black px-2 pb-10 flex flex-col items-center"
+          className="h-fit bg-primarylight dark:bg-black px-4 sm:px-8 pb-10 flex flex-col items-center"
           id="projects"
         >
           <div className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center ">
@@ -144,7 +144,7 @@ export default function Home() {
               Projects.
             </h2>
           </div>
-          <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col md:flex-row gap-2 sm:gap-4 md:gap-8 md:max-w-full">
             <ProjectsCard
               mockupImage="/mockupcineai.png"
               logoImage="/logo-cineai.png"
@@ -202,7 +202,7 @@ export default function Home() {
         </section>
         <section
           ref={aboutRef}
-          className="h-screen bg-green-200 dark:bg-gray-800"
+          className="h-screen bg-primary dark:bg-gray-800 rounded-4xl mx-3 sm:mx-4 md:mx-5"
           id="about"
         >
           <p className="text-black">About</p>

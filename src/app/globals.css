@@ -6,6 +6,9 @@
   --animate-blob: blob 7s infinite;
   --animate-blob-slow: blob 10s infinite;
   --color-darkgray: #141517;
+  --color-primary: #2c55fb;
+  --color-primarylight: #f6f8ff;
+  --color-bgprimary: #f0f2ff;
 
   @keyframes blob {
     0% {
@@ -29,6 +32,13 @@
   }
   .animation-delay-4000 {
     animation-delay: 4000ms;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
   /* Standard text */
   .font-sans {

@@ -34,13 +34,34 @@ const ProjectsCard = ({
   const [isCardExpanded, setIsCardExpanded] = useState(false);
 
   return (
-    <div className="flex flex-col bg-white rounded-4xl border border-black/10 dark:bg-darkgray  dark:border-white/10 shadow-md p-3 md:p-4 mt-4 mx-4 text-left w-fit sm:h-fit sm:max-w-140 hover:scale-105 transition-transform duration-300">
+    <div
+      className="
+          flex flex-col
+          bg-white rounded-4xl
+          border border-black/10
+          dark:bg-darkgray dark:border-white/10
+          shadow-md
+          p-3 md:p-4
+          mt-4 mx-auto
+          text-left
+
+          w-full h-fit max-w-[90vw]
+          sm:max-w-140
+          min-w-0
+          overflow-hidden
+
+          sm:hover:scale-105
+          transition-transform
+          duration-300
+          "
+    >
       <Image
         src={mockupImage}
         alt={`${title} project screenshot`}
         width={500}
         height={500}
-        className="w-full aspect-video rounded-t-3xl object-cover"
+        sizes="(max-width: 640px) 100vw, 560px"
+        className="w-full max-w-full aspect-video rounded-t-3xl object-cover"
       />
       <Image
         src={logoImage}
@@ -56,7 +77,9 @@ const ProjectsCard = ({
         {title}
       </h3>
 
-      <p className="sm:mx-2 text-sm opacity-90 sm:text-base sm:font-medium sm:opacity-80">
+      <p
+        className={`sm:mx-2 text-sm opacity-90 sm:text-base sm:font-medium sm:opacity-80 ${isCardExpanded ? "" : "line-clamp-2"}`}
+      >
         {description}
       </p>
 
@@ -67,7 +90,7 @@ const ProjectsCard = ({
           className="
           mx-auto flex-none
           grid place-items-center
-          w-9 h-9 sm:w-10 sm:h-10
+          w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11
           rounded-full
           bg-white dark:bg-darkgray  
           text-black dark:text-white
@@ -121,12 +144,9 @@ const ProjectsCard = ({
           )}
         </div>
       )}
-
-      <span className="mt-4 mb-auto sm:mx-2">
-        {tags.map((tag) => (
-          <ProjectsCardTag key={tag} text={tag} />
-        ))}
-      </span>
+      <div className="mt-2 mx-2 min-w-0">
+        <ProjectsCardTag tags={tags} singleLine={!isCardExpanded} />
+      </div>
       <div className="flex flex-col sm:flex-row items-center gap-3 mt-4 text-center">
         <Button
           link={githubLink}
