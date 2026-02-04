@@ -25,18 +25,18 @@ const NavbarButton = ({
   const baseStyles = "transition-all duration-300 cursor-pointer";
 
   const variantStyles = {
-    desktop: "px-4 font-normal",
+    desktop: "px-4",
     mobile: "text-4xl font-medium",
   };
 
   const activeStyles = {
-    desktop: "drop-shadow-[0_0_6px_rgba(255,255,255,0.35)] opacity-100",
+    desktop: "drop-shadow-[0_0_6px_rgba(255,255,255,0.35)] opacity-100 font-bold",
     mobile:
       "opacity-100 drop-shadow-[0_0_6px_rgba(255,255,255,0.35)] dark:drop-shadow-none",
   };
 
   const inactiveStyles = {
-    desktop: "opacity-80 hover:opacity-100",
+    desktop: "opacity-80 hover:opacity-100 font-medium",
     mobile: "opacity-70 hover:opacity-100",
   };
 

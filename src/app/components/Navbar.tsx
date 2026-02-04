@@ -1,7 +1,7 @@
 "use client";
 
 import DarkModeToggle from "./DarkModeToggle";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NavbarButton from "./NavbarButton";
 
 interface NavbarProps {
@@ -20,11 +20,26 @@ const Navbar = ({
   activeSection,
 }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAtTop, setIsAtTop] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsAtTop(window.scrollY === 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
       {/* Desktop Navbar */}
-      <nav className="hidden sm:flex fixed top-4 left-1/2 -translate-x-1/2 z-50 justify-center gap-2 dark:bg-white/5 rounded-4xl py-2 px-4 items-center font-sans text-black dark:text-white border border-black/10 dark:border-white/10 backdrop-blur-md">
+      <nav
+        className={`hidden sm:flex fixed  left-1/2 -translate-x-1/2 z-50 justify-center gap-2 bg-white/40 dark:bg-black/40 rounded-4xl py-2 px-4 items-center font-sans text-black dark:text-white border border-black/10 dark:border-white/10 backdrop-blur-md ${isAtTop ? "top-4 sm:top-8" : "top-2"} transition-top duration-150 shadow`}
+      >
         <NavbarButton targetRef={homeRef} active={activeSection === "home"}>
           Home
         </NavbarButton>
@@ -49,10 +64,12 @@ const Navbar = ({
 
       {/* Mobile Navbar */}
       <nav className="sm:hidden">
-        <div className="fixed top-4 right-4 z-60 flex gap-2 items-center">
+        <div
+          className={`fixed ${isAtTop ? "top-6 right-6" : "top-2 right-3"} z-60 flex gap-2 items-center transition-all duration-150`}
+        >
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 dark:bg-white/5 rounded-2xl border border-black/10 dark:border-white/10 backdrop-blur-md text-black dark:text-white"
+            className={`p-2  rounded-4xl ${isAtTop ? "" : `${isOpen ? "" : "border border-black/30 dark:border-white/30 backdrop-blur-md bg-white/30 dark:bg-black/30"} `}   text-black dark:text-white`}
             aria-label="Toggle menu"
           >
             <svg
