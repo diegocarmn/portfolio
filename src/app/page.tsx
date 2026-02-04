@@ -56,14 +56,14 @@ export default function Home() {
         contactRef={contactRef}
         activeSection={activeSection}
       />
-      <main className="text-black dark:text-white bg-white font-sans">
+      <main className="text-black dark:text-white bg-bglight dark:bg-bgdark font-sans">
         <VantaBackground>
           <section
             className="w-full h-screen p-3 sm:p-4 md:p-5 flex items-center justify-center relative"
             id="home"
             ref={homeRef}
           >
-            <div className="w-full h-full rounded-4xl outline-50 outline-primarylight dark:outline-black">
+            <div className="w-full h-full rounded-4xl outline-50 outline-bglight dark:outline-bgdark">
               <section
                 className="
                 w-full h-full md:max-w-6xl 
@@ -136,11 +136,11 @@ export default function Home() {
         </VantaBackground>
         <section
           ref={projectsRef}
-          className="h-fit bg-primarylight dark:bg-black px-4 sm:px-8 pb-10 flex flex-col items-center"
+          className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 pb-20 flex flex-col items-center pt-4 sm:pt-20 lg:pt-25"
           id="projects"
         >
-          <div className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center ">
-            <h2 className="text-black dark:text-white font-serif text-4xl sm:text-5xl tracking-tight font-medium pt-4 sm:pt-20 md:text-6xl md:pb-4">
+          <div className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center md:pb-4 lg:pb-8">
+            <h2 className="text-black dark:text-white font-serif text-4xl sm:text-5xl tracking-tight font-medium md:text-6xl">
               Projects.
             </h2>
           </div>
@@ -202,17 +202,25 @@ export default function Home() {
         </section>
         <section
           ref={aboutRef}
-          className="h-screen bg-primary dark:bg-gray-800 rounded-4xl mx-3 sm:mx-4 md:mx-5"
+          className="h-screen bg-bglight dark:bg-bgdark px-4 sm:px-8 pb-20 flex flex-col items-center pt-4 sm:pt-20 lg:pt-25"
           id="about"
         >
-          <p className="text-black">About</p>
+          <div className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center md:pb-4 lg:pb-8">
+            <h2 className="text-black dark:text-white font-serif text-4xl sm:text-5xl tracking-tight font-medium md:text-6xl">
+              About.
+            </h2>
+          </div>
         </section>
         <section
           ref={contactRef}
-          className="h-screen bg-red-200 dark:bg-gray-700"
+          className="h-screen bg-bglight dark:bg-bgdark px-4 sm:px-8 pb-20 flex flex-col items-center pt-4 sm:pt-20 lg:pt-25"
           id="contact"
         >
-          <p className="text-black">Contact</p>
+          <div className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center md:pb-4 lg:pb-8">
+            <h2 className="text-black dark:text-white font-serif text-4xl sm:text-5xl tracking-tight font-medium md:text-6xl">
+              Contact.
+            </h2>
+          </div>
         </section>
       </main>
     </>

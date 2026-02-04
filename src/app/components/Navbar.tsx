@@ -38,7 +38,7 @@ const Navbar = ({
     <>
       {/* Desktop Navbar */}
       <nav
-        className={`hidden sm:flex fixed  left-1/2 -translate-x-1/2 z-50 justify-center gap-2 bg-white/40 dark:bg-black/40 rounded-4xl py-2 px-4 items-center font-sans text-black dark:text-white border border-black/10 dark:border-white/10 backdrop-blur-md ${isAtTop ? "top-4 sm:top-8" : "top-2"} transition-top duration-150 shadow-xs`}
+        className={`hidden sm:flex fixed  left-1/2 -translate-x-1/2 z-50 justify-center gap-2 bg-white/40 dark:bg-black/40 rounded-4xl py-2 px-4 items-center font-sans text-black dark:text-white border border-black/10 dark:border-white/10 backdrop-blur-md ${isAtTop ? "top-4 sm:top-8" : "top-2"} transition-top duration-150 shadow`}
       >
         <NavbarButton targetRef={homeRef} active={activeSection === "home"}>
           Home

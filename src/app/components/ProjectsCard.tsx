@@ -39,7 +39,7 @@ const ProjectsCard = ({
           flex flex-col
           bg-white rounded-4xl
           border border-black/10
-          dark:bg-darkgray dark:border-white/10
+          dark:bg-navyblack dark:border-white/10
           shadow-md
           p-3 md:p-4
           mt-4 mx-auto
@@ -68,7 +68,7 @@ const ProjectsCard = ({
         alt={`${title} project logo`}
         width={500}
         height={500}
-        className="border-white dark:border-darkgray border-4 md:border-5 relative -top-6 md:-top-9 left-4 md:left-6 rounded-2xl bg-white dark:bg-darkgray w-13 h-13
+        className="border-white dark:border-navyblack border-4 md:border-5 relative -top-6 md:-top-9 left-4 md:left-6 rounded-2xl bg-white dark:bg-navyblack w-13 h-13
             sm:w-16 sm:h-16
             lg:w-18 lg:h-18"
       />
@@ -92,7 +92,7 @@ const ProjectsCard = ({
           grid place-items-center
           w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11
           rounded-full
-          bg-white dark:bg-darkgray  
+          bg-white dark:bg-navyblack  
           text-black dark:text-white
           border border-black/30 dark:border-white/30
           hover:scale-110 active:scale-90
@@ -133,7 +133,7 @@ const ProjectsCard = ({
               <ul className="text-sm sm:text-base font-bold flex flex-col gap-3 px-3 sm:px-3">
                 {features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-2">
-                    <FaCheckCircle className="mt-0.5 text-primary shrink-0" />
+                    <FaCheckCircle className="mt-0.5 text-accent shrink-0" />
                     <span>{feature}</span>
                   </li>
                 ))}

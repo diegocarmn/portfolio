@@ -33,7 +33,7 @@ const Button = ({
 
   const hoverBgStyles = {
     primary: "bg-black dark:bg-white",
-    secondary: "bg-primary dark:bg-black",
+    secondary: "bg-white dark:bg-black",
     primarySmall: "bg-black dark:bg-white",
     secondarySmall: "bg-white dark:bg-black",
   };
