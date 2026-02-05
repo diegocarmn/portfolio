@@ -42,7 +42,7 @@ const ProjectsCard = ({
           dark:bg-navyblack dark:border-white/10
           shadow-md
           p-3 md:p-4
-          mt-4 mx-auto
+           mx-auto
           text-left
 
           w-full h-fit max-w-[90vw]
@@ -54,6 +54,7 @@ const ProjectsCard = ({
           transition-transform
           duration-300
           "
+          onClick={() => setIsCardExpanded(!isCardExpanded)}
     >
       <Image
         src={mockupImage}
@@ -152,7 +153,7 @@ const ProjectsCard = ({
           link={githubLink}
           target="_blank"
           icon={<IoIosArrowForward className="h-4 w-4" />}
-          variant="primary"
+          variant="secondary"
         >
           GitHub
         </Button>
@@ -160,7 +161,7 @@ const ProjectsCard = ({
           link={websiteLink}
           target="_blank"
           icon={<IoIosArrowForward className="h-4 w-4" />}
-          variant="secondary"
+          variant="primary"
         >
           View website
         </Button>

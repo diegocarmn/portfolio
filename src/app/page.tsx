@@ -7,9 +7,7 @@ import StatusBadge from "./components/StatusBadge";
 import Button from "./components/Button";
 import ProjectsCard from "./components/ProjectsCard";
 import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
-import { RxDoubleArrowDown } from "react-icons/rx";
-import { count } from "console";
-import { delay } from "framer-motion";
+import BentoGrid from "./components/BentoGrid";
 
 export default function Home() {
   const homeRef = React.useRef<HTMLElement | null>(null);
@@ -76,12 +74,12 @@ export default function Home() {
                 <h1 className="text-3xl sm:text-5xl md:text-6xl font-serif font-medium tracking-tight">
                   Diego Carmona.
                   <br />
-                  Front-end developer.
+                  Full-stack developer.
                 </h1>
 
                 <p className="py-5 text-sm sm:text-lg text-balance font-medium opacity-80">
                   Focused on the JavaScript ecosystem, I’m a problem-solver who
-                  enjoys learning through building.
+                  enjoys learning through building real projects.
                 </p>
 
                 <div className="flex gap-2 sm:gap-4">
@@ -89,7 +87,7 @@ export default function Home() {
                     link="https://github.com/diegocarmn"
                     target="_blank"
                     icon={<IoIosArrowForward className="h-4 w-4" />}
-                    variant="primarySmall"
+                    variant="secondarySmall"
                   >
                     Github
                   </Button>
@@ -98,17 +96,21 @@ export default function Home() {
                     link="https://www.linkedin.com/in/diegocarmn/"
                     target="_blank"
                     icon={<IoIosArrowForward className="h-4 w-4" />}
-                    variant="primarySmall"
+                    variant="secondarySmall"
                   >
                     Linkedin
                   </Button>
 
                   <Button
-                    link="mailto:diegoncarmona@gmail.com"
+                    onClick={() => {
+                      contactRef.current?.scrollIntoView({
+                        behavior: "smooth",
+                      });
+                    }}
                     icon={<IoIosArrowForward className="h-4 w-4" />}
                     variant="primarySmall"
                   >
-                    Email
+                    Contact me
                   </Button>
                 </div>
 
@@ -116,7 +118,7 @@ export default function Home() {
                   className="
                   flex items-center justify-center
                    w-25 h-12 absolute
-                  bottom-7 sm:bottom-10
+                  bottom-15 md:bottom-10
                   left-1/2 rounded-4xl
                   -translate-x-1/2
                   animate-bounce
@@ -136,10 +138,10 @@ export default function Home() {
         </VantaBackground>
         <section
           ref={projectsRef}
-          className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 pb-20 flex flex-col items-center pt-4 sm:pt-20 lg:pt-25"
+          className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 pb-8 sm:pb-20 flex flex-col items-center pt-8 sm:pt-20 lg:pt-25"
           id="projects"
         >
-          <div className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center md:pb-4 lg:pb-8">
+          <div className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center mb-4 md:pb-4 lg:pb-8">
             <h2 className="text-black dark:text-white font-serif text-4xl sm:text-5xl tracking-tight font-medium md:text-6xl">
               Projects.
             </h2>
@@ -202,14 +204,15 @@ export default function Home() {
         </section>
         <section
           ref={aboutRef}
-          className="h-screen bg-bglight dark:bg-bgdark px-4 sm:px-8 pb-20 flex flex-col items-center pt-4 sm:pt-20 lg:pt-25"
+          className="h-screen bg-bglight dark:bg-bgdark px-4 sm:px-8 pb-20 flex flex-col items-center pt-8 sm:pt-20 lg:pt-25"
           id="about"
         >
-          <div className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center md:pb-4 lg:pb-8">
+          <div className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center mb-4 md:pb-4 lg:pb-8">
             <h2 className="text-black dark:text-white font-serif text-4xl sm:text-5xl tracking-tight font-medium md:text-6xl">
               About.
             </h2>
           </div>
+          <BentoGrid />
         </section>
         <section
           ref={contactRef}
