@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Button from "./Button";
 import { IoIosArrowForward } from "react-icons/io";
+import LocationCard from "./LocationCard";
 
 const BentoGrid = () => {
   return (
@@ -19,7 +20,7 @@ const BentoGrid = () => {
             <h3 className="card-title font-serif">
               Hi, there!
               <br />
-              I'm Diego 👋
+              I'm Diego <span className="animate-wave inline-block">👋</span>
             </h3>
           </span>
 
@@ -73,13 +74,7 @@ const BentoGrid = () => {
           </Button>
         </div>
         {/* LOCATION */}
-        <div className="bento-card p-10">
-          <h3 className="card-title font-serif pb-4">Location</h3>
-          <p className="card-text text-balance text-center">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt,
-            tenetur id? Commodi magni quo obcaecati modi
-          </p>
-        </div>
+        <LocationCard />
       </div>
     </div>
   );

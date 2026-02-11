@@ -7,7 +7,7 @@
   --animate-blob-slow: blob 10s infinite;
 
   /* COLORS */
-  --color-bglight: #f6f8ff;
+  --color-bglight: #f1fafe;
   --color-bgdark: #0a0913;
 
   --color-darkgray: #212031;
@@ -33,9 +33,40 @@
       transform: translate(0px, 0px) scale(1);
     }
   }
+
+  @keyframes wave {
+    0% {
+      transform: rotate(0deg);
+    }
+    15% {
+      transform: rotate(14deg);
+    }
+    30% {
+      transform: rotate(-8deg);
+    }
+    40% {
+      transform: rotate(14deg);
+    }
+    50% {
+      transform: rotate(-4deg);
+    }
+    60% {
+      transform: rotate(10deg);
+    }
+    70% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
 }
 
 @layer utilities {
+  .animate-wave {
+    animation: wave 2s infinite;
+    transform-origin: 70% 70%;
+  }
   .animation-delay-2000 {
     animation-delay: 2000ms;
   }
@@ -72,7 +103,7 @@
 
 @layer components {
   .bento-card {
-    @apply flex flex-col bg-white rounded-4xl border border-black/10 dark:bg-navyblack dark:border-white/10 shadow-md text-center w-full h-full;
+    @apply flex flex-col bg-white rounded-4xl border-b-4 border-primary dark:bg-navyblack dark:border-primarydark shadow-md text-center w-full h-full;
   }
   .card-title {
     @apply font-bold text-3xl sm:text-4xl tracking-tighter;
