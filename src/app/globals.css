@@ -69,3 +69,18 @@
     @apply font-sans;
   }
 }
+
+@layer components {
+  .bento-card {
+    @apply flex flex-col bg-white rounded-4xl border border-black/10 dark:bg-navyblack dark:border-white/10 shadow-md text-center w-full h-full;
+  }
+  .card-title {
+    @apply font-bold text-3xl sm:text-4xl tracking-tighter;
+  }
+  .card-subtitle {
+    @apply tracking-tight font-bold text-lg sm:text-xl;
+  }
+  .card-text {
+    @apply text-base opacity-90 sm:text-base md:text-lg font-medium sm:opacity-80 leading-relaxed;
+  }
+}

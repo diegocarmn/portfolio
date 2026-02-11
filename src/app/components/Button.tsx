@@ -20,7 +20,7 @@ const Button = ({
   onClick,
 }: ButtonProps) => {
   const baseStyles =
-    "relative overflow-hidden group rounded-full border active:scale-95 transition-transform duration-200 whitespace-nowrap text-center border-black/30 cursor-pointer";
+    "relative overflow-hidden group rounded-full border active:scale-95 transition-transform duration-200 whitespace-nowrap text-center border-black/30 cursor-pointer shadow-sm";
 
   const variantStyles = {
     primary:
