@@ -78,8 +78,8 @@ export default function Home() {
                 </h1>
 
                 <p className="py-5 card-text text-balance">
-                  I’m a problem-solver who
-                  enjoys learning through building real projects.
+                  I’m a problem-solver who enjoys learning through building real
+                  projects.
                 </p>
 
                 <div className="flex gap-2 sm:gap-4">
@@ -206,7 +206,7 @@ export default function Home() {
         </section>
         <section
           ref={aboutRef}
-          className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 md:pb-20 flex flex-col items-center pt-4 md:pt-20"
+          className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 flex flex-col items-center pt-4 md:pt-20"
           id="about"
         >
           <h2
@@ -219,14 +219,15 @@ export default function Home() {
         </section>
         <section
           ref={contactRef}
-          className="h-screen bg-bglight dark:bg-bgdark px-4 sm:px-8 pb-20 flex flex-col items-center pt-4 sm:pt-20 lg:pt-25"
+          className="h-screen bg-bglight dark:bg-bgdark px-4 sm:px-8 flex flex-col items-center pt-4 md:pt-20"
           id="contact"
         >
-          <div className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center md:pb-4 lg:pb-8">
-            <h2 className="text-black dark:text-white font-serif text-4xl sm:text-5xl tracking-tight font-medium md:text-6xl">
-              Contact
-            </h2>
-          </div>
+          <h2
+            className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center mb-4 md:pb-4
+            text-black dark:text-white font-serif text-5xl tracking-tight font-medium md:text-6xl"
+          >
+            Contact
+          </h2>
         </section>
       </main>
     </>

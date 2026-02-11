@@ -79,7 +79,7 @@ const ProjectsCard = ({
       </h3>
 
       <p
-        className={`sm:mx-2 bento-text leading-relaxed ${isCardExpanded ? "" : "line-clamp-2"}`}
+        className={`sm:mx-2 card-text leading-relaxed ${isCardExpanded ? "" : "line-clamp-2"}`}
       >
         {description}
       </p>
@@ -121,7 +121,7 @@ const ProjectsCard = ({
             <div className="flex flex-col gap-4 md:gap-4">
               <h4 className="card-subtitle font-serif">Features</h4>
 
-              <ul className="card-text opacity-100 font-bold flex flex-col gap-3 px-3 sm:px-3">
+              <ul className="card-text opacity-100 flex flex-col gap-2 px-3 sm:px-3">
                 {features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <FaCheckCircle className="mt-0.5 text-accent shrink-0" />
