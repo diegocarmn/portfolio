@@ -40,6 +40,7 @@ const ProjectsCard = ({
           bg-white rounded-4xl
           border border-black/10
           dark:bg-navyblack dark:border-white/10
+          
           shadow-md
           p-3 md:p-4
            mx-auto
@@ -50,11 +51,11 @@ const ProjectsCard = ({
           min-w-0
           overflow-hidden
 
-          sm:hover:scale-105
+          md:hover:scale-103
           transition-transform
           duration-300
           "
-          onClick={() => setIsCardExpanded(!isCardExpanded)}
+      onClick={() => setIsCardExpanded(!isCardExpanded)}
     >
       <Image
         src={mockupImage}
@@ -74,12 +75,12 @@ const ProjectsCard = ({
             lg:w-18 lg:h-18"
       />
 
-      <h3 className="pb-4 font-serif font-medium tracking-tight text-3xl sm:text-4xl sm:mx-2 -top-2 relative">
+      <h3 className="pb-4 font-serif card-title sm:mx-2 -top-2 relative">
         {title}
       </h3>
 
       <p
-        className={`sm:mx-2 text-sm opacity-90 sm:text-base sm:font-medium sm:opacity-80 ${isCardExpanded ? "" : "line-clamp-2"}`}
+        className={`sm:mx-2 card-text leading-relaxed ${isCardExpanded ? "" : "line-clamp-2"}`}
       >
         {description}
       </p>
@@ -114,24 +115,14 @@ const ProjectsCard = ({
       </div>
 
       {isCardExpanded && (
-        <div className="flex flex-col gap-2 md:gap-4 sm:mx-2 md:mt-2">
-          {subtitle && (
-            <h4 className="font-serif tracking-tight font-semibold text-lg sm:text-xl">
-              {subtitle}
-            </h4>
-          )}
-          {overview && (
-            <p className="text-sm opacity-90 sm:text-base sm:font-medium sm:opacity-80">
-              {overview}
-            </p>
-          )}
+        <div className="flex flex-col gap-4 md:gap-4 sm:mx-2 md:mt-2">
+          {subtitle && <h4 className="card-subtitle font-serif">{subtitle}</h4>}
+          {overview && <p className="card-text">{overview}</p>}
           {features && features.length > 0 && (
-            <div className="flex flex-col gap-2 md:gap-4">
-              <h4 className="font-serif tracking-tight font-semibold text-lg sm:text-xl">
-                Features
-              </h4>
+            <div className="flex flex-col gap-4 md:gap-4">
+              <h4 className="card-subtitle font-serif">Features</h4>
 
-              <ul className="text-sm sm:text-base font-bold flex flex-col gap-3 px-3 sm:px-3">
+              <ul className="card-text opacity-100 flex flex-col gap-2 px-3 sm:px-3">
                 {features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <FaCheckCircle className="mt-0.5 text-accent shrink-0" />

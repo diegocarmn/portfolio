@@ -77,9 +77,9 @@ export default function Home() {
                   Full-stack developer.
                 </h1>
 
-                <p className="py-5 text-sm sm:text-lg text-balance font-medium opacity-80">
-                  Focused on the JavaScript ecosystem, I’m a problem-solver who
-                  enjoys learning through building real projects.
+                <p className="py-5 card-text text-balance">
+                  I’m a problem-solver who enjoys learning through building real
+                  projects.
                 </p>
 
                 <div className="flex gap-2 sm:gap-4">
@@ -138,19 +138,21 @@ export default function Home() {
         </VantaBackground>
         <section
           ref={projectsRef}
-          className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 pb-8 sm:pb-20 flex flex-col items-center pt-8 sm:pt-20 lg:pt-25"
+          className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 flex flex-col items-center pt-4 md:pt-8"
           id="projects"
         >
-          <div className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center mb-4 md:pb-4 lg:pb-8">
-            <h2 className="text-black dark:text-white font-serif text-4xl sm:text-5xl tracking-tight font-medium md:text-6xl">
-              Projects.
-            </h2>
-          </div>
-          <div className="flex flex-col md:flex-row gap-2 sm:gap-4 md:gap-8 md:max-w-full">
+          <h2
+            className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center mb-4 md:pb-4
+            text-black dark:text-white font-serif text-5xl tracking-tight font-medium md:text-6xl"
+          >
+            Projects
+          </h2>
+
+          <div className="flex flex-col md:flex-row gap-4 sm:gap-4 md:gap-8 md:max-w-full">
             <ProjectsCard
               mockupImage="/mockupcineai.png"
               logoImage="/logo-cineai.png"
-              title="CineAI."
+              title="CineAI"
               description="CineAI is a movie discovery platform that uses Artificial Intelligence to make recommendations based on user behavior, taste and mood."
               subtitle="AI-Powered Movie Discovery Platform"
               overview="CineAI is a full-stack web application focused on AI-driven movie recommendations, combining LLM-based inference with real-time movie data and persistent user state.
@@ -177,7 +179,7 @@ export default function Home() {
             <ProjectsCard
               mockupImage="/mockuppitada.png"
               logoImage="/logo-pitada.png"
-              title="Pitada."
+              title="Pitada"
               description="Pitada helps people figure out what to cook by transforming the ingredients they already have at home into simple, personalized recipes using AI."
               subtitle="Smart Recipe Generator App"
               overview="Pitada is a lightweight, full-stack web application that generates AI-powered recipes from user-provided ingredients. The project focuses on performance, accessibility, and modern web standards, delivering a fast and inclusive cooking assistant experience."
@@ -204,26 +206,31 @@ export default function Home() {
         </section>
         <section
           ref={aboutRef}
-          className="h-screen bg-bglight dark:bg-bgdark px-4 sm:px-8 pb-20 flex flex-col items-center pt-8 sm:pt-20 lg:pt-25"
+          className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 flex flex-col items-center pt-4 md:pt-8"
           id="about"
         >
-          <div className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center mb-4 md:pb-4 lg:pb-8">
-            <h2 className="text-black dark:text-white font-serif text-4xl sm:text-5xl tracking-tight font-medium md:text-6xl">
-              About.
-            </h2>
-          </div>
+          <h2
+            className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center mb-4 md:pb-4
+            text-black dark:text-white font-serif text-5xl tracking-tight font-medium md:text-6xl"
+          >
+            About
+          </h2>
           <BentoGrid />
         </section>
         <section
           ref={contactRef}
-          className="h-screen bg-bglight dark:bg-bgdark px-4 sm:px-8 pb-20 flex flex-col items-center pt-4 sm:pt-20 lg:pt-25"
+          className="h-screen bg-primary/10 dark:bg-navyblack rounded-4xl
+          border-b-4 border-primary dark:border-primarydark 
+          flex flex-col items-center
+          px-4 sm:px-8 mx-4 mt-4 md:mt-8"
           id="contact"
         >
-          <div className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center md:pb-4 lg:pb-8">
-            <h2 className="text-black dark:text-white font-serif text-4xl sm:text-5xl tracking-tight font-medium md:text-6xl">
-              Contact.
-            </h2>
-          </div>
+          <h2
+            className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center my-4 md:pb-4
+            text-black dark:text-white font-serif text-5xl tracking-tight font-medium md:text-6xl"
+          >
+            Contact
+          </h2>
         </section>
       </main>
     </>

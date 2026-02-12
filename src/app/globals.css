@@ -7,17 +7,15 @@
   --animate-blob-slow: blob 10s infinite;
 
   /* COLORS */
-  --color-bglight: #f6f8ff;
+  --color-bglight: #f1fafe;
   --color-bgdark: #0a0913;
 
   --color-darkgray: #212031;
   --color-navyblack: #1a1825;
 
-  --color-primary: #0098f2;
-  --color-primarydark: #0145f8;
+  --color-primary: #2ba3ee;
+  --color-primarydark: #1a8cd8;
   --color-accent: #244afd;
-  
-  
 
   @keyframes blob {
     0% {
@@ -33,9 +31,40 @@
       transform: translate(0px, 0px) scale(1);
     }
   }
+
+  @keyframes wave {
+    0% {
+      transform: rotate(0deg);
+    }
+    15% {
+      transform: rotate(14deg);
+    }
+    30% {
+      transform: rotate(-8deg);
+    }
+    40% {
+      transform: rotate(14deg);
+    }
+    50% {
+      transform: rotate(-4deg);
+    }
+    60% {
+      transform: rotate(10deg);
+    }
+    70% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
 }
 
 @layer utilities {
+  .animate-wave {
+    animation: wave 2s infinite;
+    transform-origin: 70% 70%;
+  }
   .animation-delay-2000 {
     animation-delay: 2000ms;
   }
@@ -67,5 +96,50 @@
 
   body {
     @apply font-sans;
+  }
+}
+
+@layer components {
+  .bento-card {
+    @apply flex flex-col bg-white rounded-4xl border-b-4 border-primary dark:border-primarydark dark:bg-navyblack  shadow-md text-center w-full h-full;
+  }
+  .card-title {
+    @apply font-bold text-3xl sm:text-4xl tracking-tighter;
+  }
+  .card-subtitle {
+    @apply tracking-tight font-bold text-lg sm:text-xl;
+  }
+  .card-text {
+    @apply text-base opacity-90 sm:text-base md:text-lg font-medium sm:opacity-80 leading-relaxed;
+  }
+  .profile-image-ring {
+    position: absolute;
+    inset: -1px;
+    border-radius: 9999px;
+    background: conic-gradient(
+      from 0deg,
+      #22c55e,
+      #3b82f6,
+      #a855f7,
+      #ec4899,
+      #f97316,
+      #22c55e
+    );
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .group\/card:hover .profile-image-ring {
+    opacity: 1;
+    animation: profile-ring-spin 3s linear infinite;
+  }
+}
+
+@keyframes profile-ring-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

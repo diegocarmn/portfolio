@@ -18,7 +18,12 @@ const NavbarButton = ({
   onClick,
 }: NavbarButtonProps) => {
   const handleClick = () => {
-    targetRef.current?.scrollIntoView({ behavior: "smooth" });
+    const element = targetRef.current;
+    if (!element) return;
+
+    const y = element.getBoundingClientRect().top + window.scrollY;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
     onClick?.();
   };
 
@@ -26,22 +31,21 @@ const NavbarButton = ({
 
   const variantStyles = {
     desktop: "px-4",
-    mobile: "text-4xl font-medium",
-  };
-
-  const activeStyles = {
-    desktop: "drop-shadow-[0_0_6px_rgba(255,255,255,0.35)] opacity-100 font-bold",
-    mobile:
-      "opacity-100 drop-shadow-[0_0_6px_rgba(255,255,255,0.35)] dark:drop-shadow-none",
+    mobile: "text-4xl w-full",
   };
 
   const inactiveStyles = {
     desktop: "opacity-80 hover:opacity-100 font-medium",
-    mobile: "opacity-70 hover:opacity-100",
+    mobile: "opacity-80 active:opacity-100",
   };
 
+  const activeDesktopStyles =
+    "drop-shadow-[0_0_6px_rgba(255,255,255,0.35)] opacity-100 font-bold";
+
   const className = `${baseStyles} ${variantStyles[variant]} ${
-    active ? activeStyles[variant] : inactiveStyles[variant]
+    variant === "desktop" && active
+      ? activeDesktopStyles
+      : inactiveStyles[variant]
   }`;
 
   return (
