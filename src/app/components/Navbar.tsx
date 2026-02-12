@@ -77,11 +77,11 @@ const Navbar = ({
       {/* Mobile Navbar */}
       <nav className="md:hidden">
         <div
-          className={`fixed top-4 right-4 z-60 flex gap-2 items-center transform transition-transform duration-300 bg-white rounded-full border border-black/10 dark:bg-bgdark dark:border-white/10 backdrop-blur-md shadow`}
+          className={`fixed top-4 right-0 z-60 flex gap-2 items-center transform transition-transform duration-300 bg-white rounded-l-xl border border-black/10 dark:bg-bgdark dark:border-white/10 backdrop-blur-md shadow`}
         >
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 rounded-4xl text-black dark:text-white"
+            className="p-2 pr-4 rounded-4xl text-black dark:text-white ml-auto"
             aria-label="Toggle menu"
           >
             <svg

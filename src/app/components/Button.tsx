@@ -30,8 +30,9 @@ const Button = ({
     primarySmall:
       "dark:bg-primarydark bg-primary font-bold text-sm sm:text-base min-w-fit text-sm sm:text-base pl-3 pr-2 py-1 sm:pl-4 sm:pr-3 sm:py-2 dark:border-white/30",
     secondarySmall:
-      "dark:bg-navyblack bg-white font-bold text-sm sm:text-base min-w-fit text-sm sm:text-base pl-3 pr-2 py-1 sm:pl-4 sm:pr-3 sm:py-2 dark:border-white/30",
+      "dark:bg-navyblack bg-white font-bold text-sm sm:text-base min-w-fit text-sm sm:text-base pl-3 pr-2 py-1 sm:pl-4 sm:pr-3 sm:py-2 dark:border-white/30", 
   };
+
 
   const hoverBgStyles = {
     primary: "bg-black dark:bg-white",
