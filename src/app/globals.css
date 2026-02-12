@@ -13,11 +13,9 @@
   --color-darkgray: #212031;
   --color-navyblack: #1a1825;
 
-  --color-primary: #2BA3EE;
-  --color-primarydark: #1A8CD8;
+  --color-primary: #2ba3ee;
+  --color-primarydark: #1a8cd8;
   --color-accent: #244afd;
-  
-  
 
   @keyframes blob {
     0% {
@@ -103,7 +101,7 @@
 
 @layer components {
   .bento-card {
-    @apply flex flex-col bg-white rounded-4xl border-b-4 border-primary dark:bg-navyblack dark:border-primarydark shadow-md text-center w-full h-full;
+    @apply flex flex-col bg-white rounded-4xl border-b-4 border-primary dark:border-primarydark dark:bg-navyblack  shadow-md text-center w-full h-full;
   }
   .card-title {
     @apply font-bold text-3xl sm:text-4xl tracking-tighter;
@@ -113,5 +111,35 @@
   }
   .card-text {
     @apply text-base opacity-90 sm:text-base md:text-lg font-medium sm:opacity-80 leading-relaxed;
+  }
+  .profile-image-ring {
+    position: absolute;
+    inset: -1px;
+    border-radius: 9999px;
+    background: conic-gradient(
+      from 0deg,
+      #22c55e,
+      #3b82f6,
+      #a855f7,
+      #ec4899,
+      #f97316,
+      #22c55e
+    );
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .group\/card:hover .profile-image-ring {
+    opacity: 1;
+    animation: profile-ring-spin 3s linear infinite;
+  }
+}
+
+@keyframes profile-ring-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

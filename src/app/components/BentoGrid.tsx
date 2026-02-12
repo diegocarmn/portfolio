@@ -7,20 +7,33 @@ const BentoGrid = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:max-w-200 xl:max-w-300">
       {/* PROFILE */}
-      <div className="bento-card p-10">
+      <div className="bento-card group/card p-10">
         <div className="flex flex-col text-left gap-8 md:justify-between h-full">
           <span className="flex flex-row items-center mx-auto gap-4">
-            <Image
-              src="/profile.jpg"
-              alt="Profile Picture"
-              width={200}
-              height={200}
-              className="rounded-full mx-auto w-20 h-20 border-3 border-primary"
-            ></Image>
+            <div className="relative inline-flex items-center justify-center mx-auto">
+              {/* static primary border */}
+              <div className="w-20 h-20 rounded-full border-3 border-primary relative z-10 overflow-hidden transition-colors duration-300 group-hover/card:border-transparent">
+                <Image
+                  src="/profile.jpg"
+                  alt="Profile Picture"
+                  width={200}
+                  height={200}
+                  className="w-full h-full object-cover"
+                ></Image>
+              </div>
+              {/* rainbow ring only on hover */}
+              <div className="hidden md:block profile-image-ring"></div>
+            </div>
             <h3 className="card-title font-serif">
               Hi, there!
               <br />
-              I'm Diego <span className="animate-wave inline-block">👋</span>
+              I'm Diego{" "}
+              <span
+                className="inline-block group-hover/card:animate-[wave_3s_infinite]
+                group-hover/card:origin-[70%_70%]"
+              >
+                👋
+              </span>
             </h3>
           </span>
 
@@ -46,7 +59,7 @@ const BentoGrid = () => {
       {/* TECH STACK */}
       <div className="group bento-card p-10 md:justify-between">
         <h3 className="card-title font-serif pb-4">Tech Stack</h3>
-        <h6 className="font-serif tracking-tighter font-bold text-2xl md:text-3xl leading-6 md:leading-8 text-center opacity-90 sm:opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+        <h6 className="font-serif tracking-tighter font-bold text-2xl md:text-4xl leading-6 md:leading-8 text-center opacity-90 sm:opacity-80 group-hover:opacity-100 transition-opacity duration-300">
           TypeScript <br /> Next.js <br /> React <br /> Node.js <br /> Tailwind
           CSS <br /> PostgreSQL <br /> JavaScript <br /> Git
         </h6>

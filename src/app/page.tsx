@@ -138,7 +138,7 @@ export default function Home() {
         </VantaBackground>
         <section
           ref={projectsRef}
-          className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 flex flex-col items-center pt-4 md:pt-20"
+          className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 flex flex-col items-center pt-4 md:pt-8"
           id="projects"
         >
           <h2
@@ -206,7 +206,7 @@ export default function Home() {
         </section>
         <section
           ref={aboutRef}
-          className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 flex flex-col items-center pt-4 md:pt-20"
+          className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 flex flex-col items-center pt-4 md:pt-8"
           id="about"
         >
           <h2
@@ -219,11 +219,14 @@ export default function Home() {
         </section>
         <section
           ref={contactRef}
-          className="h-screen bg-bglight dark:bg-bgdark px-4 sm:px-8 flex flex-col items-center pt-4 md:pt-20"
+          className="h-screen bg-primary/10 dark:bg-navyblack rounded-4xl
+          border-b-4 border-primary dark:border-primarydark 
+          flex flex-col items-center
+          px-4 sm:px-8 mx-4 mt-4 md:mt-8"
           id="contact"
         >
           <h2
-            className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center mb-4 md:pb-4
+            className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center my-4 md:pb-4
             text-black dark:text-white font-serif text-5xl tracking-tight font-medium md:text-6xl"
           >
             Contact

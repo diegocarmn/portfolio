@@ -20,7 +20,7 @@ const Button = ({
   onClick,
 }: ButtonProps) => {
   const baseStyles =
-    "relative overflow-hidden group rounded-full border active:scale-95 transition-transform duration-200 whitespace-nowrap text-center border-black/30 cursor-pointer shadow-sm";
+    "relative overflow-hidden group/button rounded-full border active:scale-95 transition-transform duration-200 whitespace-nowrap text-center border-black/30 cursor-pointer shadow-sm";
 
   const variantStyles = {
     primary:
@@ -42,13 +42,13 @@ const Button = ({
 
   const textColorStyles = {
     primary:
-      "text-white dark:text-white group-hover:text-white group-hover:dark:text-black",
+      "text-white dark:text-white group-hover/button:text-white group-hover/button:dark:text-black",
     secondary:
-      "text-black dark:text-white group-hover:text-white group-hover:dark:text-black",
+      "text-black dark:text-white group-hover/button:text-white group-hover/button:dark:text-black",
     primarySmall:
-      "text-white dark:text-white group-hover:text-white group-hover:dark:text-black",
+      "text-white dark:text-white group-hover/button:text-white group-hover/button:dark:text-black",
     secondarySmall:
-      "text-black dark:text-white group-hover:text-white group-hover:dark:text-black",
+      "text-black dark:text-white group-hover/button:text-white group-hover/button:dark:text-black",
   };
 
   if (onClick) {
@@ -58,7 +58,7 @@ const Button = ({
         className={`${baseStyles} ${variantStyles[variant]} ${className}`}
       >
         <span
-          className={`absolute inset-0 ${hoverBgStyles[variant]} -translate-x-full group-hover:translate-x-0 transition-transform duration-300`}
+          className={`absolute inset-0 ${hoverBgStyles[variant]} -translate-x-full group-hover/button:translate-x-0 transition-transform duration-300`}
         ></span>
         <span
           className={`relative z-10 ${textColorStyles[variant]} transition-colors duration-300 inline-flex items-center gap-1`}
@@ -77,7 +77,7 @@ const Button = ({
       className={`${baseStyles} ${variantStyles[variant]} ${className}`}
     >
       <span
-        className={`absolute inset-0 ${hoverBgStyles[variant]} -translate-x-full group-hover:translate-x-0 transition-transform duration-300`}
+        className={`absolute inset-0 ${hoverBgStyles[variant]} -translate-x-full group-hover/button:translate-x-0 transition-transform duration-300`}
       ></span>
       <span
         className={`relative z-10 ${textColorStyles[variant]} transition-colors duration-300 inline-flex items-center gap-1`}

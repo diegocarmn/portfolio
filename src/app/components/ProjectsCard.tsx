@@ -40,6 +40,7 @@ const ProjectsCard = ({
           bg-white rounded-4xl
           border border-black/10
           dark:bg-navyblack dark:border-white/10
+          
           shadow-md
           p-3 md:p-4
            mx-auto
@@ -50,7 +51,7 @@ const ProjectsCard = ({
           min-w-0
           overflow-hidden
 
-          md:hover:scale-105
+          md:hover:scale-103
           transition-transform
           duration-300
           "

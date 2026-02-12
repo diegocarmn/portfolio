@@ -1,7 +1,7 @@
 "use client";
 
 import DarkModeToggle from "./DarkModeToggle";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import NavbarButton from "./NavbarButton";
 
 interface NavbarProps {
@@ -12,6 +12,30 @@ interface NavbarProps {
   activeSection: string | null;
 }
 
+const useScrollDirection = () => {
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return isVisible;
+};
+
 const Navbar = ({
   homeRef,
   projectsRef,
@@ -20,25 +44,13 @@ const Navbar = ({
   activeSection,
 }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isAtTop, setIsAtTop] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsAtTop(window.scrollY === 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const isVisible = useScrollDirection();
 
   return (
     <>
       {/* Desktop Navbar */}
       <nav
-        className={`hidden md:flex fixed  left-1/2 -translate-x-1/2 z-50 justify-center gap-2 bg-white/40 dark:bg-black/40 rounded-4xl py-2 px-4 items-center font-sans text-black dark:text-white border border-black/10 dark:border-white/10 backdrop-blur-md ${isAtTop ? "top-4 sm:top-8" : "top-2"} transition-top duration-150 shadow`}
+        className={`hidden md:flex fixed left-1/2 -translate-x-1/2 top-4 sm:top-8 md:top-5 z-50 justify-center gap-2 bg-white/40 dark:bg-black/40 rounded-4xl py-2 px-4 items-center font-sans text-black dark:text-white border border-black/10 dark:border-white/10 backdrop-blur-md transform transition-transform duration-150 ${isVisible ? "translate-y-0" : "-translate-y-20"} shadow`}
       >
         <NavbarButton targetRef={homeRef} active={activeSection === "home"}>
           Home
@@ -65,11 +77,11 @@ const Navbar = ({
       {/* Mobile Navbar */}
       <nav className="md:hidden">
         <div
-          className={`fixed ${isAtTop ? "top-6 right-6" : "top-2 right-3"} z-60 flex gap-2 items-center transition-all duration-150`}
+          className={`fixed top-4 right-4 z-60 flex gap-2 items-center transform transition-transform duration-300 bg-white rounded-full border border-black/10 dark:bg-bgdark dark:border-white/10 backdrop-blur-md shadow`}
         >
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`p-2  rounded-4xl ${isAtTop ? "" : `${isOpen ? "" : "border border-black/30 dark:border-white/30 backdrop-blur-md bg-white/30 dark:bg-black/30"} `}   text-black dark:text-white`}
+            className="p-2 rounded-4xl text-black dark:text-white"
             aria-label="Toggle menu"
           >
             <svg
@@ -99,8 +111,8 @@ const Navbar = ({
 
         {/* Mobile Menu Full Screen */}
         {isOpen && (
-          <div className="fixed inset-0 z-50 bg-white dark:bg-black backdrop-blur-md flex flex-col items-center justify-center gap-8">
-            <nav className="flex flex-col gap-8 font-sans text-black dark:text-white text-center items-center">
+          <div className="fixed inset-0 z-50 bg-bglight dark:bg-navyblack backdrop-blur-md flex flex-col items-center justify-center gap-8">
+            <nav className="flex flex-col gap-8 font-serif font-bold tracking-tighter text-black dark:text-white text-center items-center">
               <NavbarButton
                 variant="mobile"
                 targetRef={homeRef}
