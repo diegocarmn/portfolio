@@ -277,7 +277,7 @@ export default function Home() {
         </section>
         <section
           ref={contactRef}
-          className="h-screen bg-primary/10 dark:bg-navyblack rounded-4xl
+          className="h-screen bg-primary/50 dark:bg-navyblack rounded-4xl
           border-b-4 border-primary dark:border-primarydark 
           flex flex-col items-center
           px-4 sm:px-8 mx-4 mt-4 md:mt-8 xl:mt-30"
@@ -291,8 +291,8 @@ export default function Home() {
           </h2>
         </section>
       </main>
-      <footer className="bg-bglight dark:bg-bgdark">
-        <p className="text-center font-sans font-semibold tracking-tight text-sm text-black dark:text-white py-4">
+      <footer className="bg-bglight dark:bg-bgdark h-50 items-center justify-center flex">
+        <p className="opacity-50 text-center font-sans font-semibold tracking-tight text-sm text-black dark:text-white py-4">
           &copy; {new Date().getFullYear()} Diego Carmona. All rights reserved.
         </p>
       </footer>
