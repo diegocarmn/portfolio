@@ -5,6 +5,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { IoMdArrowRoundDown, IoMdArrowRoundUp } from "react-icons/io";
+import translations from "./content/translations";
 
 interface ProjectsCardProps {
   mockupImage: string;
@@ -17,6 +18,7 @@ interface ProjectsCardProps {
   tags: string[];
   websiteLink: string;
   githubLink: string;
+  lang: "en" | "pt";
 }
 
 const ProjectsCard = ({
@@ -30,6 +32,7 @@ const ProjectsCard = ({
   tags,
   websiteLink,
   githubLink,
+  lang,
 }: ProjectsCardProps) => {
   const [isCardExpanded, setIsCardExpanded] = useState(false);
 
@@ -120,7 +123,7 @@ const ProjectsCard = ({
           {overview && <p className="card-text">{overview}</p>}
           {features && features.length > 0 && (
             <div className="flex flex-col gap-4 md:gap-4">
-              <h4 className="card-subtitle font-serif">Features</h4>
+              <h4 className="card-subtitle font-serif">{translations[lang].projects.features}</h4>
 
               <ul className="card-text opacity-100 flex flex-col gap-2 px-3 sm:px-3">
                 {features.map((feature, index) => (
@@ -154,7 +157,7 @@ const ProjectsCard = ({
           icon={<IoIosArrowForward className="h-4 w-4" />}
           variant="primary"
         >
-          View website
+          {translations[lang].projects.projectscard.button}
         </Button>
       </div>
     </div>

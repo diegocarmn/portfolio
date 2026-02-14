@@ -3,6 +3,7 @@
 import DarkModeToggle from "./DarkModeToggle";
 import { useState, useEffect, useRef } from "react";
 import NavbarButton from "./NavbarButton";
+import { translations } from "./content/translations"; 
 
 interface NavbarProps {
   homeRef: React.RefObject<HTMLElement | null>;
@@ -10,6 +11,8 @@ interface NavbarProps {
   aboutRef: React.RefObject<HTMLElement | null>;
   contactRef: React.RefObject<HTMLElement | null>;
   activeSection: string | null;
+  lang: "en" | "pt";
+  setLang: React.Dispatch<React.SetStateAction<"en" | "pt">>;
 }
 
 const useScrollDirection = () => {
@@ -42,6 +45,8 @@ const Navbar = ({
   aboutRef,
   contactRef,
   activeSection,
+  lang,
+  setLang,
 }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const isVisible = useScrollDirection();
@@ -53,25 +58,28 @@ const Navbar = ({
         className={`hidden md:flex fixed left-1/2 -translate-x-1/2 top-4 sm:top-8 md:top-5 z-50 justify-center gap-2 bg-white/40 dark:bg-black/40 rounded-4xl py-2 px-4 items-center font-sans text-black dark:text-white border border-black/10 dark:border-white/10 backdrop-blur-md transform transition-transform duration-150 ${isVisible ? "translate-y-0" : "-translate-y-20"} shadow`}
       >
         <NavbarButton targetRef={homeRef} active={activeSection === "home"}>
-          Home
+          {translations[lang].navbar.home}
         </NavbarButton>
         <NavbarButton
           targetRef={projectsRef}
           active={activeSection === "projects"}
         >
-          Projects
+          {translations[lang].navbar.projects}
         </NavbarButton>
         <NavbarButton targetRef={aboutRef} active={activeSection === "about"}>
-          About
+          {translations[lang].navbar.about}
         </NavbarButton>
         <NavbarButton
           targetRef={contactRef}
           active={activeSection === "contact"}
         >
-          Contact
+          {translations[lang].navbar.contact}
         </NavbarButton>
         <div className="border-l border-black/30 dark:border-white/30 h-6"></div>
         <DarkModeToggle />
+        <button onClick={() => setLang(lang === "en" ? "pt" : "en")}>
+          {lang === "en" ? "PT" : "EN"}
+        </button>
       </nav>
 
       {/* Mobile Navbar */}
@@ -119,7 +127,7 @@ const Navbar = ({
                 active={activeSection === "home"}
                 onClick={() => setIsOpen(false)}
               >
-                Home
+                {translations[lang].navbar.home}
               </NavbarButton>
               <NavbarButton
                 variant="mobile"
@@ -127,7 +135,7 @@ const Navbar = ({
                 active={activeSection === "projects"}
                 onClick={() => setIsOpen(false)}
               >
-                Projects
+                {translations[lang].navbar.projects}
               </NavbarButton>
               <NavbarButton
                 variant="mobile"
@@ -135,7 +143,7 @@ const Navbar = ({
                 active={activeSection === "about"}
                 onClick={() => setIsOpen(false)}
               >
-                About
+                {translations[lang].navbar.about}
               </NavbarButton>
               <NavbarButton
                 variant="mobile"
@@ -143,7 +151,7 @@ const Navbar = ({
                 active={activeSection === "contact"}
                 onClick={() => setIsOpen(false)}
               >
-                Contact
+                {translations[lang].navbar.contact}
               </NavbarButton>
               <DarkModeToggle />
             </nav>

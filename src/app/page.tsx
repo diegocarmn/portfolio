@@ -10,11 +10,9 @@ import {
   IoIosArrowForward,
   IoIosArrowDown,
 } from "react-icons/io";
-import { FiGithub } from "react-icons/fi";
-import { FaLinkedinIn } from "react-icons/fa";
-import { MdOutlineEmail } from "react-icons/md";
 import BentoGrid from "./components/BentoGrid";
 import LogoButton from "./components/LogoButton";
+import translations from "./components/content/translations";
 
 export default function Home() {
   const homeRef = React.useRef<HTMLElement | null>(null);
@@ -23,6 +21,7 @@ export default function Home() {
   const contactRef = React.useRef<HTMLElement | null>(null);
 
   const [activeSection, setActiveSection] = React.useState<string | null>(null);
+  const [lang, setLang] = React.useState<"en" | "pt">("en");
 
   React.useEffect(() => {
     const sections = [
@@ -60,6 +59,8 @@ export default function Home() {
         aboutRef={aboutRef}
         contactRef={contactRef}
         activeSection={activeSection}
+        lang={lang}
+        setLang={setLang}
       />
       <main className="text-black dark:text-white bg-bglight dark:bg-bgdark font-sans">
         <VantaBackground>
@@ -76,17 +77,17 @@ export default function Home() {
                 px-4 sm:px-10 md:px-20 md:mx-auto
                 "
               >
-                <StatusBadge />
+                <StatusBadge lang={lang} />
 
                 <h1 className="text-3xl sm:text-5xl md:text-6xl font-serif font-medium tracking-tight">
-                  Diego Carmona.
+                  {translations[lang].hero.name}
                   <br />
-                  Full-stack developer.
+                  {translations[lang].hero.title}
                 </h1>
 
                 <p className="py-5 card-text text-balance">
-                  I’m a problem-solver who enjoys learning through building real
-                  projects.
+                  {translations[lang].hero.subtitle}
+
                 </p>
 
                 <div className="flex gap-2 sm:gap-4 items-center">
@@ -168,7 +169,7 @@ export default function Home() {
                     icon={<IoIosArrowForward className="h-4 w-4" />}
                     variant="primarySmall"
                   >
-                    Contact me
+                    {translations[lang].hero.button}
                   </Button>
                 </div>
 
@@ -203,62 +204,35 @@ export default function Home() {
             className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center mb-4 md:pb-4
             text-black dark:text-white font-serif text-5xl tracking-tight font-medium md:text-6xl"
           >
-            Projects
+            {translations[lang].projects.title}
           </h2>
 
           <div className="flex flex-col md:flex-row gap-4 sm:gap-4 md:gap-8 md:max-w-full">
             <ProjectsCard
               mockupImage="/mockupcineai.png"
               logoImage="/logo-cineai.png"
-              title="CineAI"
-              description="CineAI is a movie discovery platform that uses Artificial Intelligence to make recommendations based on user behavior, taste and mood."
-              subtitle="AI-Powered Movie Discovery Platform"
-              overview="CineAI is a full-stack web application focused on AI-driven movie recommendations, combining LLM-based inference with real-time movie data and persistent user state.
-              The system adapts recommendations based on user favorites, interaction history, and mood input."
-              features={[
-                "LLM-powered recommendation engine using Groq (LLaMA models)",
-                "Server-side movie search and trending feeds via TMDB API",
-                "OAuth authentication with Auth.js (Google provider)",
-                "Real-time UI updates, loading states, and resilient error handling",
-              ]}
-              tags={[
-                "Next.js",
-                "TypeScript",
-                "React",
-                "Node.js",
-                "Tailwind CSS",
-                "AI API",
-                "Auth.js",
-                "PostgreSQL",
-              ]}
+              title={translations[lang].projects.cineai.title}
+              description={translations[lang].projects.cineai.description}
+              subtitle={translations[lang].projects.cineai.subtitle}
+              overview={translations[lang].projects.cineai.overview}
+              features={translations[lang].projects.cineai.features}
+              tags={translations[lang].projects.cineai.tags}
               websiteLink="https://aicine.vercel.app"
               githubLink="https://github.com/diegocarmn/cineai"
+              lang={lang}
             />
             <ProjectsCard
               mockupImage="/mockuppitada.png"
               logoImage="/logo-pitada.png"
-              title="Pitada"
-              description="Pitada helps people figure out what to cook by transforming the ingredients they already have at home into simple, personalized recipes using AI."
-              subtitle="Smart Recipe Generator App"
-              overview="Pitada is a lightweight, full-stack web application that generates AI-powered recipes from user-provided ingredients. The project focuses on performance, accessibility, and modern web standards, delivering a fast and inclusive cooking assistant experience."
-              features={[
-                "AI-based recipe generation using Groq LLMs",
-                "Ingredient-driven input flow with clean state management",
-                "Serverless API endpoint for recipe inference (/api/ai/recipe)",
-                "Light/Dark theme support with CSS variables",
-                "Fully accessible UI (ARIA, keyboard navigation, semantic HTML)",
-                "PWA-ready with installable app experience",
-              ]}
-              tags={[
-                "Next.js",
-                "TypeScript",
-                "React",
-                "Tailwind CSS",
-                "AI API",
-                "PWA",
-              ]}
+              title={translations[lang].projects.pitada.title}
+              description={translations[lang].projects.pitada.description}
+              subtitle={translations[lang].projects.pitada.subtitle}
+              overview={translations[lang].projects.pitada.overview}
+              features={translations[lang].projects.pitada.features}
+              tags={translations[lang].projects.pitada.tags}
               websiteLink="https://pitada.vercel.app"
               githubLink="https://github.com/diegocarmn/pitada"
+              lang={lang}
             />
           </div>
         </section>
@@ -271,9 +245,9 @@ export default function Home() {
             className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center mb-4 md:pb-4
             text-black dark:text-white font-serif text-5xl tracking-tight font-medium md:text-6xl"
           >
-            About
+            {translations[lang].about.title}
           </h2>
-          <BentoGrid />
+          <BentoGrid lang={lang} />
         </section>
         <section
           ref={contactRef}
@@ -287,13 +261,13 @@ export default function Home() {
             className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center my-4 md:pb-4
             text-black dark:text-white font-serif text-5xl tracking-tight font-medium md:text-6xl"
           >
-            Contact
+            {translations[lang].contact.title}
           </h2>
         </section>
       </main>
       <footer className="bg-bglight dark:bg-bgdark h-50 items-center justify-center flex">
         <p className="opacity-50 text-center font-sans font-semibold tracking-tight text-sm text-black dark:text-white py-4">
-          &copy; {new Date().getFullYear()} Diego Carmona. All rights reserved.
+          &copy; {new Date().getFullYear()} Diego Carmona. {translations[lang].footer.text}
         </p>
       </footer>
     </>

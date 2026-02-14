@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { IoIosAdd, IoIosRemove } from "react-icons/io";
+import translations from "./content/translations";
 
-const LocationCard = () => {
+const LocationCard = ({ lang } : { lang: "en" | "pt" }) => {
   const [zoomLevel, setZoomLevel] = useState(2);
 
   const increaseZoom = () => {
@@ -25,7 +26,7 @@ const LocationCard = () => {
       <span className="absolute inset-0 bg-primary/10 dark:bg-navyblack/40 pointer-events-none rounded-4xl z-0" />
 
       <span className="bg-white dark:bg-navyblack mx-auto px-8 py-2 rounded-b-xl shadow-md z-10">
-        <h3 className="card-subtitle font-serif">Location</h3>
+        <h3 className="card-subtitle font-serif">{translations[lang].about.location.title}</h3>
       </span>
 
       {zoomLevel === 2 || zoomLevel === 3 ? (
