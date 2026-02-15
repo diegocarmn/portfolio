@@ -10,9 +10,15 @@ import {
   IoIosArrowForward,
   IoIosArrowDown,
 } from "react-icons/io";
+import { IoLocationSharp } from "react-icons/io5";
+import { MdArrowOutward } from "react-icons/md";
 import BentoGrid from "./components/BentoGrid";
 import LogoButton from "./components/LogoButton";
+import CopyEmailButton from "./components/CopyEmailButton";
+import ContactCard from "./components/ContactCard";
 import translations from "./components/content/translations";
+import Link from "next/link";
+
 
 export default function Home() {
   const homeRef = React.useRef<HTMLElement | null>(null);
@@ -87,7 +93,6 @@ export default function Home() {
 
                 <p className="py-5 card-text text-balance">
                   {translations[lang].hero.subtitle}
-
                 </p>
 
                 <div className="flex gap-2 sm:gap-4 items-center">
@@ -251,23 +256,72 @@ export default function Home() {
         </section>
         <section
           ref={contactRef}
-          className="h-screen bg-primary dark:bg-navyblack rounded-4xl
-          border-b-4 border-navyblack/30 dark:border-primarydark 
-          flex flex-col items-center
-          px-4 sm:px-8 mx-4 mt-4 md:mt-8 xl:mt-30"
+          className="h-fit bg-white dark:bg-navyblack rounded-4xl
+          border-t-4 border-primary dark:border-primarydark shadow-md
+          flex flex-col items-center gap-4
+          px-4 sm:px-8 mx-4 py-8 mt-4 mb-4 md:mt-8 xl:mt-30 xl:px-20 xl:max-w-400 xl:mx-auto"
           id="contact"
         >
           <h2
-            className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center my-4 md:my-8 md:pb-4
-            text-white dark:text-white font-serif text-5xl tracking-tight font-medium md:text-6xl"
+            className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center md:my-8 
+            text-black dark:text-white font-serif text-5xl tracking-tight font-medium md:text-6xl"
           >
             {translations[lang].contact.title}
           </h2>
+          <div className="lg:max-w-200 xl:max-w-260 grid grid-cols-1 md:gap-8 text-center">
+            <h3 className="card-text text-center text-black dark:text-white text-balance xl:mb-10">
+              {translations[lang].contact.description}
+            </h3>
+            <div className="flex flex-col xl:flex-row xl:gap-20 xl:items-center">
+              <div className="flex flex-col gap-2 items-center py-15">
+                <Link
+                  className="group/email font-serif font-bold text-xl sm:text-4xl md:text-5xl tracking-tighter flex justify-center"
+                  href="mailto:diegoncarmona@gmail.com"
+                >
+                  diegoncarmona@gmail.com
+                  <MdArrowOutward className="mt-0.5 sm:mt-1 h-6 w-6 sm:h-9 sm:w-9 md:h-12 md:w-12 group-hover/email:translate-x-1 group-hover/email:-translate-y-1 transition-transform duration-300" />
+                </Link>
+                <CopyEmailButton lang={lang} />
+              </div>
+              <div className="flex flex-col gap-4 w-full md:w-80 md:mx-auto xl:flex-col xl:w-full">
+                <ContactCard
+                  title={translations[lang].contact.linkedin.title}
+                  description={translations[lang].contact.linkedin.description}
+                  link="https://www.linkedin.com/in/diegocarmn/"
+                />
+                <ContactCard
+                  title={translations[lang].contact.github.title}
+                  description={translations[lang].contact.github.description}
+                  link="https://github.com/diegocarmn"
+                />
+                {lang === "pt" && (
+                  <ContactCard
+                    title={translations[lang].contact.whatsapp.title}
+                    description={
+                      translations[lang].contact.whatsapp.description
+                    }
+                    link="http://wa.me/+5551994638306"
+                  />
+                )}
+              </div>
+            </div>
+            <div className="flex flex-col gap-4 items-center mt-8">
+              <p className="card-text text-sm font-semibold leading-0 flex items-center gap-1 ">
+                <IoLocationSharp className="h-4 w-4 text-primary" />
+                {translations[lang].contact.location}
+              </p>
+              <p className="card-text text-sm font-semibold leading-0 flex items-center gap-2 ">
+                <span className="rounded-full h-2 w-2 bg-green-600 animate-pulse"></span>
+                {translations[lang].hero.tag}
+              </p>
+            </div>
+          </div>
         </section>
       </main>
-      <footer className="bg-bglight dark:bg-bgdark h-50 items-center justify-center flex">
+      <footer className="bg-bglight dark:bg-bgdark h-25 items-center justify-center flex">
         <p className="opacity-50 text-center font-sans font-semibold tracking-tight text-sm text-black dark:text-white py-4">
-          &copy; {new Date().getFullYear()} Diego Carmona. {translations[lang].footer.text}
+          &copy; {new Date().getFullYear()} Diego Carmona.{" "}
+          {translations[lang].footer.text}
         </p>
       </footer>
     </>

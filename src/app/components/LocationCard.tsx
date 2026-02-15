@@ -45,7 +45,7 @@ const LocationCard = ({ lang } : { lang: "en" | "pt" }) => {
           <IoIosRemove className="h-8 w-8" />
         </button>
       ) : null}
-
+      
       <span className="absolute rounded-full opacity-40 bg-primary dark:bg-primarydark w-15 h-15 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
       <span className="absolute rounded-full opacity-80 bg-primary dark:bg-primarydark w-15 h-15 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-ping"></span>
     </div>

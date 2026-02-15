@@ -15,7 +15,7 @@ export const translations = {
       title: "Full-stack Developer.",
       subtitle:
         "I’m a problem-solver who enjoys learning through building real projects.",
-      button: "Contact Me",
+      button: "Contact me",
     },
 
     projects: {
@@ -109,7 +109,34 @@ export const translations = {
     },
 
     contact: {
-      title: "Contact",
+      title: "Let's talk!",
+      description:
+        "I'm always interested in hearing about new opportunities, collaborations, or just chatting about technology. Send me a message and I'll get back to you as soon as I can.",
+
+      whatsapp: {
+        title: "",
+        subtitle: "",
+        description: "",
+      },
+
+      linkedin: {
+        title: "LinkedIn",
+        subtitle: "/in/diegocarmn/",
+        description: "Connect with me",
+      },
+
+      github: {
+        title: "GitHub",
+        subtitle: "github.com/diegocarmn",
+        description: "Check out my projects",
+      },
+
+      location: "Porto Alegre, Brazil",
+
+      button: {
+        copy: "Copy email",
+        copied: "Copied!",
+      },
     },
 
     footer: {
@@ -136,7 +163,7 @@ export const translations = {
 
     projects: {
       title: "Projetos",
-        features: "Funcionalidades",
+      features: "Funcionalidades",
 
       cineai: {
         title: "CineAI",
@@ -194,7 +221,7 @@ export const translations = {
     },
 
     about: {
-      title: "Sobre",
+      title: "Sobre mim",
 
       profile: {
         intro: "Olá! Eu sou",
@@ -225,7 +252,34 @@ export const translations = {
     },
 
     contact: {
-      title: "Contato",
+      title: "Vamos conversar!",
+      description:
+        "Estou sempre interessado em ouvir sobre novas oportunidades, colaborações ou apenas conversar sobre tecnologia. Manda uma mensagem e eu vou responder o mais breve possível.",
+
+      whatsapp: {
+        title: "WhatsApp",
+        subtitle: "+55 85 9 9999-9999",
+        description: "Enviar mensagem",
+      },
+
+      linkedin: {
+        title: "LinkedIn",
+        subtitle: "/in/diegocarmn/",
+        description: "Conecte-se comigo",
+      },
+
+      github: {
+        title: "GitHub",
+        subtitle: "github.com/diegocarmn",
+        description: "Confira meus projetos",
+      },
+
+      location: "Porto Alegre, Brasil",
+
+      button: {
+        copy: "Copiar email",
+        copied: "Copiado!",
+      },
     },
 
     footer: {
