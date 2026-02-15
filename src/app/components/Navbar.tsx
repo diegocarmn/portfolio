@@ -56,7 +56,7 @@ const Navbar = ({
     <>
       {/* Desktop Navbar */}
       <nav
-        className={`hidden md:flex fixed left-1/2 -translate-x-1/2 top-4 sm:top-8 md:top-5 z-50 justify-center gap-2 bg-white/40 dark:bg-black/40 rounded-4xl py-2 px-4 items-center font-sans text-black dark:text-white border border-black/10 dark:border-white/10 backdrop-blur-md transform transition-transform duration-150 ${isVisible ? "translate-y-0" : "-translate-y-20"} shadow`}
+        className={`hidden md:flex fixed left-1/2 -translate-x-1/2 top-4 sm:top-8 md:top-5 z-50 justify-center gap-2 bg-white/40 dark:bg-black/40 rounded-4xl py-2 pl-4 pr-2 items-center font-sans text-black dark:text-white border border-black/10 dark:border-white/10 backdrop-blur-md transform transition-transform duration-150 ${isVisible ? "translate-y-0" : "-translate-y-20"} shadow`}
       >
         <NavbarButton targetRef={homeRef} active={activeSection === "home"}>
           {translations[lang].navbar.home}
@@ -76,9 +76,10 @@ const Navbar = ({
         >
           {translations[lang].navbar.contact}
         </NavbarButton>
-        <div className="border-l border-black/30 dark:border-white/30 h-6"></div>
-        <DarkModeToggle />
-        <LanguageToggle lang={lang} setLang={setLang} />
+        <div className="flex border-l gap-1 border-black/30 dark:border-white/30 pl-3 items-center">
+          <DarkModeToggle />
+          <LanguageToggle lang={lang} setLang={setLang} />
+        </div>
       </nav>
 
       {/* Mobile Navbar */}
@@ -152,7 +153,10 @@ const Navbar = ({
               >
                 {translations[lang].navbar.contact}
               </NavbarButton>
-              <DarkModeToggle />
+              <div className="flex gap-4 pt-4 w-full justify-center border-t border-black/80 dark:border-white/80">
+                <DarkModeToggle />
+                <LanguageToggle lang={lang} setLang={setLang} />
+              </div>
             </nav>
           </div>
         )}

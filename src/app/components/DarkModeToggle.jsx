@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { MdSunny } from "react-icons/md";
 import { RiMoonClearFill } from "react-icons/ri";
+import { IoMdMoon } from "react-icons/io";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function DarkModeToggle() {
@@ -32,8 +33,8 @@ export default function DarkModeToggle() {
 
   return (
     <button
-      className="inline-flex items-center rounded-full px-2 py-2
-        active:scale-95 transition-all duration-150 cursor-pointer text-black dark:text-white"
+      className="inline-flex items-center rounded-full px-2 py-2 opacity-75 hover:opacity-100
+        active:scale-80 transition-all duration-150 cursor-pointer text-black dark:text-white"
       onClick={handleToggle}
       aria-label="Toggle Dark Mode"
       title={isDarkMode ? "Light Mode" : "Dark Mode"}
@@ -53,7 +54,7 @@ export default function DarkModeToggle() {
           {isDarkMode ? (
             <MdSunny size={iconSize} />
           ) : (
-            <RiMoonClearFill size={iconSize} />
+            <IoMdMoon size={iconSize} />
           )}
         </motion.span>
       </AnimatePresence>

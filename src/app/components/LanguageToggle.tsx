@@ -47,7 +47,7 @@ const LanguageToggle = ({
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className={`flex items-center gap-1 px-3 py-2 text-sm font-bold rounded-full cursor-pointer opacity-70 dark:opacity-80 hover:opacity-100 transition-opacity duration-300 ${isOpen ? "bg-white/60 dark:bg-white/10 opacity-100 dark:opacity-100 " : ""}`}
+        className={`flex items-center gap-1 px-3 py-2 text-lg md:text-sm font-bold rounded-full cursor-pointer opacity-70 dark:opacity-80 hover:opacity-100 transition-opacity duration-300 ${isOpen ? "bg-white dark:bg-white/10 opacity-100 dark:opacity-100 " : ""}`}
       >
         {lang === "en" ? "EN" : "PT"}
         {isOpen ? (
@@ -58,14 +58,14 @@ const LanguageToggle = ({
       </button>
 
       {isOpen && (
-        <div className="absolute -right-8 mt-4 grid gap-1 p-2 w-34 rounded-2xl bg-white dark:bg-navyblack shadow-lg border border-black/10 dark:border-white/10 z-50">
+        <div className="absolute -right-8 mt-4 grid gap-1 p-2 w-34 rounded-3xl bg-white dark:bg-navyblack shadow-lg border border-black/10 dark:border-white/10 z-50 font-semibold text-sm">
           <button
             type="button"
             disabled={lang === "en"}
             onClick={() => handleSelect("en")}
-            className={`block w-full text-left px-3 py-2 text-xs sm:text-sm rounded-xl cursor-pointer ${
+            className={`flex w-full text-left px-3 py-2 rounded-4xl cursor-pointer ${
               lang === "en"
-                ? "bg-black/5 dark:bg-white/10 font-semibold"
+                ? "bg-black/5 dark:bg-white/10"
                 : "hover:bg-black/5 dark:hover:bg-white/10"
             }`}
           >
@@ -74,7 +74,7 @@ const LanguageToggle = ({
               alt="USA flag"
               width={16}
               height={12}
-              className="mr-2 inline-block"
+              className="mr-2 inline-block rounded-xs"
             />
             English
           </button>
@@ -82,9 +82,9 @@ const LanguageToggle = ({
             type="button"
             disabled={lang === "pt"}
             onClick={() => handleSelect("pt")}
-            className={`block w-full text-left px-3 py-2 text-xs sm:text-sm rounded-xl cursor-pointer ${
+            className={`flex w-full text-left px-3 py-2 rounded-4xl cursor-pointer ${
               lang === "pt"
-                ? "bg-black/5 dark:bg-white/10 font-semibold"
+                ? "bg-black/5 dark:bg-white/10"
                 : "hover:bg-black/5 dark:hover:bg-white/10"
             }`}
           >
@@ -93,7 +93,7 @@ const LanguageToggle = ({
               alt="Brazil flag"
               width={16}
               height={12}
-              className="mr-2 inline-block"
+              className="mr-2 inline-block rounded-xs"
             />
             Português
           </button>
