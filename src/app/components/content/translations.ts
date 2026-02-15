@@ -14,7 +14,7 @@ export const translations = {
       name: "Diego Carmona.",
       title: "Full-stack Developer.",
       subtitle:
-        "I’m a problem-solver who enjoys learning through building real projects.",
+        "Problem solver with a background in keeping real systems running.",
       button: "Contact me",
     },
 
@@ -78,13 +78,13 @@ export const translations = {
     },
 
     about: {
-      title: "About",
+      title: "About me",
 
       profile: {
         intro: "Hi, there!",
         intro2: "I'm Diego",
         description:
-          "I’m a full-stack developer driven by curiosity and learning through building real projects. I like working across the entire stack, from clean and intuitive user interfaces to backend logic and data. With a background in technical support, I bring a hands-on mindset, strong ownership, and attention to detail to everything I build.",
+          "I'm a full-stack developer focused on building real products end to end. My background in technical support shaped how I work: I care about reliability, ownership, and what happens after something goes live. I enjoy working across the stack, from user-facing details to backend logic and data, always with real usage in mind.",
         button: {
           text: "View Resume",
           link: "/resume.pdf",
@@ -99,7 +99,7 @@ export const translations = {
       research: {
         title: "Research",
         description:
-          "Tecmides is an academic research project focused on identifying disengaged students in online learning environments.",
+          "Tecmides is an academic research project centered on identifying disengaged students in online learning environments.",
         button: "View Publication",
       },
 
@@ -138,10 +138,6 @@ export const translations = {
         copied: "Copied!",
       },
     },
-
-    footer: {
-      text: "All rights reserved.",
-    },
   },
 
   pt: {
@@ -155,9 +151,9 @@ export const translations = {
     hero: {
       tag: "Disponível para projetos",
       name: "Diego Carmona.",
-      title: "Desenvolvedor Full-Stack.",
+      title: "Desenvolvedor Full-stack.",
       subtitle:
-        "Sou um solucionador de problemas que gosta de aprender construindo projetos reais.",
+        "Resolvedor de problemas com experiência em manter sistemas reais funcionando.",
       button: "Fale comigo",
     },
 
@@ -224,10 +220,10 @@ export const translations = {
       title: "Sobre mim",
 
       profile: {
-        intro: "Olá! Eu sou",
-        intro2: "o Diego",
+        intro: "Olá! Eu",
+        intro2: "sou Diego",
         description:
-          "Sou um desenvolvedor full-stack movido pela curiosidade e por aprender construindo projetos reais. Gosto de atuar em toda a stack, de interfaces limpas e intuitivas até lógica de backend e dados. Com experiência em suporte técnico, trago uma postura prática, forte senso de responsabilidade e atenção aos detalhes para tudo o que construo.",
+          "Sou um desenvolvedor full stack focado em construir produtos reais de ponta a ponta. Minha experiência em suporte técnico moldou a forma como eu trabalho: me importo com confiabilidade, senso de responsabilidade e com o que acontece depois que algo entra em produção. Gosto de atuar em toda a stack, dos detalhes da interface à lógica de backend e dados, sempre pensando no uso real.",
         button: {
           text: "Ver currículo",
           link: "/curriculo.pdf",
@@ -236,13 +232,13 @@ export const translations = {
 
       techstack: {
         title: "Tecnologias",
-        description: "Tecnologias com as quais tenho trabalhado atualmente.",
+        description: "Tecnologias usadas por mim atualmente.",
       },
 
       research: {
         title: "Pesquisa",
         description:
-          "Tecmides é um projeto de pesquisa acadêmica focado em identificar estudantes desengajados em ambientes de aprendizagem online.",
+          "Tecmides é um projeto de pesquisa acadêmica focado em identificar estudantes desengajados em ambientes de aprendizagem EAD.",
         button: "Ver publicação",
       },
 
@@ -280,10 +276,6 @@ export const translations = {
         copy: "Copiar email",
         copied: "Copiado!",
       },
-    },
-
-    footer: {
-      text: "Todos os direitos reservados.",
     },
   },
 };

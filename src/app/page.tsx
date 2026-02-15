@@ -6,10 +6,7 @@ import React from "react";
 import StatusBadge from "./components/StatusBadge";
 import Button from "./components/Button";
 import ProjectsCard from "./components/ProjectsCard";
-import {
-  IoIosArrowForward,
-  IoIosArrowDown,
-} from "react-icons/io";
+import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdArrowOutward } from "react-icons/md";
 import BentoGrid from "./components/BentoGrid";
@@ -19,7 +16,6 @@ import ContactCard from "./components/ContactCard";
 import translations from "./components/content/translations";
 import Link from "next/link";
 
-
 export default function Home() {
   const homeRef = React.useRef<HTMLElement | null>(null);
   const projectsRef = React.useRef<HTMLElement | null>(null);
@@ -28,6 +24,12 @@ export default function Home() {
 
   const [activeSection, setActiveSection] = React.useState<string | null>(null);
   const [lang, setLang] = React.useState<"en" | "pt">("en");
+
+  React.useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
+    }
+  }, [lang]);
 
   React.useEffect(() => {
     const sections = [
@@ -202,7 +204,7 @@ export default function Home() {
         </VantaBackground>
         <section
           ref={projectsRef}
-          className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 flex flex-col items-center pt-4 md:pt-8 xl:mt-30"
+          className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 flex flex-col items-center pt-4 md:pt-8 md:mt-20 xl:mt-30"
           id="projects"
         >
           <h2
@@ -243,7 +245,7 @@ export default function Home() {
         </section>
         <section
           ref={aboutRef}
-          className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 flex flex-col items-center pt-4 md:pt-8 xl:mt-30"
+          className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 flex flex-col items-center pt-4 md:pt-8 md:mt-20 xl:mt-30"
           id="about"
         >
           <h2
@@ -258,8 +260,8 @@ export default function Home() {
           ref={contactRef}
           className="h-fit bg-white dark:bg-navyblack rounded-4xl
           border-t-4 border-primary dark:border-primarydark shadow-md
-          flex flex-col items-center gap-4
-          px-4 sm:px-8 mx-4 py-8 mt-4 mb-4 md:mt-8 xl:mt-30 xl:px-20 xl:max-w-400 xl:mx-auto"
+          flex flex-col items-center gap-4 xl:max-w-350 xl:mx-auto
+          px-4 sm:px-8 mx-4 py-8 mt-4 mb-4 md:mt-28 xl:mt-38"
           id="contact"
         >
           <h2
@@ -268,12 +270,12 @@ export default function Home() {
           >
             {translations[lang].contact.title}
           </h2>
-          <div className="lg:max-w-200 xl:max-w-260 grid grid-cols-1 md:gap-8 text-center">
-            <h3 className="card-text text-center text-black dark:text-white text-balance xl:mb-10">
+          <div className="lg:max-w-200 xl:max-w-7xl grid grid-cols-1 text-center">
+            <h3 className="card-text text-center text-black dark:text-white text-balance">
               {translations[lang].contact.description}
             </h3>
-            <div className="flex flex-col xl:flex-row xl:gap-20 xl:items-center">
-              <div className="flex flex-col gap-2 items-center py-15">
+            <div className="flex flex-col items-center">
+              <div className="flex flex-col gap-2 items-center py-15 md:py-25 xl:py-32">
                 <Link
                   className="group/email font-serif font-bold text-xl sm:text-4xl md:text-5xl tracking-tighter flex justify-center"
                   href="mailto:diegoncarmona@gmail.com"
@@ -283,7 +285,9 @@ export default function Home() {
                 </Link>
                 <CopyEmailButton lang={lang} />
               </div>
-              <div className="flex flex-col gap-4 w-full md:w-80 md:mx-auto xl:flex-col xl:w-full">
+              <div
+                className={`flex flex-col gap-4 w-full md:max-w-80 md:w-full md:mx-auto lg:flex-row lg:max-w-full ${lang === "pt" ? "xl:max-w-5xl" : "xl:max-w-2xl"}`}
+              >
                 <ContactCard
                   title={translations[lang].contact.linkedin.title}
                   description={translations[lang].contact.linkedin.description}
@@ -306,11 +310,11 @@ export default function Home() {
               </div>
             </div>
             <div className="flex flex-col gap-4 items-center mt-8">
-              <p className="card-text text-sm font-semibold leading-0 flex items-center gap-1 ">
+              <p className="card-text text-sm md:text-base font-semibold leading-0 flex items-center gap-1 ">
                 <IoLocationSharp className="h-4 w-4 text-primary" />
                 {translations[lang].contact.location}
               </p>
-              <p className="card-text text-sm font-semibold leading-0 flex items-center gap-2 ">
+              <p className="card-text text-sm md:text-base font-semibold leading-0 flex items-center gap-2 ">
                 <span className="rounded-full h-2 w-2 bg-green-600 animate-pulse"></span>
                 {translations[lang].hero.tag}
               </p>
@@ -320,8 +324,7 @@ export default function Home() {
       </main>
       <footer className="bg-bglight dark:bg-bgdark h-25 items-center justify-center flex">
         <p className="opacity-50 text-center font-sans font-semibold tracking-tight text-sm text-black dark:text-white py-4">
-          &copy; {new Date().getFullYear()} Diego Carmona.{" "}
-          {translations[lang].footer.text}
+          &copy; {new Date().getFullYear()} Diego Carmona.
         </p>
       </footer>
     </>

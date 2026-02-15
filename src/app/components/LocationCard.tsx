@@ -31,7 +31,7 @@ const LocationCard = ({ lang } : { lang: "en" | "pt" }) => {
 
       {zoomLevel === 2 || zoomLevel === 3 ? (
         <button
-          className="rounded-full bg-white dark:bg-navyblack grid place-items-center w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 border border-black/30 dark:border-white/30 hover:scale-110 active:scale-90 transition-transform duration-200 cursor-pointer absolute right-4 bottom-4 z-10"
+          className="rounded-full bg-white dark:bg-navyblack grid place-items-center w-11 h-11 border border-black/30 dark:border-white/30 hover:scale-110 active:scale-90 transition-transform duration-200 cursor-pointer absolute right-4 bottom-4 z-10"
           onClick={increaseZoom}
         >
           <IoIosAdd className="h-8 w-8" />
@@ -39,13 +39,13 @@ const LocationCard = ({ lang } : { lang: "en" | "pt" }) => {
       ) : null}
       {zoomLevel === 1 || zoomLevel === 2 ? (
         <button
-          className="rounded-full bg-white dark:bg-navyblack grid place-items-center w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 border border-black/30 dark:border-white/30 hover:scale-110 active:scale-90 transition-transform duration-200 cursor-pointer absolute left-4 bottom-4 z-10"
+          className="rounded-full bg-white dark:bg-navyblack grid place-items-center w-11 h-11 border border-black/30 dark:border-white/30 hover:scale-110 active:scale-90 transition-transform duration-200 cursor-pointer absolute left-4 bottom-4 z-10"
           onClick={decreaseZoom}
         >
           <IoIosRemove className="h-8 w-8" />
         </button>
       ) : null}
-      
+
       <span className="absolute rounded-full opacity-40 bg-primary dark:bg-primarydark w-15 h-15 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
       <span className="absolute rounded-full opacity-80 bg-primary dark:bg-primarydark w-15 h-15 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-ping"></span>
     </div>
