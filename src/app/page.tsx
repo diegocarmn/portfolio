@@ -251,15 +251,15 @@ export default function Home() {
         </section>
         <section
           ref={contactRef}
-          className="h-screen bg-primary/50 dark:bg-navyblack rounded-4xl
-          border-b-4 border-primary dark:border-primarydark 
+          className="h-screen bg-primary dark:bg-navyblack rounded-4xl
+          border-b-4 border-navyblack/30 dark:border-primarydark 
           flex flex-col items-center
           px-4 sm:px-8 mx-4 mt-4 md:mt-8 xl:mt-30"
           id="contact"
         >
           <h2
-            className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center my-4 md:pb-4
-            text-black dark:text-white font-serif text-5xl tracking-tight font-medium md:text-6xl"
+            className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center my-4 md:my-8 md:pb-4
+            text-white dark:text-white font-serif text-5xl tracking-tight font-medium md:text-6xl"
           >
             {translations[lang].contact.title}
           </h2>

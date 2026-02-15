@@ -4,6 +4,7 @@ import DarkModeToggle from "./DarkModeToggle";
 import { useState, useEffect, useRef } from "react";
 import NavbarButton from "./NavbarButton";
 import { translations } from "./content/translations"; 
+import LanguageToggle from "./LanguageToggle";
 
 interface NavbarProps {
   homeRef: React.RefObject<HTMLElement | null>;
@@ -77,9 +78,7 @@ const Navbar = ({
         </NavbarButton>
         <div className="border-l border-black/30 dark:border-white/30 h-6"></div>
         <DarkModeToggle />
-        <button onClick={() => setLang(lang === "en" ? "pt" : "en")}>
-          {lang === "en" ? "PT" : "EN"}
-        </button>
+        <LanguageToggle lang={lang} setLang={setLang} />
       </nav>
 
       {/* Mobile Navbar */}
