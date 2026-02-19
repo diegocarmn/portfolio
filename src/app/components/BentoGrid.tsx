@@ -3,6 +3,41 @@ import Button from "./Button";
 import { IoIosArrowForward } from "react-icons/io";
 import LocationCard from "./LocationCard";
 import translations from "./content/translations";
+import { motion } from "framer-motion";
+
+const techStack = [
+  "TypeScript",
+  "Next.js",
+  "React",
+  "Node.js",
+  "Tailwind CSS",
+  "PostgreSQL",
+  "JavaScript",
+  "Git",
+];
+
+const animatedList = {
+  hidden: { 
+    opacity: 0},
+
+  visible: {
+    opacity: 1,
+
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+}
+
+const animatedItem = {
+  hidden: { 
+    opacity: 0, 
+    y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+}
 
 const BentoGrid = ({ lang }: { lang: "en" | "pt" }) => {
   return (
@@ -55,11 +90,23 @@ const BentoGrid = ({ lang }: { lang: "en" | "pt" }) => {
 
       {/* TECH STACK */}
       <div className="group bento-card p-10 md:justify-between">
-        <h3 className="card-title font-serif pb-4">{translations[lang].about.techstack.title}</h3>
-        <h6 className="font-serif tracking-tighter font-bold text-2xl md:text-4xl leading-6 md:leading-8 text-center opacity-90 sm:opacity-80 group-hover:opacity-100 transition-opacity duration-300">
-          TypeScript <br /> Next.js <br /> React <br /> Node.js <br /> Tailwind
-          CSS <br /> PostgreSQL <br /> JavaScript <br /> Git
-        </h6>
+        <h3 
+        className="card-title font-serif pb-4">{translations[lang].about.techstack.title}</h3>
+        <motion.ul 
+        variants={animatedList}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        className="font-serif tracking-tighter font-bold text-2xl md:text-4xl leading-6 md:leading-8 text-center opacity-90 sm:opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+          {techStack.map((tech, index) => (
+            <motion.li 
+              key={index}
+              variants={animatedItem}
+            >
+              {tech}<br />
+            </motion.li>
+          ))}
+        </motion.ul>
         <p className="card-text pt-4 px-6 text-balance group-hover:opacity-100 transition-opacity duration-300">
           {translations[lang].about.techstack.description}
         </p>

@@ -6,6 +6,7 @@ import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { IoMdArrowRoundDown, IoMdArrowRoundUp } from "react-icons/io";
 import translations from "./content/translations";
+import { motion } from "framer-motion";
 
 interface ProjectsCardProps {
   mockupImage: string;
@@ -37,7 +38,11 @@ const ProjectsCard = ({
   const [isCardExpanded, setIsCardExpanded] = useState(false);
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, x: 90, filter: "blur(20px)" }}
+      whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+      transition={{ duration: 0.1}}
+      viewport={{ once: true }}
       className="
           flex flex-col
           bg-white rounded-4xl
@@ -160,7 +165,7 @@ const ProjectsCard = ({
           {translations[lang].projects.projectscard.button}
         </Button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

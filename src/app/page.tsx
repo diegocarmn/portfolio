@@ -15,6 +15,8 @@ import CopyEmailButton from "./components/CopyEmailButton";
 import ContactCard from "./components/ContactCard";
 import translations from "./components/content/translations";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { blurUp } from "./components/animations";
 
 export default function Home() {
   const homeRef = React.useRef<HTMLElement | null>(null);
@@ -78,7 +80,10 @@ export default function Home() {
             ref={homeRef}
           >
             <div className="w-full h-full rounded-b-4xl outline-50 outline-bglight dark:outline-bgdark">
-              <section
+              <motion.section
+                variants={blurUp}
+                initial="initial"
+                animate="animate"
                 className="
                 w-full h-full md:max-w-6xl 
                 flex flex-col justify-center
@@ -179,26 +184,34 @@ export default function Home() {
                     {translations[lang].hero.button}
                   </Button>
                 </div>
-
-                <button
-                  className="
+              </motion.section>
+              <motion.button
+                animate={{
+                  y: [0, -10, 0, -10, 0],
+                }}
+                transition={{
+                  duration: 0.8,
+                  repeat: Infinity,
+                  delay: 2,
+                  repeatDelay: 2,
+                  ease: "easeInOut",
+                }}
+                className="
                   flex items-center justify-center
                    w-25 h-12 absolute
                   bottom-15 md:bottom-10
                   left-1/2 rounded-4xl
                   -translate-x-1/2
-                  animate-bounce
                   cursor-pointer"
-                  onClick={() => {
-                    projectsRef.current?.scrollIntoView({
-                      behavior: "smooth",
-                    });
-                  }}
-                  aria-label="Scroll to Projects section"
-                >
-                  <IoIosArrowDown className="h-8 w-8 sm:h-10 sm:w-10 opacity-70" />
-                </button>
-              </section>
+                onClick={() => {
+                  projectsRef.current?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+                aria-label="Scroll to Projects section"
+              >
+                <IoIosArrowDown className="h-8 w-8 sm:h-10 sm:w-10 opacity-70" />
+              </motion.button>
             </div>
           </section>
         </VantaBackground>
@@ -207,12 +220,16 @@ export default function Home() {
           className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 flex flex-col items-center pt-4 md:pt-8 md:mt-20 xl:mt-30"
           id="projects"
         >
-          <h2
+          <motion.h2
+            variants={blurUp}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
             className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center mb-4 md:pb-4
             text-black dark:text-white font-serif text-5xl tracking-tight font-medium md:text-6xl"
           >
             {translations[lang].projects.title}
-          </h2>
+          </motion.h2>
 
           <div className="flex flex-col md:flex-row gap-4 sm:gap-4 md:gap-8 md:max-w-full">
             <ProjectsCard
@@ -248,12 +265,16 @@ export default function Home() {
           className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 flex flex-col items-center pt-4 md:pt-8 md:mt-20 xl:mt-30"
           id="about"
         >
-          <h2
+          <motion.h2
+            variants={blurUp}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
             className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center mb-4 md:pb-4
             text-black dark:text-white font-serif text-5xl tracking-tight font-medium md:text-6xl"
           >
             {translations[lang].about.title}
-          </h2>
+          </motion.h2>
           <BentoGrid lang={lang} />
         </section>
         <section

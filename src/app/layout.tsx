@@ -71,7 +71,7 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
+  }, 
 };
 
 export default function RootLayout({

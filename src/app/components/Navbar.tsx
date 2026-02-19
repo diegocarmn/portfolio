@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import NavbarButton from "./NavbarButton";
 import { translations } from "./content/translations"; 
 import LanguageToggle from "./LanguageToggle";
+import { motion } from "framer-motion";
 
 interface NavbarProps {
   homeRef: React.RefObject<HTMLElement | null>;
@@ -55,7 +56,10 @@ const Navbar = ({
   return (
     <>
       {/* Desktop Navbar */}
-      <nav
+      <motion.nav
+        initial={{ opacity: 0, y: -60 }}
+        animate={{ opacity: 1, y: 0}}
+        transition={{ duration: 0.2, ease: "easeInOut" }}
         className={`hidden md:flex fixed left-1/2 -translate-x-1/2 top-4 sm:top-8 md:top-5 z-50 justify-center gap-2 bg-white/40 dark:bg-black/40 rounded-4xl py-2 pl-4 pr-2 items-center font-sans text-black dark:text-white border border-black/10 dark:border-white/10 backdrop-blur-md transform transition-transform duration-150 ${isVisible ? "translate-y-0" : "-translate-y-20"} shadow`}
       >
         <NavbarButton targetRef={homeRef} active={activeSection === "home"}>
@@ -80,7 +84,7 @@ const Navbar = ({
           <DarkModeToggle />
           <LanguageToggle lang={lang} setLang={setLang} />
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Mobile Navbar */}
       <nav className="md:hidden">
