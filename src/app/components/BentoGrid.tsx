@@ -4,6 +4,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import LocationCard from "./LocationCard";
 import translations from "./content/translations";
 import { motion } from "framer-motion";
+import { animatedCard } from "./animations";
 
 const techStack = [
   "TypeScript",
@@ -43,7 +44,13 @@ const BentoGrid = ({ lang }: { lang: "en" | "pt" }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:max-w-200 xl:max-w-300">
       {/* PROFILE */}
-      <div className="bento-card group/card p-10">
+      <motion.div
+        variants={animatedCard}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="bento-card group/card p-10"
+      >
         <div className="flex flex-col text-left gap-8 md:justify-between h-full">
           <span className="flex flex-row items-center mx-auto gap-4">
             <div className="relative inline-flex items-center justify-center mx-auto">
@@ -86,36 +93,50 @@ const BentoGrid = ({ lang }: { lang: "en" | "pt" }) => {
             {translations[lang].about.profile.button.text}
           </Button>
         </div>
-      </div>
+      </motion.div>
 
       {/* TECH STACK */}
-      <div className="group bento-card p-10 md:justify-between">
-        <h3 
-        className="card-title font-serif pb-4">{translations[lang].about.techstack.title}</h3>
-        <motion.ul 
-        variants={animatedList}
+      <motion.div
+        variants={animatedCard}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="group bento-card p-10 md:justify-between"
+      >
+        <h3 className="card-title font-serif pb-4">
+          {translations[lang].about.techstack.title}
+        </h3>
+        <motion.ul
+          variants={animatedList}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-        className="font-serif tracking-tighter font-bold text-2xl md:text-4xl leading-6 md:leading-8 text-center opacity-90 sm:opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+          className="font-serif tracking-tighter font-bold text-2xl md:text-4xl leading-6 md:leading-8 text-center opacity-90 sm:opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+        >
           {techStack.map((tech, index) => (
-            <motion.li 
-              key={index}
-              variants={animatedItem}
-            >
-              {tech}<br />
+            <motion.li key={index} variants={animatedItem}>
+              {tech}
+              <br />
             </motion.li>
           ))}
         </motion.ul>
         <p className="card-text pt-4 px-6 text-balance group-hover:opacity-100 transition-opacity duration-300">
           {translations[lang].about.techstack.description}
         </p>
-      </div>
+      </motion.div>
 
       {/* RESEARCH */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 xl:col-span-1 md:col-span-2 gap-4">
+      <motion.div
+        variants={animatedCard}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 xl:col-span-1 md:col-span-2 gap-4"
+      >
         <div className="bento-card group/research p-10 gap-8">
-          <h3 className="card-title font-serif">{translations[lang].about.research.title}</h3>
+          <h3 className="card-title font-serif">
+            {translations[lang].about.research.title}
+          </h3>
           <p className="card-text text-balance group-hover/research:opacity-100 transition-opacity duration-300">
             {translations[lang].about.research.description}
           </p>
@@ -131,7 +152,7 @@ const BentoGrid = ({ lang }: { lang: "en" | "pt" }) => {
         </div>
         {/* LOCATION */}
         <LocationCard lang={lang} />
-      </div>
+      </motion.div>
     </div>
   );
 };

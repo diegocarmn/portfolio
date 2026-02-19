@@ -7,6 +7,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import { IoMdArrowRoundUp } from "react-icons/io";
 import translations from "./content/translations";
 import { motion, AnimatePresence } from "framer-motion";
+import { animatedCard } from "./animations";
 
 interface ProjectsCardProps {
   mockupImage: string;
@@ -41,9 +42,9 @@ const ProjectsCard = ({
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: 90, filter: "blur(20px)" }}
-      whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-      transition={{ duration: 0.1 }}
+      variants={animatedCard}
+      initial="hidden"
+      whileInView="visible"
       viewport={{ once: true }}
       className="
           flex flex-col

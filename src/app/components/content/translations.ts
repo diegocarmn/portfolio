@@ -105,6 +105,7 @@ export const translations = {
 
       location: {
         title: "Location",
+        location: "Porto Alegre, Brazil",
       },
     },
 
@@ -244,6 +245,7 @@ export const translations = {
 
       location: {
         title: "Localização",
+        location: "Porto Alegre, RS",
       },
     },
 
