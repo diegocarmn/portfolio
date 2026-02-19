@@ -69,7 +69,7 @@ const LanguageToggle = ({
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
+            transition={{ duration: 0.1, ease: "easeInOut" }}
             className="absolute -right-8 mt-4 grid gap-1 p-2 w-34 rounded-3xl bg-white dark:bg-navyblack shadow-lg border border-black/10 dark:border-white/10 z-50 font-semibold text-sm"
           >
             <button

@@ -7,7 +7,7 @@ interface ButtonProps {
   icon?: React.ReactNode;
   variant?: "primary" | "secondary" | "primarySmall" | "secondarySmall";
   className?: string;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Button = ({
@@ -76,6 +76,9 @@ const Button = ({
       href={link || "#"}
       target={target}
       className={`${baseStyles} ${variantStyles[variant]} ${className}`}
+      onClick={(e) => {
+        e.stopPropagation();
+      }}
     >
       <span
         className={`absolute inset-0 ${hoverBgStyles[variant]} -translate-x-full group-hover/button:translate-x-0 transition-transform duration-300`}

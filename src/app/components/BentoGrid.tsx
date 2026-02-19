@@ -65,8 +65,8 @@ const BentoGrid = ({ lang }: { lang: "en" | "pt" }) => {
               <br />
               {translations[lang].about.profile.intro2}{" "}
               <span
-                className="inline-block group-hover/card:animate-[wave_3s_infinite]
-                group-hover/card:origin-[70%_70%]"
+                className="inline-block animate-[wave_3s_infinite]
+                origin-[70%_70%]"
               >
                 👋
               </span>

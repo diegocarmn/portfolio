@@ -4,9 +4,9 @@ import Button from "./Button";
 import { IoIosArrowForward } from "react-icons/io";
 import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
-import { IoMdArrowRoundDown, IoMdArrowRoundUp } from "react-icons/io";
+import { IoMdArrowRoundUp } from "react-icons/io";
 import translations from "./content/translations";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface ProjectsCardProps {
   mockupImage: string;
@@ -21,6 +21,8 @@ interface ProjectsCardProps {
   githubLink: string;
   lang: "en" | "pt";
 }
+
+const MotionArrow = motion(IoMdArrowRoundUp);
 
 const ProjectsCard = ({
   mockupImage,
@@ -41,7 +43,7 @@ const ProjectsCard = ({
     <motion.div
       initial={{ opacity: 0, x: 90, filter: "blur(20px)" }}
       whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-      transition={{ duration: 0.1}}
+      transition={{ duration: 0.1 }}
       viewport={{ once: true }}
       className="
           flex flex-col
@@ -59,9 +61,10 @@ const ProjectsCard = ({
           min-w-0
           overflow-hidden
 
-          md:hover:scale-103
-          transition-transform
-          duration-300
+          md:hover:scale-102
+          transition-transform duration-250
+          cursor-pointer
+        
           "
       onClick={() => setIsCardExpanded(!isCardExpanded)}
     >
@@ -113,37 +116,55 @@ const ProjectsCard = ({
             isCardExpanded ? "Collapse card details" : "Expand card details"
           }
         >
-          {isCardExpanded ? (
-            <IoMdArrowRoundUp className="w-5 h-5" />
-          ) : (
-            <IoMdArrowRoundDown className="w-5 h-5" />
-          )}
+          <MotionArrow
+            className="w-5 h-5"
+            initial={{ rotate: 180 }}
+            animate={{ rotate: isCardExpanded ? 0 : 180 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+          />
         </button>
         <span className="w-full border-t border-black/30 dark:border-white/30 mt-4 mb-2"></span>
       </div>
 
-      {isCardExpanded && (
-        <div className="flex flex-col gap-4 md:gap-4 sm:mx-2 md:mt-2">
-          {subtitle && <h4 className="card-subtitle font-serif">{subtitle}</h4>}
-          {overview && <p className="card-text">{overview}</p>}
-          {features && features.length > 0 && (
-            <div className="flex flex-col gap-4 md:gap-4">
-              <h4 className="card-subtitle font-serif">{translations[lang].projects.features}</h4>
+      <AnimatePresence>
+        {isCardExpanded && (
+          <motion.div
+            initial={{ opacity: 0, y: -20, height: 0, filter: "blur(20px)" }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              height: "auto",
+              filter: "blur(0px)",
+              transition: { duration: 0.2, ease: "easeOut" },
+            }}
+            exit={{ opacity: 0, y: -20, height: 0 }}
+            className="flex flex-col gap-4 md:gap-4 sm:mx-2 md:mt-2"
+          >
+            {subtitle && (
+              <h4 className="card-subtitle font-serif">{subtitle}</h4>
+            )}
+            {overview && <p className="card-text">{overview}</p>}
+            {features && features.length > 0 && (
+              <div className="flex flex-col gap-4 md:gap-4">
+                <h4 className="card-subtitle font-serif">
+                  {translations[lang].projects.features}
+                </h4>
 
-              <ul className="card-text opacity-100 flex flex-col gap-2 px-3 sm:px-3">
-                {features.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <FaCheckCircle className="mt-0.5 text-accent shrink-0" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
+                <ul className="card-text opacity-100 flex flex-col gap-2 px-3 sm:px-3">
+                  {features.map((feature, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <FaCheckCircle className="mt-0.5 text-accent shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
 
-              <span className="w-full border-t border-black/30 dark:border-white/30 mt-2 mb-2"></span>
-            </div>
-          )}
-        </div>
-      )}
+                <span className="w-full border-t border-black/30 dark:border-white/30 mt-2 mb-2"></span>
+              </div>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
       <div className="mt-2 mx-2 min-w-0">
         <ProjectsCardTag tags={tags} singleLine={!isCardExpanded} />
       </div>
