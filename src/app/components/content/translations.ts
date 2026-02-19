@@ -1,5 +1,4 @@
 
-
 export const translations = {
   en: {
     navbar: {
@@ -138,6 +137,11 @@ export const translations = {
         copy: "Copy email",
         copied: "Copied!",
       },
+    },
+
+    footer: {
+      text: "Built with a good playlist.",
+      source: "Source Code",
     },
   },
 
@@ -278,6 +282,11 @@ export const translations = {
         copy: "Copiar email",
         copied: "Copiado!",
       },
+    },
+
+    footer: {
+      text: "Feito com uma boa playlist.",
+      source: "Código Fonte",
     },
   },
 };

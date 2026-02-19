@@ -16,7 +16,9 @@ import ContactCard from "./components/ContactCard";
 import translations from "./components/content/translations";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { blurUp } from "./components/animations";
+import { blurUp, animatedCard } from "./components/animations";
+
+const MotionLink = motion(Link);
 
 export default function Home() {
   const homeRef = React.useRef<HTMLElement | null>(null);
@@ -277,8 +279,12 @@ export default function Home() {
           </motion.h2>
           <BentoGrid lang={lang} />
         </section>
-        <section
+        <motion.section
           ref={contactRef}
+          variants={animatedCard}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
           className="h-fit bg-white dark:bg-navyblack rounded-4xl
           border-t-4 border-primary dark:border-primarydark shadow-md
           flex flex-col items-center gap-4 xl:max-w-350 xl:mx-auto
@@ -297,13 +303,17 @@ export default function Home() {
             </h3>
             <div className="flex flex-col items-center">
               <div className="flex flex-col gap-2 items-center py-15 md:py-25 xl:py-32">
-                <Link
+                <MotionLink
+                  initial={{ opacity: 1, scale: 1 }}
+                  whileTap={{ opacity: 1, scale: 0.98 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+              
                   className="group/email font-serif font-bold text-xl sm:text-4xl md:text-5xl tracking-tighter flex justify-center"
                   href="mailto:diegoncarmona@gmail.com"
                 >
                   diegoncarmona@gmail.com
                   <MdArrowOutward className="mt-0.5 sm:mt-1 h-6 w-6 sm:h-9 sm:w-9 md:h-12 md:w-12 group-hover/email:translate-x-1 group-hover/email:-translate-y-1 transition-transform duration-300" />
-                </Link>
+                </MotionLink>
                 <CopyEmailButton lang={lang} />
               </div>
               <div
@@ -332,7 +342,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-4 items-center mt-8">
               <p className="card-text text-sm md:text-base font-semibold leading-0 flex items-center gap-1 ">
-                <IoLocationSharp className="h-4 w-4 text-primary" />
+                <IoLocationSharp className="h-4 w-4 dark:text-white" />
                 {translations[lang].contact.location}
               </p>
               <p className="card-text text-sm md:text-base font-semibold leading-0 flex items-center gap-2 ">
@@ -341,11 +351,18 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </section>
+        </motion.section>
       </main>
       <footer className="bg-bglight dark:bg-bgdark h-25 items-center justify-center flex">
-        <p className="opacity-50 text-center font-sans font-semibold tracking-tight text-sm text-black dark:text-white py-4">
-          &copy; {new Date().getFullYear()} Diego Carmona.
+        <p className="opacity-70 text-center font-sans font-semibold tracking-tight text-sm text-black dark:text-white py-4">
+          &copy; {new Date().getFullYear()} Diego Carmona. {translations[lang].footer.text}
+          <Link
+            href="https://github.com/diegocarmn/portfolio"
+            target="_blank"
+            className="ml-2 text-primary hover:underline"
+          >
+            {translations[lang].footer.source}
+          </Link>
         </p>
       </footer>
     </>

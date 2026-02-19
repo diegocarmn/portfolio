@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { IoIosAdd, IoIosRemove } from "react-icons/io";
+import { IoLocationSharp } from "react-icons/io5";
 import translations from "./content/translations";
 import { motion } from "framer-motion";
 
@@ -77,8 +78,9 @@ const LocationCard = ({ lang }: { lang: "en" | "pt" }) => {
       <span className="absolute inset-0 bg-primary/10 dark:bg-navyblack/40 pointer-events-none rounded-4xl z-5" />
 
       {/* Title */}
-      <span className="absolute top-0 left-1/2 -translate-x-1/2 bg-white dark:bg-navyblack px-8 py-2 rounded-b-xl shadow-md z-10">
-        <h3 className="card-subtitle font-serif">
+      <span className="absolute top-0 left-1/2 -translate-x-1/2 bg-white dark:bg-navyblack px-6 py-2 rounded-b-xl shadow-md z-10">
+        <h3 className="card-subtitle font-serif items-center flex gap-2">
+          <IoLocationSharp className="h-4 w-4 inline" />
           {translations[lang].about.location.title}
         </h3>
       </span>

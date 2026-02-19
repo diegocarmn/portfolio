@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Button from "./Button";
 import { IoIosArrowForward } from "react-icons/io";
+import { BsStack } from "react-icons/bs";
+import { IoDocumentText } from "react-icons/io5";
 import LocationCard from "./LocationCard";
 import translations from "./content/translations";
 import { motion } from "framer-motion";
@@ -35,7 +37,7 @@ const animatedItem = {
     opacity: 0, 
     y: 20 },
   visible: {
-    opacity: 1,
+    opacity: 0.8,
     y: 0,
   },
 }
@@ -101,9 +103,10 @@ const BentoGrid = ({ lang }: { lang: "en" | "pt" }) => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="group bento-card p-10 md:justify-between"
+        className="group bento-card p-10 md:justify-between items-center"
       >
-        <h3 className="card-title font-serif pb-4">
+        <h3 className="card-title font-serif pb-4 flex items-center gap-3">
+          <BsStack className="h-6 w-6 sm:h-8 sm:w-8 inline" />
           {translations[lang].about.techstack.title}
         </h3>
         <motion.ul
@@ -133,8 +136,9 @@ const BentoGrid = ({ lang }: { lang: "en" | "pt" }) => {
         viewport={{ once: true }}
         className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 xl:col-span-1 md:col-span-2 gap-4"
       >
-        <div className="bento-card group/research p-10 gap-8">
-          <h3 className="card-title font-serif">
+        <div className="bento-card group/research p-10 gap-8 items-center">
+          <h3 className="card-title font-serif flex items-center gap-2">
+            <IoDocumentText className="h-6 w-6 sm:h-8 sm:w-8 inline" />
             {translations[lang].about.research.title}
           </h3>
           <p className="card-text text-balance group-hover/research:opacity-100 transition-opacity duration-300">
