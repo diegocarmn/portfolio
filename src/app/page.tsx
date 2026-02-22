@@ -353,13 +353,13 @@ export default function Home() {
           </div>
         </motion.section>
       </main>
-      <footer className="bg-bglight dark:bg-bgdark h-25 items-center justify-center flex">
+      <footer className="bg-bglight dark:bg-bgdark h-25 items-center justify-center flex px-8">
         <p className="opacity-70 text-center font-sans font-semibold tracking-tight text-sm text-black dark:text-white py-4">
           &copy; {new Date().getFullYear()} Diego Carmona. {translations[lang].footer.text}
           <Link
             href="https://github.com/diegocarmn/portfolio"
             target="_blank"
-            className="ml-2 text-primary hover:underline"
+            className="ml-2 text-primary hover:underline inline-block"
           >
             {translations[lang].footer.source}
           </Link>
