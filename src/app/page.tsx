@@ -18,7 +18,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { blurUp, animatedCard } from "./components/animations";
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 export default function Home() {
   const homeRef = React.useRef<HTMLElement | null>(null);
@@ -307,7 +307,6 @@ export default function Home() {
                   initial={{ opacity: 1, scale: 1 }}
                   whileTap={{ opacity: 1, scale: 0.98 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-              
                   className="group/email font-serif font-bold text-xl sm:text-4xl md:text-5xl tracking-tighter flex justify-center"
                   href="mailto:diegoncarmona@gmail.com"
                 >
@@ -355,7 +354,8 @@ export default function Home() {
       </main>
       <footer className="bg-bglight dark:bg-bgdark h-25 items-center justify-center flex px-8">
         <p className="opacity-70 text-center font-sans font-semibold tracking-tight text-sm text-black dark:text-white py-4">
-          &copy; {new Date().getFullYear()} Diego Carmona. {translations[lang].footer.text}
+          &copy; {new Date().getFullYear()} Diego Carmona.{" "}
+          {translations[lang].footer.text}
           <Link
             href="https://github.com/diegocarmn/portfolio"
             target="_blank"

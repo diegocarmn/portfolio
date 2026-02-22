@@ -23,7 +23,7 @@ interface ProjectsCardProps {
   lang: "en" | "pt";
 }
 
-const MotionArrow = motion(IoMdArrowRoundUp);
+const MotionArrow = motion.create(IoMdArrowRoundUp);
 
 const ProjectsCard = ({
   mockupImage,

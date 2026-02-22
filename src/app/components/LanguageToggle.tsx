@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
-const MotionArrow = motion(IoIosArrowUp);
+const MotionArrow = motion.create(IoIosArrowUp);
 
 const LanguageToggle = ({
   lang,
@@ -14,7 +14,6 @@ const LanguageToggle = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement | null>(null);
-  
 
   const handleSelect = (value: "en" | "pt") => {
     setLang(value);

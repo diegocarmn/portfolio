@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Nunito } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -15,6 +16,7 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://carmona.vercel.app"),
   title: "Diego Carmona | Full-stack Developer",
   description:
     "Diego Carmona's personal portfolio showcasing projects, skills, and contact information. Built with Next.js, TypeScript, and Tailwind CSS.",
@@ -71,7 +73,7 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  }, 
+  },
 };
 
 export default function RootLayout({
@@ -83,6 +85,7 @@ export default function RootLayout({
     <html lang="en" className="dark bg-bglight dark:bg-bgdark">
       <body className={`${geist.variable} ${nunito.variable} antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
