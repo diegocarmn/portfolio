@@ -18,7 +18,7 @@ const CopyEmailButton = ({ lang }: { lang: "en" | "pt" }) => {
       onClick={handleCopy}
       disabled={copied}
       animate={{
-        backgroundColor: copied ? "rgb(22, 163, 74)" : "rgb(59, 130, 246)",
+        backgroundColor: copied ? "rgb(22, 163, 74)" : "rgb(26, 140, 216)",
       }}
       transition={{
         duration: 0.25,

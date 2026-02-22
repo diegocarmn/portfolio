@@ -359,7 +359,7 @@ export default function Home() {
           <Link
             href="https://github.com/diegocarmn/portfolio"
             target="_blank"
-            className="ml-2 text-primary hover:underline inline-block"
+            className="ml-2 text-primarydark hover:underline inline-block"
           >
             {translations[lang].footer.source}
           </Link>
