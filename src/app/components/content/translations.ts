@@ -43,6 +43,7 @@ export const translations = {
           "AI API",
           "Auth.js",
           "PostgreSQL",
+          "REST APIs"
         ],
       },
 
@@ -115,7 +116,6 @@ export const translations = {
 
       whatsapp: {
         title: "",
-        subtitle: "",
         description: "",
       },
 
@@ -156,9 +156,9 @@ export const translations = {
     hero: {
       tag: "Disponível para projetos",
       name: "Diego Carmona.",
-      title: "Desenvolvedor Full-stack.",
+      title: "Desenvolvedor Full Stack.",
       subtitle:
-        "Resolvedor de problemas com experiência em manter sistemas reais funcionando.",
+        "Focado em resolver problemas e manter sistemas reais funcionando.",
       button: "Fale comigo",
     },
 
@@ -172,12 +172,12 @@ export const translations = {
           "CineAI é uma plataforma de descoberta de filmes que usa Inteligência Artificial para fazer recomendações com base no comportamento, gosto e humor do usuário.",
         subtitle: "Plataforma de Descoberta de Filmes com IA",
         overview:
-          "CineAI é uma aplicação web full-stack focada em recomendações de filmes guiadas por IA, combinando inferência baseada em LLM com dados atualizados de filmes e estado persistente do usuário. O sistema adapta as recomendações com base nos favoritos, histórico de interação e no humor informado pelo usuário.",
+          "CineAI é uma aplicação web full-stack focada em recomendações de filmes baseadas em IA, combinando inferência baseada em LLM com dados atualizados de filmes e dados persistentes do usuário. O sistema adapta as recomendações com base nos favoritos, histórico de interação e no humor informado pelo usuário.",
         features: [
           "Motor de recomendação com LLM usando Groq (modelos LLaMA)",
           "Busca de filmes no servidor e listas de tendência via TMDB API",
           "Autenticação OAuth com Auth.js (provedor Google)",
-          "Atualizações em tempo real na interface, estados de loading e tratamento resiliente de erros",
+          "Atualizações em tempo real na interface, estados de carregamento e tratamento resiliente de erros",
         ],
         tags: [
           "Next.js",
@@ -185,9 +185,10 @@ export const translations = {
           "React",
           "Node.js",
           "Tailwind CSS",
-          "AI API",
+          "API de IA",
           "Auth.js",
           "PostgreSQL",
+          "APIs REST",
         ],
       },
 
@@ -197,7 +198,7 @@ export const translations = {
           "Pitada ajuda pessoas a decidirem o que cozinhar transformando os ingredientes que já têm em casa em receitas simples e personalizadas usando IA.",
         subtitle: "App Gerador Inteligente de Receitas",
         overview:
-          "Pitada é uma aplicação web full-stack leve que gera receitas com apoio de IA a partir dos ingredientes fornecidos pelo usuário. O projeto prioriza desempenho, acessibilidade e padrões modernos da web, entregando uma experiência rápida e inclusiva de assistente de cozinha.",
+          "Pitada é uma aplicação web full stack, leve e focada em desempenho, que gera receitas com apoio de IA a partir dos ingredientes fornecidos pelo usuário. O projeto prioriza desempenho, acessibilidade e padrões modernos da web, entregando uma experiência rápida, acessível e pensada para o dia a dia na cozinha.",
         features: [
           "Geração de receitas baseada em IA usando LLMs da Groq",
           "Fluxo de entrada orientado por ingredientes com gestão de estado limpa",
@@ -211,7 +212,7 @@ export const translations = {
           "TypeScript",
           "React",
           "Tailwind CSS",
-          "AI API",
+          "API de IA",
           "PWA",
         ],
       },
@@ -228,7 +229,7 @@ export const translations = {
         intro: "Olá! Eu",
         intro2: "sou Diego",
         description:
-          "Sou um desenvolvedor full stack focado em construir produtos reais de ponta a ponta. Minha experiência em suporte técnico moldou a forma como eu trabalho: me importo com confiabilidade, senso de responsabilidade e com o que acontece depois que algo entra em produção. Gosto de atuar em toda a stack, dos detalhes da interface à lógica de backend e dados, sempre pensando no uso real.",
+          "Sou desenvolvedor full stack, focado em construir produtos reais de ponta a ponta. Minha experiência em suporte técnico moldou a forma como eu trabalho: me importo com confiabilidade, responsabilidade e com o que acontece depois que algo entra em produção. Gosto de atuar em toda a stack, dos detalhes da interface à lógica de backend e dados, sempre pensando no uso real.",
         button: {
           text: "Ver currículo",
           link: "/curriculo.pdf",
@@ -256,11 +257,10 @@ export const translations = {
     contact: {
       title: "Vamos conversar!",
       description:
-        "Estou sempre interessado em ouvir sobre novas oportunidades, colaborações ou apenas conversar sobre tecnologia. Manda uma mensagem e eu vou responder o mais breve possível.",
+        "Estou sempre aberto a conversar sobre novos projetos, colaborações ou simplesmente trocar ideias sobre tecnologia. Manda uma mensagem que eu respondo assim que possível.",
 
       whatsapp: {
         title: "WhatsApp",
-        subtitle: "+55 85 9 9999-9999",
         description: "Enviar mensagem",
       },
 
@@ -286,7 +286,7 @@ export const translations = {
 
     footer: {
       text: "Feito com uma boa playlist.",
-      source: "Código Fonte",
+      source: "Código-fonte",
     },
   },
 };
