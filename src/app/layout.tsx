@@ -16,13 +16,13 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://carmona.vercel.app"),
-  title: "Diego Carmona | Full-stack Developer",
+  metadataBase: new URL("https://diegocarmona.me"),
+  title: "Diego Carmona | Software Engineer",
   description:
     "Diego Carmona's personal portfolio showcasing projects, skills, and contact information. Built with Next.js, TypeScript, and Tailwind CSS.",
   keywords: [
     "Diego Carmona",
-    "Full-stack Developer",
+    "Software Engineer",
     "Next.js Portfolio",
     "TypeScript Developer",
     "React Developer",
@@ -39,10 +39,10 @@ export const metadata: Metadata = {
   publisher: "Diego Carmona",
 
   openGraph: {
-    title: "Diego Carmona | Full-stack Developer",
+    title: "Diego Carmona | Software Engineer",
     description:
       "Diego Carmona's personal portfolio showcasing projects, skills, and contact information. Built with Next.js, TypeScript, and Tailwind CSS.",
-    url: "https://carmona.vercel.app",
+    url: "https://diegocarmona.me",
     siteName: "Diego Carmona Portfolio",
     locale: "en-US",
     type: "website",
@@ -51,16 +51,16 @@ export const metadata: Metadata = {
         url: "/preview.png",
         width: 1200,
         height: 630,
-        alt: "Pitada - Aplicativo de receitas com IA",
+        alt: "Diego Carmona Portfolio Preview",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Pitada - Receitas com IA",
+    title: "Diego Carmona | Software Engineer",
     description:
-      "Descubra receitas incríveis com os ingredientes que você já tem em casa.",
+      "Diego Carmona's personal portfolio showcasing projects, skills, and contact information.",
     images: ["/preview.png"],
   },
   robots: {
