@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import StructuredData from "./components/StructuredData";
 import { Geist, Nunito } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+
 
 const geist = Geist({
   subsets: ["latin"],
@@ -83,6 +85,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark bg-bglight dark:bg-bgdark">
+      <head>
+        <StructuredData />
+      </head>
       <body className={`${geist.variable} ${nunito.variable} antialiased`}>
         {children}
         <Analytics />
