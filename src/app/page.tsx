@@ -99,6 +99,7 @@ export default function Home() {
                   <br />
                   {translations[lang].hero.title}
                 </h1>
+                <p className="sr-only">Diego Carmona - Software Engineer</p>
 
                 <p className="py-5 card-text text-balance">
                   {translations[lang].hero.subtitle}
