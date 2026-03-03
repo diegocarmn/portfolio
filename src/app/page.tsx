@@ -335,7 +335,7 @@ export default function Home() {
                     description={
                       translations[lang].contact.whatsapp.description
                     }
-                    link="http://wa.me/+5551994638306"
+                    link="https://wa.me/+5551994638306"
                   />
                 )}
               </div>

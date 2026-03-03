@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   title: "Diego Carmona | Software Engineer",
   description:
     "Diego Carmona's personal portfolio showcasing projects, skills, and contact information. Built with Next.js, TypeScript, and Tailwind CSS.",
+  alternates: {
+    canonical: "https://diegocarmona.me",
+  },
   keywords: [
     "Diego Carmona",
     "Software Engineer",
@@ -29,8 +32,11 @@ export const metadata: Metadata = {
     "TypeScript Developer",
     "React Developer",
     "Node.js Developer",
-    "Software Engineer",
     "Web Developer",
+    "Full Stack Developer",
+    "Desenvolvedor",
+    "Portfolio",
+    "Desenvolvedor Full Stack",
   ],
   authors: [
     {
