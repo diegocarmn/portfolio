@@ -19,24 +19,26 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://diegocarmona.me"),
-  title: "Diego Carmona | Software Engineer",
+  title: "Diego Carmona | Software Developer",
   description:
-    "Diego Carmona's personal portfolio showcasing projects, skills, and contact information. Built with Next.js, TypeScript, and Tailwind CSS.",
+    "Diego Carmona — Software Developer specializing in React, Next.js, and TypeScript. Explore my projects, skills, and web development work.",
   alternates: {
     canonical: "https://diegocarmona.me",
   },
   keywords: [
     "Diego Carmona",
-    "Software Engineer",
-    "Next.js Portfolio",
-    "TypeScript Developer",
-    "React Developer",
-    "Node.js Developer",
-    "Web Developer",
+    "Diego Carmona developer",
+    "Software Developer Portfolio",
     "Full Stack Developer",
-    "Desenvolvedor",
-    "Portfolio",
-    "Desenvolvedor Full Stack",
+    "React Developer",
+    "Next.js Developer",
+    "TypeScript Developer",
+    "Node.js Developer",
+    "JavaScript Developer",
+    "Web Developer",
+    "React Next.js portfolio",
+    "Diego Carmona desenvolvedor",
+    "Diego Carmona dev",
   ],
   authors: [
     {
@@ -45,18 +47,24 @@ export const metadata: Metadata = {
   ],
   creator: "Diego Carmona",
   publisher: "Diego Carmona",
+  category: "technology",
+  applicationName: "Diego Carmona Portfolio",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
 
   openGraph: {
-    title: "Diego Carmona | Software Engineer",
+    title: "Diego Carmona | Software Developer",
     description:
-      "Diego Carmona's personal portfolio showcasing projects, skills, and contact information. Built with Next.js, TypeScript, and Tailwind CSS.",
+      "Diego Carmona — Software Developer specializing in React, Next.js, and TypeScript. Explore my projects, skills, and web development work.",
     url: "https://diegocarmona.me",
     siteName: "Diego Carmona Portfolio",
     locale: "en-US",
     type: "website",
     images: [
       {
-        url: "/preview.png",
+        url: "https://diegocarmona.me/preview.png",
         width: 1200,
         height: 630,
         alt: "Diego Carmona Portfolio Preview",
@@ -66,10 +74,10 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Diego Carmona | Software Engineer",
+    title: "Diego Carmona | Software Developer",
     description:
-      "Diego Carmona's personal portfolio showcasing projects, skills, and contact information.",
-    images: ["/preview.png"],
+      "Diego Carmona — Software Developer specializing in React, Next.js, and TypeScript. Explore my projects, skills, and web development work.",
+    images: ["https://diegocarmona.me/preview.png"],
   },
   robots: {
     index: true,

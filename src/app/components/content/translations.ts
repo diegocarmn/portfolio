@@ -11,7 +11,7 @@ export const translations = {
     hero: {
       tag: "Available for projects",
       name: "Diego Carmona.",
-      title: "Software Engineer.",
+      title: "Software Developer.",
       subtitle:
         "Problem solver with a background in keeping real systems running.",
       button: "Contact me",
@@ -84,7 +84,7 @@ export const translations = {
         intro: "Hi, there!",
         intro2: "I'm Diego",
         description:
-          "I'm a software engineer focused on building real products end to end. My background in technical support shaped how I work: I care deeply about reliability, ownership, and what happens after something goes live. I enjoy working across the stack, from user-facing details to backend logic and data, always grounded in real-world usage.",
+          "I'm a software developer focused on building real products end to end. My background in technical support shaped how I work: I care deeply about reliability, ownership, and what happens after something goes live. I enjoy working across the stack, from user-facing details to backend logic and data, always grounded in real-world usage.",
         button: {
           text: "View Resume",
           link: "/resume.pdf",
@@ -156,7 +156,7 @@ export const translations = {
     hero: {
       tag: "Disponível para projetos",
       name: "Diego Carmona.",
-      title: "Software Engineer.",
+      title: "Desenvolvedor de Software.",
       subtitle:
         "Focado em resolver problemas e manter sistemas reais funcionando.",
       button: "Fale comigo",
@@ -229,7 +229,7 @@ export const translations = {
         intro: "Olá! Eu",
         intro2: "sou Diego",
         description:
-          "Sou um engenheiro de software focado em construir produtos reais de ponta a ponta. Minha experiência em suporte técnico moldou a forma como eu trabalho - me importo com confiabilidade, responsabilidade e com o que acontece depois que algo entra em produção. Gosto de atuar em toda a stack, dos detalhes da interface à lógica de backend e dados, sempre pensando no uso real.",
+          "Sou um desenvolvedor de software focado em construir produtos reais de ponta a ponta. Minha experiência em suporte técnico moldou a forma como eu trabalho - me importo com confiabilidade, responsabilidade e com o que acontece depois que algo entra em produção. Gosto de atuar em toda a stack, dos detalhes da interface à lógica de backend e dados, sempre pensando no uso real.",
         button: {
           text: "Ver currículo",
           link: "/curriculo.pdf",
