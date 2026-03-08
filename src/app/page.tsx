@@ -364,7 +364,7 @@ export default function Home() {
           <Link
             href="https://github.com/diegocarmn/portfolio"
             target="_blank"
-            className="ml-1 text-primarydark hover:underline inline-block"
+            className="ml-1 text-black dark:text-white underline inline-block"
             aria-label={translations[lang].footer.source}
           >
             {translations[lang].footer.source}
