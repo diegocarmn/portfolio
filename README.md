@@ -1,24 +1,48 @@
-# Diego Carmona - Portfolio
+<h1 >
+  <img src="./src/app/favicon.ico" width="28" style="vertical-align: -4px; margin-right:8px;" />
+  Diego Carmona — Software Developer Portfolio
+</h1>
 
 A production-grade, high-performance portfolio built as a real-world web product. Designed with a strong focus on **performance, accessibility, SEO, and long-term maintainability**, while showcasing modern full-stack engineering practices.
 
-**Live:** https://diegocarmona.me  
-**Repository:** https://github.com/diegocarmn/portfolio
-
-## Overview
+🔗 **Live:** https://diegocarmona.me  
+📂 **Repository:** https://github.com/diegocarmn/portfolio
+## 📖 Overview
 
 This project is a **fully production-ready portfolio** that reflects how I approach real software systems:
 
-![Portfolio preview](./public/preview.png)
+
+<p align="center">
+  <img src="./public/screenshots/desktop.png" width="1000"/>
+</p>
 
 - Clear product identity and positioning
 - End-to-end ownership (UX → frontend → SEO → deployment)
 - Strong technical foundations with modern React and Next.js
 - Measurable real-world results (indexing, ranking, performance)
 
+### ⚡ Lighthouse Score
+
+- Performance: 97
+- Accessibility: 100
+- Best Practices: 100
+- SEO: 100
+
+> ⚠️ **Note:** Measured on production deployment.
+- Performance optimized with image compression and modern formats
+- Accessibility-first design with semantic HTML and ARIA support
+- SEO architecture using Next.js Metadata API and structured data
+
 It is intentionally built as a **single-page application with rich interactions**, while still being **crawlable, indexable, and SEO-safe**.
 
-## Tech Stack
+## ✨ Key Highlights
+- Lighthouse 97/100 performance score
+- Production deployment with Vercel
+- Internationalization (EN / PT-BR)
+- Structured data and full SEO architecture
+
+
+## 🧰 Tech Stack
 
 ### Platform & Frameworks
 
@@ -38,7 +62,7 @@ It is intentionally built as a **single-page application with rich interactions*
 - **Vercel Analytics** – real usage and performance insights
 - **Next/Image & next/font** – asset and font optimization
 
-## Features
+## ✨ Features
 
 ### Performance & UX
 
@@ -63,11 +87,11 @@ It is intentionally built as a **single-page application with rich interactions*
 - Dynamic language switching without reloads
 - Correct `lang` attribute handling
 
-## SEO (Search Engine Optimization)
+## 🔎 SEO (Search Engine Optimization)
 
-SEO in this project is treated as **part of the system design**
+SEO in this project is treated as **a core part of the system design**.
 
-### Implemented SEO Architecture
+### 🏗️ Implemented SEO Architecture
 
 - **Next.js Metadata API**  
   Titles, descriptions, authorship, and keywords
@@ -86,7 +110,7 @@ SEO in this project is treated as **part of the system design**
 - **Favicon & preview assets**  
   Properly exposed for SERP and social platforms
 
-### Real-World Result
+### 📈 Real-World Result
 
 - Indexed within hours of Search Console verification
 - Ranking #1 for branded searches such as:
@@ -96,7 +120,7 @@ SEO in this project is treated as **part of the system design**
 
 This validates the architecture: strong SEO fundamentals, correct semantics, and fast indexing without sacrificing UX.
 
-### SEO Architecture Diagram
+### 🧭 SEO Architecture Diagram
 
 ```
 Search Engine Crawler
@@ -159,7 +183,7 @@ src/
 └── tsconfig.json                  # TypeScript strict mode enabled
 ```
 
-## Local Development
+## 💻 Local Development
 
 ### Requirements
 
@@ -201,9 +225,9 @@ npm start
 npm run lint
 ```
 
-## Deployment
+## 🚀 Deployment
 
-Deployed on Vercel with automatic deployments from GitHub:
+<a href="https://carmona.vercel.app">Deployed on Vercel</a> with automatic deployments from GitHub:
 
 ```bash
 # Push to main branch triggers deployment
@@ -217,7 +241,7 @@ git push origin main
 - Edge caching
 - Built-in analytics
 
-## Code Quality
+## 🧹 Code Quality
 
 - ✅ TypeScript strict mode enabled
 - ✅ No implicit `any`
@@ -232,11 +256,11 @@ This project is licensed under the **MIT License**.
 
 > ⚠️ **Note:** This repository is open-source, but personal branding, identity, and content must not be reused to impersonate or misrepresent the author.
 
-See the [`LICENSE`](./LICENSE) file for full details.
+See the [`LICENSE`](./LICENSE.md) file for full details.
 
 ## 👤 Author
 
-**Diego Carmona** - Software Engineer
+**Diego Carmona** - Software Developer
 
 - 🔗 [LinkedIn](https://linkedin.com/in/diegocarmn)
 - 🔗 [GitHub](https://github.com/diegocarmn)
@@ -244,3 +268,7 @@ See the [`LICENSE`](./LICENSE) file for full details.
 
 📩 Interested in working together?  
 Feel free to reach out via LinkedIn or email.
+
+---
+
+<p align="center">🎧 Crafted with code, curiosity, and a good playlist.</p>
