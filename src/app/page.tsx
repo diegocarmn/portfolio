@@ -239,7 +239,7 @@ export default function Home() {
 
           <div className="flex flex-col md:flex-row gap-4 sm:gap-4 md:gap-8 md:max-w-full">
             <ProjectsCard
-              mockupImage="/mockupcineai.png"
+              mockupImage="/mockupcineai.webp"
               logoImage="/logo-cineai.png"
               title={translations[lang].projects.cineai.title}
               description={translations[lang].projects.cineai.description}
@@ -252,7 +252,7 @@ export default function Home() {
               lang={lang}
             />
             <ProjectsCard
-              mockupImage="/mockuppitada.png"
+              mockupImage="/mockuppitada.webp"
               logoImage="/logo-pitada.png"
               title={translations[lang].projects.pitada.title}
               description={translations[lang].projects.pitada.description}

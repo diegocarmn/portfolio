@@ -59,7 +59,7 @@ const BentoGrid = ({ lang }: { lang: "en" | "pt" }) => {
               {/* static primary border */}
               <div className="w-20 h-20 rounded-full border-3 border-primary relative z-10 overflow-hidden transition-colors duration-300 group-hover/card:border-transparent">
                 <Image
-                  src="/profile.jpg"
+                  src="/profile.webp"
                   alt="Profile Picture"
                   width={200}
                   height={200}

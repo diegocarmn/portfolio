@@ -28,16 +28,16 @@ const LocationCard = ({ lang }: { lang: "en" | "pt" }) => {
 
   const backgrounds = {
     1: {
-      light: "/map/zoom1-light.png",
-      dark: "/map/zoom1-dark.png",
+      light: "/map/zoom1-light.webp",
+      dark: "/map/zoom1-dark.webp",
     },
     2: {
-      light: "/map/zoom2-light.png",
-      dark: "/map/zoom2-dark.png",
+      light: "/map/zoom2-light.webp",
+      dark: "/map/zoom2-dark.webp",
     },
     3: {
-      light: "/map/zoom3-light.png",
-      dark: "/map/zoom3-dark.png",
+      light: "/map/zoom3-light.webp",
+      dark: "/map/zoom3-dark.webp",
     },
   };
 
