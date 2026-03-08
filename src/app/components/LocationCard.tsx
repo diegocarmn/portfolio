@@ -90,6 +90,8 @@ const LocationCard = ({ lang }: { lang: "en" | "pt" }) => {
         <button
           className="rounded-full bg-white dark:bg-navyblack grid place-items-center w-11 h-11 border border-black/30 dark:border-white/30 hover:scale-110 active:scale-90 transition-transform duration-200 cursor-pointer absolute right-4 bottom-4 z-10"
           onClick={increaseZoom}
+          aria-label={translations[lang].accessibility.zoomIn}
+          type="button"
         >
           <IoIosAdd className="h-8 w-8" />
         </button>
@@ -100,6 +102,8 @@ const LocationCard = ({ lang }: { lang: "en" | "pt" }) => {
         <button
           className="rounded-full bg-white dark:bg-navyblack grid place-items-center w-11 h-11 border border-black/30 dark:border-white/30 hover:scale-110 active:scale-90 transition-transform duration-200 cursor-pointer absolute left-4 bottom-4 z-10"
           onClick={decreaseZoom}
+          aria-label={translations[lang].accessibility.zoomOut}
+          type="button"
         >
           <IoIosRemove className="h-8 w-8" />
         </button>

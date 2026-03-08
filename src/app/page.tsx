@@ -185,6 +185,7 @@ export default function Home() {
                     }}
                     icon={<IoIosArrowForward className="h-4 w-4" />}
                     variant="primarySmall"
+                    ariaLabel={translations[lang].hero.buttonAriaLabel}
                   >
                     {translations[lang].hero.button}
                   </Button>
@@ -213,7 +214,7 @@ export default function Home() {
                     behavior: "smooth",
                   });
                 }}
-                aria-label="Scroll to Projects section"
+                aria-label={translations[lang].hero.scrollDown}
               >
                 <IoIosArrowDown className="h-8 w-8 sm:h-10 sm:w-10 opacity-70" />
               </motion.button>
@@ -312,6 +313,7 @@ export default function Home() {
                   transition={{ duration: 0.2, ease: "easeOut" }}
                   className="group/email font-serif font-bold text-xl sm:text-4xl md:text-5xl tracking-tighter flex justify-center"
                   href="mailto:diegoncarmona@gmail.com"
+                  aria-label={translations[lang].accessibility.emailLabel}
                 >
                   diegoncarmona@gmail.com
                   <MdArrowOutward className="mt-0.5 sm:mt-1 h-6 w-6 sm:h-9 sm:w-9 md:h-12 md:w-12 group-hover/email:translate-x-1 group-hover/email:-translate-y-1 transition-transform duration-300" />
@@ -362,7 +364,8 @@ export default function Home() {
           <Link
             href="https://github.com/diegocarmn/portfolio"
             target="_blank"
-            className="ml-2 text-primarydark hover:underline inline-block"
+            className="ml-1 text-primarydark hover:underline inline-block"
+            aria-label={translations[lang].footer.source}
           >
             {translations[lang].footer.source}
           </Link>

@@ -1,3 +1,5 @@
+import { button } from "framer-motion/client";
+import { access } from "fs";
 
 export const translations = {
   en: {
@@ -15,6 +17,8 @@ export const translations = {
       subtitle:
         "Problem solver with a background in keeping real systems running.",
       button: "Contact me",
+      buttonAriaLabel: "Go to contact section",
+      scrollDown: "Scroll down to see my projects",
     },
 
     projects: {
@@ -143,6 +147,16 @@ export const translations = {
       text: "Built with a good playlist.",
       source: "Source Code",
     },
+
+    accessibility: {
+      expandCard: "Expand",
+      collapseCard: "Collapse",
+      darkMode: "Dark mode",
+      lightMode: "Light mode",
+      zoomIn: "Zoom in",
+      zoomOut: "Zoom out",
+      emailLabel: "Email address for contact",
+    },
   },
 
   pt: {
@@ -160,6 +174,8 @@ export const translations = {
       subtitle:
         "Focado em resolver problemas e manter sistemas reais funcionando.",
       button: "Fale comigo",
+      buttonAriaLabel: "Ir à seção de contato",
+      scrollDown: "Desça para ver meus projetos",
     },
 
     projects: {
@@ -287,6 +303,16 @@ export const translations = {
     footer: {
       text: "Feito com uma boa playlist.",
       source: "Código-fonte",
+    },
+
+    accessibility: {
+      expandCard: "Expandir",
+      collapseCard: "Recolher",
+      darkMode: "Modo escuro",
+      lightMode: "Modo claro",
+      zoomIn: "Aumentar zoom",
+      zoomOut: "Diminuir zoom",
+      emailLabel: "Endereço de email para contato",
     },
   },
 };

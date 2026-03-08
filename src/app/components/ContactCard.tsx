@@ -15,6 +15,7 @@ const ContactCard = ({
       href={link}
       target="_blank"
       className="relative group/contact w-full bg-white dark:bg-navyblack dark:border-white/10 text-left rounded-2xl p-5 shadow-md border border-black/10 hover:bg-black/3 dark:hover:bg-white/5 active:scale-95 transition-transform duration-200"
+      aria-label={`${title} - ${description}`}
     >
       <h3 className="card-subtitle font-serif">
         {title}
@@ -26,6 +27,7 @@ const ContactCard = ({
         <IoIosArrowForward
           className="text-black dark:text-white group-hover/contact:translate-x-1 transition-transform duration-200"
           size={24}
+          aria-hidden="true"
         />
       </div>
     </Link>

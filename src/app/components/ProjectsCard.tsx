@@ -39,6 +39,7 @@ const ProjectsCard = ({
   lang,
 }: ProjectsCardProps) => {
   const [isCardExpanded, setIsCardExpanded] = useState(false);
+  const detailsId = `project-details-${title.replace(/\s+/g, "-").toLowerCase()}`;
 
   return (
     <motion.div
@@ -68,6 +69,15 @@ const ProjectsCard = ({
         
           "
       onClick={() => setIsCardExpanded(!isCardExpanded)}
+      aria-expanded={isCardExpanded}
+      aria-controls={detailsId}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          setIsCardExpanded(!isCardExpanded);
+        }
+      }}
     >
       <Image
         src={mockupImage}
@@ -100,7 +110,6 @@ const ProjectsCard = ({
       <div className="flex flex-row items-center my-2 md:mt-4 sm:mx-2">
         <span className="w-full border-t border-black/30 dark:border-white/30 mt-4 mb-2"></span>
         <button
-          onClick={() => setIsCardExpanded(!isCardExpanded)}
           className="
           mx-auto flex-none
           grid place-items-center
@@ -114,7 +123,7 @@ const ProjectsCard = ({
           cursor-pointer
           "
           title={
-            isCardExpanded ? "Collapse card details" : "Expand card details"
+            isCardExpanded ? translations[lang].accessibility.collapseCard : translations[lang].accessibility.expandCard
           }
         >
           <MotionArrow
@@ -140,6 +149,7 @@ const ProjectsCard = ({
             }}
             exit={{ opacity: 0, y: -20, height: 0 }}
             className="flex flex-col gap-4 md:gap-4 sm:mx-2 md:mt-2"
+            id={detailsId}
           >
             {subtitle && (
               <h4 className="card-subtitle font-serif">{subtitle}</h4>
@@ -175,6 +185,7 @@ const ProjectsCard = ({
           target="_blank"
           icon={<IoIosArrowForward className="h-4 w-4" />}
           variant="secondary"
+          ariaLabel="Github"
         >
           GitHub
         </Button>
@@ -183,6 +194,7 @@ const ProjectsCard = ({
           target="_blank"
           icon={<IoIosArrowForward className="h-4 w-4" />}
           variant="primary"
+          ariaLabel={translations[lang].projects.projectscard.button}
         >
           {translations[lang].projects.projectscard.button}
         </Button>

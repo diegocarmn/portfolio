@@ -4,6 +4,7 @@ interface ButtonProps {
   children?: React.ReactNode | null;
   link?: string;
   target?: string;
+  ariaLabel?: string;
   icon?: React.ReactNode;
   variant?: "primary" | "secondary" | "primarySmall" | "secondarySmall";
   className?: string;
@@ -14,6 +15,7 @@ const Button = ({
   children,
   link,
   target,
+  ariaLabel,
   icon,
   variant = "primary",
   className = "",
@@ -57,6 +59,8 @@ const Button = ({
       <button
         onClick={onClick}
         className={`${baseStyles} ${variantStyles[variant]} ${className}`}
+        aria-label={ariaLabel}
+        type="button"
       >
         <span
           className={`absolute inset-0 ${hoverBgStyles[variant]} -translate-x-full group-hover/button:translate-x-0 transition-transform duration-300`}
@@ -75,6 +79,7 @@ const Button = ({
     <Link
       href={link || "#"}
       target={target}
+      aria-label={ariaLabel}
       className={`${baseStyles} ${variantStyles[variant]} ${className}`}
       onClick={(e) => {
         e.stopPropagation();

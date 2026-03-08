@@ -81,7 +81,7 @@ const Navbar = ({
           {translations[lang].navbar.contact}
         </NavbarButton>
         <div className="flex border-l gap-1 border-black/30 dark:border-white/30 pl-3 items-center">
-          <DarkModeToggle />
+          <DarkModeToggle lang={lang} />
           <LanguageToggle lang={lang} setLang={setLang} />
         </div>
       </motion.nav>
@@ -158,7 +158,7 @@ const Navbar = ({
                 {translations[lang].navbar.contact}
               </NavbarButton>
               <div className="flex gap-4 pt-4 w-full justify-center border-t border-black/80 dark:border-white/80">
-                <DarkModeToggle />
+                <DarkModeToggle lang={lang} />
                 <LanguageToggle lang={lang} setLang={setLang} />
               </div>
             </nav>

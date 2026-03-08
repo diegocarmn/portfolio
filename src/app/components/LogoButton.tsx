@@ -22,6 +22,7 @@ const LogoButton = ({
         href={link || "#"}
         target={target}
         rel="noopener noreferrer"
+        aria-label={title}
         className="flex items-center justify-center w-6 h-6 opacity-70 hover:opacity-100 active:scale-90 transition-all duration-200"
       >
         {logo}

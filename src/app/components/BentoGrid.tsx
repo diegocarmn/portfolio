@@ -91,6 +91,7 @@ const BentoGrid = ({ lang }: { lang: "en" | "pt" }) => {
             variant="primarySmall"
             icon={<IoIosArrowForward className="h-4 w-4" />}
             className="mx-auto"
+            ariaLabel={translations[lang].about.profile.button.text}
           >
             {translations[lang].about.profile.button.text}
           </Button>
@@ -150,6 +151,7 @@ const BentoGrid = ({ lang }: { lang: "en" | "pt" }) => {
             variant="secondarySmall"
             icon={<IoIosArrowForward className="h-4 w-4" />}
             className="mx-auto"
+            ariaLabel={translations[lang].about.research.button}
           >
             {translations[lang].about.research.button}
           </Button>
