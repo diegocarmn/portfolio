@@ -23,7 +23,7 @@ This project is a **fully production-ready portfolio** that reflects how I appro
 
 ### ⚡ Lighthouse Score
 
-- Performance: 97
+- Performance: 99
 - Accessibility: 100
 - Best Practices: 100
 - SEO: 100
@@ -36,7 +36,7 @@ This project is a **fully production-ready portfolio** that reflects how I appro
 It is intentionally built as a **single-page application with rich interactions**, while still being **crawlable, indexable, and SEO-safe**.
 
 ## ✨ Key Highlights
-- Lighthouse 97/100 performance score
+- Lighthouse 99/100 performance score
 - Production deployment with Vercel
 - Internationalization (EN / PT-BR)
 - Structured data and full SEO architecture
@@ -158,7 +158,7 @@ src/
 │   │   ├── Button.tsx             # Reusable button component
 │   │   ├── ContactCard.tsx        # Contact method cards
 │   │   ├── CopyEmailButton.tsx    # Email copy with toast feedback
-│   │   ├── DarkModeToggle.jsx     # Theme switcher
+│   │   ├── DarkModeToggle.tsx     # Theme switcher
 │   │   ├── LanguageToggle.tsx     # Language state toggle
 │   │   ├── LocationCard.tsx       # Interactive map zoom with crossfade
 │   │   ├── LogoButton.tsx         # Social links reusable button
@@ -178,6 +178,7 @@ src/
 │   └── sitemap.ts                 # Dynamic sitemap.xml generation
 ├── public/
 │   ├── map/                       # Map assets (zoom levels)
+|   |-- screenshots/               # Website screenshots for README
 │   ├── preview.png                # OG/Twitter preview image (1200×630)
 │   └── *.png                      # Project mockups & logos
 └── tsconfig.json                  # TypeScript strict mode enabled

@@ -16,6 +16,8 @@ export default function StructuredData() {
       "https://github.com/diegocarmn",
       "https://diegocarmona.me",
     ],
+    mainEntityOfPage: "https://diegocarmona.me",
+    identifier: "https://diegocarmona.me/#person",
     knowsAbout: [
       "Software Development",
       "Full Stack Web Development",
