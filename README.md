@@ -7,6 +7,9 @@ A production-grade, high-performance portfolio built as a real-world web product
 
 🔗 **Live:** https://diegocarmona.me  
 📂 **Repository:** https://github.com/diegocarmn/portfolio
+
+📊 **Performance Report:** [View metrics](#-performance)
+
 ## 📖 Overview
 
 This project is a **fully production-ready portfolio** that reflects how I approach real software systems:
@@ -21,14 +24,29 @@ This project is a **fully production-ready portfolio** that reflects how I appro
 - Strong technical foundations with modern React and Next.js
 - Measurable real-world results (indexing, ranking, performance)
 
-### ⚡ Lighthouse Score
+## ⚡ Performance
 
+Measured in production:
+
+**Lighthouse**
 - Performance: 99
 - Accessibility: 100
 - Best Practices: 100
 - SEO: 100
 
-> ⚠️ **Note:** Measured on production deployment.
+**Real User Metrics (Vercel Speed Insights)**
+
+- Real Experience Score: **99**
+- First Contentful Paint: **~1.35s**
+- Largest Contentful Paint: **~2.08s**
+- Interaction to Next Paint: **~80ms**
+- Cumulative Layout Shift: **0**
+
+<p align="center">
+  <img src="./public/screenshots/speed-insights.png" alt="Vercel Speed Insights" width="1000"/>
+</p>
+
+
 - Performance optimized with image compression and modern formats
 - Accessibility-first design with semantic HTML and ARIA support
 - SEO architecture using Next.js Metadata API and structured data
@@ -59,7 +77,8 @@ It is intentionally built as a **single-page application with rich interactions*
 ### Tooling
 
 - **ESLint** – enforced code quality
-- **Vercel Analytics** – real usage and performance insights
+- **Vercel Analytics** – real usage and traffic insights
+- **Vercel Speed Insights** – real user performance metrics and Core Web Vitals monitoring
 - **Next/Image & next/font** – asset and font optimization
 
 ## ✨ Features
