@@ -3,6 +3,7 @@ import StructuredData from "./components/StructuredData";
 import { Geist, Nunito } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 
 const geist = Geist({
@@ -105,6 +106,7 @@ export default function RootLayout({
       <body className={`${geist.variable} ${nunito.variable} antialiased`}>
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
