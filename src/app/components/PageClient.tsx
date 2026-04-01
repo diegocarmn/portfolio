@@ -1,0 +1,388 @@
+"use client";
+
+import Navbar from "./Navbar";
+import React from "react";
+import StatusBadge from "./StatusBadge";
+import Button from "./Button";
+import ProjectsCard from "./ProjectsCard";
+import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
+import { IoLocationSharp } from "react-icons/io5";
+import { MdArrowOutward } from "react-icons/md";
+import BentoGrid from "./BentoGrid";
+import LogoButton from "./LogoButton";
+import CopyEmailButton from "./CopyEmailButton";
+import ContactCard from "./ContactCard";
+import translations from "./content/translations";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { blurUp, animatedCard } from "./animations";
+import VantaBackground from "./VantaBackground";
+
+const MotionLink = motion.create(Link);
+
+export default function PageClient() {
+  const homeRef = React.useRef<HTMLElement | null>(null);
+  const projectsRef = React.useRef<HTMLElement | null>(null);
+  const aboutRef = React.useRef<HTMLElement | null>(null);
+  const contactRef = React.useRef<HTMLElement | null>(null);
+
+  const [activeSection, setActiveSection] = React.useState<string | null>(null);
+  const [lang, setLang] = React.useState<"en" | "pt">("en");
+
+  React.useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
+    }
+  }, [lang]);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY < 10) {
+        setActiveSection("home");
+        return;
+      }
+
+      const sections = [
+        { ref: homeRef, id: "home" },
+        { ref: projectsRef, id: "projects" },
+        { ref: aboutRef, id: "about" },
+        { ref: contactRef, id: "contact" },
+      ];
+
+      const viewportCenter = window.innerHeight / 2;
+      let closestSection = sections[0];
+      let closestDistance = Infinity;
+
+      sections.forEach(({ ref, id }) => {
+        if (!ref.current) return;
+
+        const rect = ref.current.getBoundingClientRect();
+        const sectionCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(sectionCenter - viewportCenter);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestSection = { ref, id };
+        }
+      });
+
+      setActiveSection(closestSection.id);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <>
+      <Navbar
+        homeRef={homeRef}
+        projectsRef={projectsRef}
+        aboutRef={aboutRef}
+        contactRef={contactRef}
+        activeSection={activeSection}
+        lang={lang}
+        setLang={setLang}
+      />
+      <main className="text-black dark:text-white bg-bglight dark:bg-bgdark font-sans">
+        <VantaBackground>
+          <section
+            className="w-full h-screen px-4 pb-4 md:px-5 md:pb-5 flex items-center justify-center relative"
+            id="home"
+            ref={homeRef}
+          >
+            <div className="w-full h-full rounded-b-4xl outline-50 outline-bglight dark:outline-bgdark">
+              <motion.section
+                variants={blurUp}
+                initial="initial"
+                animate="animate"
+                className="
+                w-full h-full md:max-w-6xl 
+                flex flex-col justify-center
+                px-4 sm:px-10 md:px-20 md:mx-auto
+                "
+              >
+                <StatusBadge lang={lang} />
+
+                <h1 className="text-3xl sm:text-5xl md:text-6xl font-serif font-medium tracking-tight">
+                  {translations[lang].hero.name}
+                  <br />
+                  {translations[lang].hero.title}
+                </h1>
+                <p className="sr-only">
+                  Diego Carmona - {translations[lang].hero.title}
+                </p>
+
+                <p className="py-5 card-text text-balance">
+                  {translations[lang].hero.subtitle}
+                </p>
+
+                <div className="flex gap-2 sm:gap-4 items-center">
+                  <LogoButton
+                    link="https://github.com/diegocarmn"
+                    logo={
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width="48"
+                        height="48"
+                        color="currentColor"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M10 20.5675C6.57143 21.7248 3.71429 20.5675 2 17" />
+                        <path d="M10 22V18.7579C10 18.1596 10.1839 17.6396 10.4804 17.1699C10.6838 16.8476 10.5445 16.3904 10.1771 16.2894C7.13394 15.4528 5 14.1077 5 9.64606C5 8.48611 5.38005 7.39556 6.04811 6.4464C6.21437 6.21018 6.29749 6.09208 6.31748 5.9851C6.33746 5.87813 6.30272 5.73852 6.23322 5.45932C5.95038 4.32292 5.96871 3.11619 6.39322 2.02823C6.39322 2.02823 7.27042 1.74242 9.26698 2.98969C9.72282 3.27447 9.95075 3.41686 10.1515 3.44871C10.3522 3.48056 10.6206 3.41384 11.1573 3.28041C11.8913 3.09795 12.6476 3 13.5 3C14.3524 3 15.1087 3.09795 15.8427 3.28041C16.3794 3.41384 16.6478 3.48056 16.8485 3.44871C17.0493 3.41686 17.2772 3.27447 17.733 2.98969C19.7296 1.74242 20.6068 2.02823 20.6068 2.02823C21.0313 3.11619 21.0496 4.32292 20.7668 5.45932C20.6973 5.73852 20.6625 5.87813 20.6825 5.9851C20.7025 6.09207 20.7856 6.21019 20.9519 6.4464C21.6199 7.39556 22 8.48611 22 9.64606C22 14.1077 19.8661 15.4528 16.8229 16.2894C16.4555 16.3904 16.3162 16.8476 16.5196 17.1699C16.8161 17.6396 17 18.1596 17 18.7579V22" />
+                      </svg>
+                    }
+                    target="_blank"
+                    title="GitHub"
+                  ></LogoButton>
+
+                  <LogoButton
+                    link="https://www.linkedin.com/in/diegocarmn/"
+                    logo={
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width="48"
+                        height="48"
+                        color="currentColor"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M7 10V17" />
+                        <path d="M11 13V17M11 13C11 11.3431 12.3431 10 14 10C15.6569 10 17 11.3431 17 13V17M11 13V10" />
+                        <path d="M7.00801 7L6.99902 7" />
+                        <path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" />
+                      </svg>
+                    }
+                    target="_blank"
+                    title="LinkedIn"
+                  ></LogoButton>
+
+                  <LogoButton
+                    link="mailto:diegoncarmona@gmail.com"
+                    logo={
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width="48"
+                        height="48"
+                        color="currentColor"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M2 6L8.91302 9.91697C11.4616 11.361 12.5384 11.361 15.087 9.91697L22 6" />
+                        <path d="M2.01577 13.4756C2.08114 16.5412 2.11383 18.0739 3.24496 19.2094C4.37608 20.3448 5.95033 20.3843 9.09883 20.4634C11.0393 20.5122 12.9607 20.5122 14.9012 20.4634C18.0497 20.3843 19.6239 20.3448 20.7551 19.2094C21.8862 18.0739 21.9189 16.5412 21.9842 13.4756C22.0053 12.4899 22.0053 11.5101 21.9842 10.5244C21.9189 7.45886 21.8862 5.92609 20.7551 4.79066C19.6239 3.65523 18.0497 3.61568 14.9012 3.53657C12.9607 3.48781 11.0393 3.48781 9.09882 3.53656C5.95033 3.61566 4.37608 3.65521 3.24495 4.79065C2.11382 5.92608 2.08114 7.45885 2.01576 10.5244C1.99474 11.5101 1.99475 12.4899 2.01577 13.4756Z" />
+                      </svg>
+                    }
+                    title="Email"
+                  ></LogoButton>
+
+                  <Button
+                    onClick={() => {
+                      contactRef.current?.scrollIntoView({
+                        behavior: "smooth",
+                      });
+                    }}
+                    icon={<IoIosArrowForward className="h-4 w-4" />}
+                    variant="primarySmall"
+                    ariaLabel={translations[lang].hero.buttonAriaLabel}
+                  >
+                    {translations[lang].hero.button}
+                  </Button>
+                </div>
+              </motion.section>
+              <motion.button
+                animate={{
+                  y: [0, -10, 0, -10, 0],
+                }}
+                transition={{
+                  duration: 0.8,
+                  repeat: Infinity,
+                  delay: 2,
+                  repeatDelay: 2,
+                  ease: "easeInOut",
+                }}
+                className="
+                  flex items-center justify-center
+                   w-25 h-12 absolute
+                  bottom-15 md:bottom-10
+                  left-1/2 rounded-4xl
+                  -translate-x-1/2
+                  cursor-pointer"
+                onClick={() => {
+                  projectsRef.current?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+                aria-label={translations[lang].hero.scrollDown}
+              >
+                <IoIosArrowDown className="h-8 w-8 sm:h-10 sm:w-10 opacity-70" />
+              </motion.button>
+            </div>
+          </section>
+        </VantaBackground>
+        <section
+          ref={projectsRef}
+          className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 flex flex-col items-center pt-4 md:pt-8 md:mt-20 xl:mt-30"
+          id="projects"
+        >
+          <motion.h2
+            variants={blurUp}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center mb-4 md:pb-4
+            text-black dark:text-white font-serif text-5xl tracking-tight font-medium md:text-6xl"
+          >
+            {translations[lang].projects.title}
+          </motion.h2>
+
+          <div className="flex flex-col md:flex-row gap-4 sm:gap-4 md:gap-8 md:max-w-full">
+            <ProjectsCard
+              mockupImage="/mockupcineai.webp"
+              logoImage="/logo-cineai.png"
+              title={translations[lang].projects.cineai.title}
+              description={translations[lang].projects.cineai.description}
+              subtitle={translations[lang].projects.cineai.subtitle}
+              overview={translations[lang].projects.cineai.overview}
+              features={translations[lang].projects.cineai.features}
+              tags={translations[lang].projects.cineai.tags}
+              websiteLink="https://aicine.vercel.app"
+              githubLink="https://github.com/diegocarmn/cineai"
+              lang={lang}
+            />
+            <ProjectsCard
+              mockupImage="/mockuppitada.webp"
+              logoImage="/logo-pitada.png"
+              title={translations[lang].projects.pitada.title}
+              description={translations[lang].projects.pitada.description}
+              subtitle={translations[lang].projects.pitada.subtitle}
+              overview={translations[lang].projects.pitada.overview}
+              features={translations[lang].projects.pitada.features}
+              tags={translations[lang].projects.pitada.tags}
+              websiteLink="https://pitada.vercel.app"
+              githubLink="https://github.com/diegocarmn/pitada"
+              lang={lang}
+            />
+          </div>
+        </section>
+        <section
+          ref={aboutRef}
+          className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 flex flex-col items-center pt-4 md:pt-8 md:mt-20 xl:mt-30"
+          id="about"
+        >
+          <motion.h2
+            variants={blurUp}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center mb-4 md:pb-4
+            text-black dark:text-white font-serif text-5xl tracking-tight font-medium md:text-6xl"
+          >
+            {translations[lang].about.title}
+          </motion.h2>
+          <BentoGrid lang={lang} />
+        </section>
+        <motion.section
+          ref={contactRef}
+          variants={animatedCard}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="h-fit bg-white dark:bg-navyblack rounded-4xl
+          border-t-4 border-primary dark:border-primarydark shadow-md
+          flex flex-col items-center gap-4 xl:max-w-350 xl:mx-auto
+          px-4 sm:px-8 mx-4 py-8 mt-4 mb-4 md:mt-28 xl:mt-38"
+          id="contact"
+        >
+          <h2
+            className="sm:px-10 sm:mx-auto md:max-w-7xl lg:max-w-8/9 md:px-20 text-center md:my-8 
+            text-black dark:text-white font-serif text-5xl tracking-tight font-medium md:text-6xl"
+          >
+            {translations[lang].contact.title}
+          </h2>
+          <div className="lg:max-w-200 xl:max-w-7xl grid grid-cols-1 text-center">
+            <h3 className="card-text text-center text-black dark:text-white text-balance">
+              {translations[lang].contact.description}
+            </h3>
+            <div className="flex flex-col items-center">
+              <div className="flex flex-col gap-2 items-center py-15 md:py-25 xl:py-32">
+                <MotionLink
+                  initial={{ opacity: 1, scale: 1 }}
+                  whileTap={{ opacity: 1, scale: 0.98 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="group/email font-serif font-bold text-xl sm:text-4xl md:text-5xl tracking-tighter flex justify-center"
+                  href="mailto:diegoncarmona@gmail.com"
+                  aria-label={translations[lang].accessibility.emailLabel}
+                >
+                  diegoncarmona@gmail.com
+                  <MdArrowOutward className="mt-0.5 sm:mt-1 h-6 w-6 sm:h-9 sm:w-9 md:h-12 md:w-12 group-hover/email:translate-x-1 group-hover/email:-translate-y-1 transition-transform duration-300" />
+                </MotionLink>
+                <CopyEmailButton lang={lang} />
+              </div>
+              <div
+                className={`flex flex-col gap-4 w-full md:max-w-80 md:w-full md:mx-auto lg:flex-row lg:max-w-full ${lang === "pt" ? "xl:max-w-5xl" : "xl:max-w-2xl"}`}
+              >
+                <ContactCard
+                  title={translations[lang].contact.linkedin.title}
+                  description={translations[lang].contact.linkedin.description}
+                  link="https://www.linkedin.com/in/diegocarmn/"
+                />
+                <ContactCard
+                  title={translations[lang].contact.github.title}
+                  description={translations[lang].contact.github.description}
+                  link="https://github.com/diegocarmn"
+                />
+                {lang === "pt" && (
+                  <ContactCard
+                    title={translations[lang].contact.whatsapp.title}
+                    description={
+                      translations[lang].contact.whatsapp.description
+                    }
+                    link="https://wa.me/+5551994638306"
+                  />
+                )}
+              </div>
+            </div>
+            <div className="flex flex-col gap-4 items-center mt-8">
+              <p className="card-text text-sm md:text-base font-semibold leading-0 flex items-center gap-1 ">
+                <IoLocationSharp className="h-4 w-4 dark:text-white" />
+                {translations[lang].contact.location}
+              </p>
+              <p className="card-text text-sm md:text-base font-semibold leading-0 flex items-center gap-2 ">
+                <span className="rounded-full h-2 w-2 bg-green-600 animate-pulse"></span>
+                {translations[lang].hero.tag}
+              </p>
+            </div>
+          </div>
+        </motion.section>
+      </main>
+      <footer className="bg-bglight dark:bg-bgdark h-25 items-center justify-center flex px-8">
+        <p className="opacity-70 text-center font-sans font-semibold tracking-tight text-sm text-black dark:text-white py-4">
+          &copy; {new Date().getFullYear()} Diego Carmona.{" "}
+          {translations[lang].footer.text}
+          <Link
+            href="https://github.com/diegocarmn/portfolio"
+            target="_blank"
+            className="ml-1 text-black dark:text-white underline inline-block"
+            aria-label={translations[lang].footer.source}
+          >
+            {translations[lang].footer.source}
+          </Link>
+        </p>
+      </footer>
+    </>
+  );
+}
