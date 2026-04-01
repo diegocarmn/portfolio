@@ -82,6 +82,7 @@ const LanguageToggle = ({
               }`}
             >
               <Image
+                priority
                 src="/us.svg"
                 alt="USA flag"
                 width={16}
@@ -101,6 +102,7 @@ const LanguageToggle = ({
               }`}
             >
               <Image
+                priority
                 src="/br.svg"
                 alt="Brazil flag"
                 width={16}

@@ -1,7 +1,6 @@
 "use client";
 
 import Navbar from "./components/Navbar";
-import VantaBackground from "./components/VantaBackground";
 import React from "react";
 import StatusBadge from "./components/StatusBadge";
 import Button from "./components/Button";
@@ -17,6 +16,7 @@ import translations from "./components/content/translations";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { blurUp, animatedCard } from "./components/animations";
+import VantaBackground from "./components/VantaBackground";
 
 const MotionLink = motion.create(Link);
 
@@ -36,31 +36,44 @@ export default function Home() {
   }, [lang]);
 
   React.useEffect(() => {
-    const sections = [
-      homeRef.current,
-      projectsRef.current,
-      aboutRef.current,
-      contactRef.current,
-    ];
+    const handleScroll = () => {
+      
+      if (window.scrollY < 10) {
+        setActiveSection("home");
+        return;
+      }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        threshold: 0.6,
-      },
-    );
+      const sections = [
+        { ref: homeRef, id: "home" },
+        { ref: projectsRef, id: "projects" },
+        { ref: aboutRef, id: "about" },
+        { ref: contactRef, id: "contact" },
+      ];
 
-    sections.forEach((section) => {
-      if (section) observer.observe(section);
-    });
+      const viewportCenter = window.innerHeight / 2;
+      let closestSection = sections[0];
+      let closestDistance = Infinity;
 
-    return () => observer.disconnect();
+      sections.forEach(({ ref, id }) => {
+        if (!ref.current) return;
+
+        const rect = ref.current.getBoundingClientRect();
+        const sectionCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(sectionCenter - viewportCenter);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestSection = { ref, id };
+        }
+      });
+
+      setActiveSection(closestSection.id);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); 
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (

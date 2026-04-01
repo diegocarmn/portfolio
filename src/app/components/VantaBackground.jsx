@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import FOG from "vanta/dist/vanta.fog.min";
+import { motion } from "framer-motion";
+import { slideDown } from "./animations";
 
 const lightColors = {
   highlightColor: 0x9f9eff,
@@ -20,7 +22,6 @@ export default function VantaBackground({ children, className = "" }) {
   const vantaRef = useRef(null);
   const vantaEffect = useRef(null);
   const [colors, setColors] = useState(darkColors);
-
   useEffect(() => {
     function updateColors() {
       if (document.documentElement.classList.contains("dark")) {
@@ -65,11 +66,12 @@ export default function VantaBackground({ children, className = "" }) {
   }, [colors]);
 
   return (
-    <div
+    <motion.div
+      {...slideDown}
       ref={vantaRef}
       className={`relative w-full h-screen overflow-hidden ${className}`}
     >
       <div className="relative z-10">{children}</div>
-    </div>
+    </motion.div>
   );
 }
