@@ -32,9 +32,8 @@ const Button = ({
     primarySmall:
       "dark:bg-primarydark bg-primary font-bold text-sm sm:text-base min-w-fit text-sm sm:text-base pl-3 pr-2 py-1 sm:pl-4 sm:pr-3 sm:py-2 dark:border-white/30",
     secondarySmall:
-      "dark:bg-navyblack bg-white font-bold text-sm sm:text-base min-w-fit text-sm sm:text-base pl-3 pr-2 py-1 sm:pl-4 sm:pr-3 sm:py-2 dark:border-white/30", 
+      "dark:bg-navyblack bg-white font-bold text-sm sm:text-base min-w-fit text-sm sm:text-base pl-3 pr-2 py-1 sm:pl-4 sm:pr-3 sm:py-2 dark:border-white/30",
   };
-
 
   const hoverBgStyles = {
     primary: "bg-black dark:bg-white",
@@ -72,6 +71,35 @@ const Button = ({
           {icon && <span className="inline-flex h-4 w-4">{icon}</span>}
         </span>
       </button>
+    );
+  }
+
+  // Use regular <a> tag for PDFs and external links to avoid RSC parsing issues
+  const isPDF = link?.endsWith(".pdf");
+  const isExternal = link?.startsWith("http");
+
+  if (isPDF || isExternal) {
+    return (
+      <a
+        href={link || "#"}
+        target={target}
+        rel={target}
+        aria-label={ariaLabel}
+        className={`${baseStyles} ${variantStyles[variant]} ${className}`}
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+      >
+        <span
+          className={`absolute inset-0 ${hoverBgStyles[variant]} -translate-x-full group-hover/button:translate-x-0 transition-transform duration-300`}
+        ></span>
+        <span
+          className={`relative z-10 ${textColorStyles[variant]} transition-colors duration-300 inline-flex items-center gap-1`}
+        >
+          {children}
+          {icon && <span className="inline-flex h-4 w-4">{icon}</span>}
+        </span>
+      </a>
     );
   }
 

@@ -87,7 +87,7 @@ const BentoGrid = ({ lang }: { lang: "en" | "pt" }) => {
           </p>
           <Button
             link={translations[lang].about.profile.button.link}
-            target="_blank"
+            target="noopener noreferrer"
             variant="primarySmall"
             icon={<IoIosArrowForward className="h-4 w-4" />}
             className="mx-auto"

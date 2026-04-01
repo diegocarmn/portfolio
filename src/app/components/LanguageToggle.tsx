@@ -75,7 +75,7 @@ const LanguageToggle = ({
               type="button"
               disabled={lang === "en"}
               onClick={() => handleSelect("en")}
-              className={`flex w-full text-left px-3 py-2 rounded-4xl cursor-pointer ${
+              className={`flex w-full text-left items-center px-3 py-2 rounded-4xl cursor-pointer ${
                 lang === "en"
                   ? "bg-black/5 dark:bg-white/10"
                   : "hover:bg-black/5 dark:hover:bg-white/10"
@@ -87,7 +87,8 @@ const LanguageToggle = ({
                 alt="USA flag"
                 width={16}
                 height={12}
-                className="mr-2 inline-block rounded-xs"
+                className="mr-2 rounded-xs"
+                style={{ width: "16px", height: "12px" }}
               />
               English
             </button>
@@ -95,7 +96,7 @@ const LanguageToggle = ({
               type="button"
               disabled={lang === "pt"}
               onClick={() => handleSelect("pt")}
-              className={`flex w-full text-left px-3 py-2 rounded-4xl cursor-pointer ${
+              className={`flex w-full text-left items-center px-3 py-2 rounded-4xl cursor-pointer ${
                 lang === "pt"
                   ? "bg-black/5 dark:bg-white/10"
                   : "hover:bg-black/5 dark:hover:bg-white/10"
@@ -107,7 +108,8 @@ const LanguageToggle = ({
                 alt="Brazil flag"
                 width={16}
                 height={12}
-                className="mr-2 inline-block rounded-xs"
+                className="mr-2 rounded-xs"
+                style={{ width: "16px", height: "12px" }}
               />
               Português
             </button>
