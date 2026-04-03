@@ -1,5 +1,3 @@
-import { button } from "framer-motion/client";
-import { access } from "fs";
 
 export const translations = {
   en: {
@@ -13,9 +11,9 @@ export const translations = {
     hero: {
       tag: "Available for projects",
       name: "Diego Carmona.",
-      title: "Software Developer.",
+      title: "Frontend Developer.",
       subtitle:
-        "Problem solver with a background in keeping real systems running.",
+        "Building production-ready web apps with performance and accessibility in mind.",
       button: "Contact me",
       buttonAriaLabel: "Go to contact section",
       scrollDown: "Scroll down to see my projects",
@@ -28,50 +26,49 @@ export const translations = {
       cineai: {
         title: "CineAI",
         description:
-          "CineAI is a movie discovery platform that uses Artificial Intelligence to make recommendations based on user behavior, taste and mood.",
+          "AI-powered movie discovery platform with personalized recommendations based on user profile and mood.",
         subtitle: "AI-Powered Movie Discovery Platform",
         overview:
-          "CineAI is a full-stack web application focused on AI-driven movie recommendations, combining LLM-based inference with real-time movie data and persistent user state. The system adapts recommendations based on user favorites, interaction history, and mood input.",
+          "CineAI integrates LLMs (Groq/LLaMA) with the TMDB API to deliver personalized movie recommendations based on user profile and mood. Built with Next.js App Router and serverless APIs, it includes Google OAuth authentication, relational database persistence, and a full favorites and watchlist system synced across sessions.",
         features: [
-          "LLM-powered recommendation engine using Groq (LLaMA models)",
-          "Server-side movie search and trending feeds via TMDB API",
-          "OAuth authentication with Auth.js (Google provider)",
-          "Real-time UI updates, loading states, and resilient error handling",
+          "LLM-powered recommendations using Groq (LLaMA models) + TMDB API",
+          "Google OAuth authentication via Auth.js with PostgreSQL persistence",
+          "Full favorites and watchlist system synced across sessions and users",
+          "Serverless API architecture with Next.js App Router",
         ],
         tags: [
           "Next.js",
           "TypeScript",
           "React",
-          "Node.js",
           "Tailwind CSS",
-          "AI API",
-          "Auth.js",
+          "Prisma",
           "PostgreSQL",
-          "REST APIs",
+          "Auth.js",
+          "Groq/LLaMA",
+          "Node.js",
         ],
       },
 
       pitada: {
         title: "Pitada",
         description:
-          "Pitada helps people figure out what to cook by transforming the ingredients they already have at home into simple, personalized recipes using AI.",
-        subtitle: "Smart Recipe Generator App",
+          "Web app that generates AI-powered recipes from ingredients you already have at home, delivered as an installable PWA.",
+        subtitle: "AI Recipe Generator",
         overview:
-          "Pitada is a lightweight, full-stack web application that generates AI-powered recipes from user-provided ingredients. The project focuses on performance, accessibility, and modern web standards, delivering a fast and inclusive cooking assistant experience.",
+          "Pitada generates personalized recipes via AI (Groq/LLaMA) from user-provided ingredients. Delivered as an installable PWA with async state management via TanStack Query, full accessibility support, and a responsive mobile-first interface.",
         features: [
-          "AI-based recipe generation using Groq LLMs",
-          "Ingredient-driven input flow with clean state management",
-          "Serverless API endpoint for recipe inference (/api/ai/recipe)",
-          "Light/Dark theme support with CSS variables",
+          "AI recipe generation using Groq/LLaMA via serverless API endpoint",
+          "Installable PWA with light/dark theme and persistent preferences",
+          "Async state management with TanStack Query",
           "Fully accessible UI (ARIA, keyboard navigation, semantic HTML)",
-          "PWA-ready with installable app experience",
         ],
         tags: [
           "Next.js",
           "TypeScript",
           "React",
           "Tailwind CSS",
-          "AI API",
+          "TanStack Query",
+          "Groq/LLaMA",
           "PWA",
         ],
       },
@@ -88,7 +85,7 @@ export const translations = {
         intro: "Hi, there!",
         intro2: "I'm Diego",
         description:
-          "I'm a software developer focused on building real products end to end. My background in technical support shaped how I work: I care deeply about reliability, ownership, and what happens after something goes live. I enjoy working across the stack, from user-facing details to backend logic and data, always grounded in real-world usage.",
+          "I'm a frontend developer focused on building real, production-ready products. My background in technical support shaped how I work: I care deeply about reliability, ownership, and what happens after something goes live. I focus on the frontend, but I'm comfortable going deeper into the stack when the product needs it.",
         button: {
           text: "View Resume",
           link: "/resume.pdf",
@@ -168,11 +165,11 @@ export const translations = {
     },
 
     hero: {
-      tag: "Disponível para projetos",
+      tag: "Disponível para oportunidades",
       name: "Diego Carmona.",
-      title: "Desenvolvedor de Software.",
+      title: "Desenvolvedor Frontend.",
       subtitle:
-        "Focado em resolver problemas e manter sistemas reais funcionando.",
+        "Construindo aplicações web prontas para produção, com foco em performance e acessibilidade.",
       button: "Fale comigo",
       buttonAriaLabel: "Ir à seção de contato",
       scrollDown: "Desça para ver meus projetos",
@@ -185,50 +182,49 @@ export const translations = {
       cineai: {
         title: "CineAI",
         description:
-          "CineAI é uma plataforma de descoberta de filmes que usa Inteligência Artificial para fazer recomendações com base no comportamento, gosto e humor do usuário.",
+          "Plataforma de descoberta de filmes com IA que gera recomendações personalizadas com base no perfil e humor do usuário.",
         subtitle: "Plataforma de Descoberta de Filmes com IA",
         overview:
-          "CineAI é uma aplicação web full-stack focada em recomendações de filmes baseadas em IA, combinando inferência baseada em LLM com dados atualizados de filmes e dados persistentes do usuário. O sistema adapta as recomendações com base nos favoritos, histórico de interação e no humor informado pelo usuário.",
+          "CineAI integra LLMs (Groq/LLaMA) com a API do TMDB para gerar recomendações personalizadas de filmes com base no perfil e humor do usuário. Construído com Next.js App Router e APIs serverless, inclui autenticação Google OAuth, persistência em banco relacional e sistema completo de favoritos e watchlist sincronizados entre sessões.",
         features: [
-          "Motor de recomendação com LLM usando Groq (modelos LLaMA)",
-          "Busca de filmes no servidor e listas de tendência via TMDB API",
-          "Autenticação OAuth com Auth.js (provedor Google)",
-          "Atualizações em tempo real na interface, estados de carregamento e tratamento resiliente de erros",
+          "Recomendações via LLM usando Groq (modelos LLaMA) + API do TMDB",
+          "Autenticação Google OAuth via Auth.js com persistência em PostgreSQL",
+          "Sistema completo de favoritos e watchlist sincronizados entre sessões",
+          "Arquitetura serverless com Next.js App Router",
         ],
         tags: [
           "Next.js",
           "TypeScript",
           "React",
-          "Node.js",
           "Tailwind CSS",
-          "API de IA",
-          "Auth.js",
+          "Prisma",
           "PostgreSQL",
-          "APIs REST",
+          "Auth.js",
+          "Groq/LLaMA",
+          "Node.js",
         ],
       },
 
       pitada: {
         title: "Pitada",
         description:
-          "Pitada ajuda pessoas a decidirem o que cozinhar transformando os ingredientes que já têm em casa em receitas simples e personalizadas usando IA.",
-        subtitle: "App Gerador Inteligente de Receitas",
+          "Aplicação web que gera receitas com IA a partir dos ingredientes que você já tem em casa, entregue como PWA instalável.",
+        subtitle: "Gerador Inteligente de Receitas com IA",
         overview:
-          "Pitada é uma aplicação web full stack, leve e focada em desempenho, que gera receitas com apoio de IA a partir dos ingredientes fornecidos pelo usuário. O projeto prioriza desempenho, acessibilidade e padrões modernos da web, entregando uma experiência rápida, acessível e pensada para o dia a dia na cozinha.",
+          "Pitada gera receitas personalizadas via IA (Groq/LLaMA) a partir dos ingredientes informados pelo usuário. Entregue como PWA instalável, com gerenciamento de estado assíncrono via TanStack Query, acessibilidade completa e interface responsiva mobile-first.",
         features: [
-          "Geração de receitas baseada em IA usando LLMs da Groq",
-          "Fluxo de entrada orientado por ingredientes com gestão de estado limpa",
-          "Endpoint de API serverless para inferência de receitas (/api/ai/recipe)",
-          "Suporte a tema claro/escuro com variáveis CSS",
+          "Geração de receitas com Groq/LLaMA via endpoint serverless",
+          "PWA instalável com tema claro/escuro e preferências persistentes",
+          "Gerenciamento de estado assíncrono com TanStack Query",
           "Interface totalmente acessível (ARIA, navegação por teclado, HTML semântico)",
-          "PWA pronta, com experiência de app instalável",
         ],
         tags: [
           "Next.js",
           "TypeScript",
           "React",
           "Tailwind CSS",
-          "API de IA",
+          "TanStack Query",
+          "Groq/LLaMA",
           "PWA",
         ],
       },
@@ -245,7 +241,7 @@ export const translations = {
         intro: "Olá! Eu",
         intro2: "sou Diego",
         description:
-          "Sou um desenvolvedor de software focado em construir produtos reais de ponta a ponta. Minha experiência em suporte técnico moldou a forma como eu trabalho - me importo com confiabilidade, responsabilidade e com o que acontece depois que algo entra em produção. Gosto de atuar em toda a stack, dos detalhes da interface à lógica de backend e dados, sempre pensando no uso real.",
+          "Sou um desenvolvedor frontend focado em construir produtos reais prontos para produção. Minha experiência em suporte técnico moldou a forma como eu trabalho: me importo com confiabilidade, responsabilidade e com o que acontece depois que algo entra em produção. Foco no frontend, mas fico à vontade para ir mais fundo na stack quando o produto precisa.",
         button: {
           text: "Ver currículo",
           link: "/curriculo.pdf",

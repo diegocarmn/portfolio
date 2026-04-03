@@ -10,12 +10,13 @@ import { animatedCard } from "./animations";
 
 const techStack = [
   "TypeScript",
-  "Next.js",
   "React",
-  "Node.js",
+  "Next.js",
   "Tailwind CSS",
+  "TanStack Query",
+  "Prisma",
   "PostgreSQL",
-  "JavaScript",
+  "Node.js",
   "Git",
 ];
 
@@ -115,7 +116,7 @@ const BentoGrid = ({ lang }: { lang: "en" | "pt" }) => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="font-serif tracking-tighter font-bold text-2xl md:text-4xl leading-6 md:leading-8 text-center opacity-90 sm:opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+          className="font-serif tracking-tighter font-bold whitespace-nowrap text-2xl md:text-4xl leading-6 md:leading-8 text-center opacity-90 sm:opacity-80 group-hover:opacity-100 transition-opacity duration-300"
         >
           {techStack.map((tech, index) => (
             <motion.li key={index} variants={animatedItem}>

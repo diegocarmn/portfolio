@@ -20,17 +20,17 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://diegocarmona.me"),
-  title: "Diego Carmona | Software Developer",
+  title: "Diego Carmona | Frontend Developer",
   description:
-    "Diego Carmona — Software Developer specializing in React, Next.js, and TypeScript. Explore my projects, skills, and web development work.",
+    "Frontend Developer specializing in React, Next.js and TypeScript. Building production-ready web applications with AI integrations, high performance, accessibility and modern architecture.",
   alternates: {
     canonical: "https://diegocarmona.me",
   },
   keywords: [
     "Diego Carmona",
     "Diego Carmona developer",
-    "Software Developer Portfolio",
-    "Full Stack Developer",
+    "Frontend Developer Portfolio",
+    "Frontend Developer",
     "React Developer",
     "Next.js Developer",
     "TypeScript Developer",
@@ -40,6 +40,10 @@ export const metadata: Metadata = {
     "React Next.js portfolio",
     "Diego Carmona desenvolvedor",
     "Diego Carmona dev",
+    "Porto Alegre developer",
+    "desenvolvedor frontend Porto Alegre",
+    "AI developer",
+    "LLM integration",
   ],
   authors: [
     {
@@ -56,12 +60,12 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Diego Carmona | Software Developer",
+    title: "Diego Carmona | Frontend Developer",
     description:
-      "Diego Carmona — Software Developer specializing in React, Next.js, and TypeScript. Explore my projects, skills, and web development work.",
+      "Frontend Developer specializing in React, Next.js and TypeScript. Building production-ready web applications with AI integrations, high performance, accessibility and modern architecture.",
     url: "https://diegocarmona.me",
     siteName: "Diego Carmona Portfolio",
-    locale: "en-US",
+    locale: "en_US",
     type: "website",
     images: [
       {
@@ -75,9 +79,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Diego Carmona | Software Developer",
+    title: "Diego Carmona | Frontend Developer",
     description:
-      "Diego Carmona — Software Developer specializing in React, Next.js, and TypeScript. Explore my projects, skills, and web development work.",
+      "Frontend Developer specializing in React, Next.js and TypeScript. Building production-ready web applications with AI integrations, high performance, accessibility and modern architecture.",
     images: ["https://diegocarmona.me/preview.png"],
   },
   robots: {
