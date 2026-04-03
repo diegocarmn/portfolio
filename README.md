@@ -184,6 +184,7 @@ src/
 │   │   ├── LocationCard.tsx       # Interactive map zoom with crossfade
 │   │   ├── LogoButton.tsx         # Social links reusable button
 │   │   ├── Navbar.tsx             # Navigation with active section tracking
+|   |   |-- PageClient.tsx         # Main client component (page container)
 │   │   ├── ProjectsCard.tsx       # Project showcase card
 │   │   ├── ProjectsCardTag.tsx    # Skill tags component
 │   │   ├── StatusBadge.tsx        # Availability status
@@ -194,7 +195,7 @@ src/
 │   ├── favicon.ico                # Site favicon
 │   ├── globals.css                # Tailwind + custom properties
 │   ├── layout.tsx                 # Root layout with metadata & fonts
-│   ├── page.tsx                   # Main portfolio page
+│   ├── page.tsx                   # Page entry point
 │   ├── robots.ts                  # robots.txt generation (crawl rules + sitemap)
 │   └── sitemap.ts                 # Dynamic sitemap.xml generation
 ├── public/
