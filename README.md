@@ -1,9 +1,9 @@
 <h1 >
   <img src="./src/app/favicon.ico" width="28" style="vertical-align: -4px; margin-right:8px;" />
-  Diego Carmona — Software Developer Portfolio
+  Diego Carmona — Frontend Developer Portfolio
 </h1>
 
-A production-grade, high-performance portfolio built as a real-world web product. Designed with a strong focus on **performance, accessibility, SEO, and long-term maintainability**, while showcasing modern full-stack engineering practices.
+A production-grade, high-performance portfolio built as a real-world web product. Designed with a strong focus on **performance, accessibility, SEO, and long-term maintainability**, while showcasing modern frontend engineering and real-world architecture.
 
 🔗 **Live:** https://diegocarmona.me  
 📂 **Repository:** https://github.com/diegocarmn/portfolio
@@ -34,18 +34,23 @@ Measured in production:
 - Best Practices: 100
 - SEO: 100
 
+<p align="center">
+  <img src="./public/screenshots/lighthouse.png" alt="Lighthouse Score" width="1000"/>
+</p>
+
 **Real User Metrics (Vercel Speed Insights)**
 
-- Real Experience Score: **99**
-- First Contentful Paint: **~1.35s**
-- Largest Contentful Paint: **~2.08s**
-- Interaction to Next Paint: **~80ms**
+- Real Experience Score: **100**
+- First Contentful Paint: **0.34s**
+- Largest Contentful Paint: **1.03s**
+- Interaction to Next Paint: **48ms**
 - Cumulative Layout Shift: **0**
+- First Input Delay: **2ms**
+- Time to First Byte: **0.05s**
 
 <p align="center">
   <img src="./public/screenshots/speed-insights.png" alt="Vercel Speed Insights" width="1000"/>
 </p>
-
 
 - Performance optimized with image compression and modern formats
 - Accessibility-first design with semantic HTML and ARIA support
@@ -55,10 +60,10 @@ It is intentionally built as a **single-page application with rich interactions*
 
 ## ✨ Key Highlights
 - Lighthouse 99/100 performance score
+- Real Experience Score 100 (Vercel Speed Insights)
 - Production deployment with Vercel
 - Internationalization (EN / PT-BR)
 - Structured data and full SEO architecture
-
 
 ## 🧰 Tech Stack
 
@@ -132,10 +137,7 @@ SEO in this project is treated as **a core part of the system design**.
 ### 📈 Real-World Result
 
 - Indexed within hours of Search Console verification
-- Ranking #1 for branded searches such as:
-  - name + role
-  - name + tech stack
-  - name + location
+- Reached 15+ organic clicks in the first 28 days (Google Search Console)
 
 This validates the architecture: strong SEO fundamentals, correct semantics, and fast indexing without sacrificing UX.
 
@@ -280,7 +282,7 @@ See the [`LICENSE`](./LICENSE.md) file for full details.
 
 ## 👤 Author
 
-**Diego Carmona** - Software Developer
+**Diego Carmona** - Frontend Developer
 
 - 🔗 [LinkedIn](https://linkedin.com/in/diegocarmn)
 - 🔗 [GitHub](https://github.com/diegocarmn)
