@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { MdSunny } from "react-icons/md";
 import { IoMdMoon } from "react-icons/io";
 import { motion, AnimatePresence } from "framer-motion";
-import { translations } from "./content/translations";
+import { translations } from "@/app/content/translations";
 
 export default function DarkModeToggle({ lang }: { lang: "en" | "pt" }) {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -20,7 +20,7 @@ export default function DarkModeToggle({ lang }: { lang: "en" | "pt" }) {
   const handleToggle = () => {
     const newState = !isDarkMode;
     setIsDarkMode(newState);
-    
+
     if (newState) {
       document.documentElement.classList.add("dark");
     } else {
@@ -35,8 +35,16 @@ export default function DarkModeToggle({ lang }: { lang: "en" | "pt" }) {
       className="inline-flex items-center rounded-full px-2 py-2 opacity-75 hover:opacity-100
         active:scale-80 transition-all duration-150 cursor-pointer text-black dark:text-white"
       onClick={handleToggle}
-      aria-label={isDarkMode ? translations[lang].accessibility.lightMode : translations[lang].accessibility.darkMode}
-      title={isDarkMode ? translations[lang].accessibility.lightMode : translations[lang].accessibility.darkMode}
+      aria-label={
+        isDarkMode
+          ? translations[lang].accessibility.lightMode
+          : translations[lang].accessibility.darkMode
+      }
+      title={
+        isDarkMode
+          ? translations[lang].accessibility.lightMode
+          : translations[lang].accessibility.darkMode
+      }
     >
       <AnimatePresence mode="wait" initial={false}>
         <motion.span

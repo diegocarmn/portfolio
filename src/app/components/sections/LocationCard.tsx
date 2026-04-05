@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { IoIosAdd, IoIosRemove } from "react-icons/io";
 import { IoLocationSharp } from "react-icons/io5";
-import translations from "./content/translations";
+import translations from "@/app/content/translations";
 import { motion } from "framer-motion";
 
 const LocationCard = ({ lang }: { lang: "en" | "pt" }) => {

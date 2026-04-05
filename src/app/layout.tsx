@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import StructuredData from "./components/StructuredData";
+import StructuredData from "./lib/StructuredData";
 import { Geist, Nunito } from "next/font/google";
-import "./globals.css";
+import "./globals.css"
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-
 
 const geist = Geist({
   subsets: ["latin"],

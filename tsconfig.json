@@ -28,7 +28,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
-, "src/app/components/VantaBackground.jsx"],
+    "**/*.mts",
+    "src/app/components/background/VantaBackground.jsx"
+  ],
   "exclude": ["node_modules"]
 }

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import FOG from "vanta/dist/vanta.fog.min";
 import { motion } from "framer-motion";
-import { slideDown } from "./animations";
+import { slideDown } from "@/app/motion/animations";
 
 const lightColors = {
   highlightColor: 0x9f9eff,

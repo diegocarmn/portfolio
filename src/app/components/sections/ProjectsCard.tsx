@@ -1,13 +1,13 @@
 import Image from "next/image";
-import ProjectsCardTag from "./ProjectsCardTag";
-import Button from "./Button";
+import ProjectsCardTag from "@/app/components/sections/ProjectsCardTag";
+import Button from "@/app/components/ui/Button";
 import { IoIosArrowForward } from "react-icons/io";
 import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { IoMdArrowRoundUp } from "react-icons/io";
-import translations from "./content/translations";
+import translations from "@/app/content/translations";
 import { motion, AnimatePresence } from "framer-motion";
-import { animatedCard } from "./animations";
+import { animatedCard } from "@/app/motion/animations";
 
 interface ProjectsCardProps {
   mockupImage: string;
@@ -123,7 +123,9 @@ const ProjectsCard = ({
           cursor-pointer
           "
           title={
-            isCardExpanded ? translations[lang].accessibility.collapseCard : translations[lang].accessibility.expandCard
+            isCardExpanded
+              ? translations[lang].accessibility.collapseCard
+              : translations[lang].accessibility.expandCard
           }
         >
           <MotionArrow

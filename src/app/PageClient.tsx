@@ -1,22 +1,22 @@
 "use client";
 
-import Navbar from "./Navbar";
+import Navbar from "./components/navigation/Navbar";
 import React from "react";
-import StatusBadge from "./StatusBadge";
-import Button from "./Button";
-import ProjectsCard from "./ProjectsCard";
+import StatusBadge from "./components/ui/StatusBadge";
+import Button from "./components/ui/Button";
+import ProjectsCard from "./components/sections/ProjectsCard";
 import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdArrowOutward } from "react-icons/md";
-import BentoGrid from "./BentoGrid";
-import LogoButton from "./LogoButton";
-import CopyEmailButton from "./CopyEmailButton";
-import ContactCard from "./ContactCard";
+import BentoGrid from "./components/sections/BentoGrid";
+import LogoButton from "./components/ui/LogoButton";
+import CopyEmailButton from "./components/actions/CopyEmailButton";
+import ContactCard from "./components/sections/ContactCard";
 import translations from "./content/translations";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { blurUp, animatedCard } from "./animations";
-import VantaBackground from "./VantaBackground";
+import { blurUp, animatedCard } from "./motion/animations";
+import VantaBackground from "@/app/components/background/VantaBackground";
 
 const MotionLink = motion.create(Link);
 

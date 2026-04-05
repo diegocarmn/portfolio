@@ -1,6 +1,6 @@
 import { MdContentCopy, MdDone } from "react-icons/md";
 import { useState } from "react";
-import translations from "./content/translations";
+import translations from "@/app/content/translations";
 import { motion, AnimatePresence } from "framer-motion";
 
 const CopyEmailButton = ({ lang }: { lang: "en" | "pt" }) => {

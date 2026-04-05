@@ -14,7 +14,6 @@ A production-grade, high-performance portfolio built as a real-world web product
 
 This project is a **fully production-ready portfolio** that reflects how I approach real software systems:
 
-
 <p align="center">
   <img src="./public/screenshots/desktop.png" width="1000"/>
 </p>
@@ -29,6 +28,7 @@ This project is a **fully production-ready portfolio** that reflects how I appro
 Measured in production:
 
 **Lighthouse**
+
 - Performance: 99
 - Accessibility: 100
 - Best Practices: 100
@@ -59,6 +59,7 @@ Measured in production:
 It is intentionally built as a **single-page application with rich interactions**, while still being **crawlable, indexable, and SEO-safe**.
 
 ## ✨ Key Highlights
+
 - Lighthouse 99/100 performance score
 - Real Experience Score 100 (Vercel Speed Insights)
 - Production deployment with Vercel
@@ -174,36 +175,45 @@ Search Engine Crawler
 src/
 ├── app/
 │   ├── components/
-│   │   ├── animations.ts          # Framer Motion variants
-│   │   ├── BentoGrid.tsx          # Bento layout with cards
-│   │   ├── Button.tsx             # Reusable button component
-│   │   ├── ContactCard.tsx        # Contact method cards
-│   │   ├── CopyEmailButton.tsx    # Email copy with toast feedback
-│   │   ├── DarkModeToggle.tsx     # Theme switcher
-│   │   ├── LanguageToggle.tsx     # Language state toggle
-│   │   ├── LocationCard.tsx       # Interactive map zoom with crossfade
-│   │   ├── LogoButton.tsx         # Social links reusable button
-│   │   ├── Navbar.tsx             # Navigation with active section tracking
-|   |   |-- PageClient.tsx         # Main client component (page container)
-│   │   ├── ProjectsCard.tsx       # Project showcase card
-│   │   ├── ProjectsCardTag.tsx    # Skill tags component
-│   │   ├── StatusBadge.tsx        # Availability status
-│   │   ├── StructuredData.tsx     # JSON-LD structured data (schema.org)
-│   │   ├── VantaBackground.jsx    # 3D background effect wrapper
-│   │   └── content/
-│   │       └── translations.ts    # language/text data (EN + PT-BR)
-│   ├── favicon.ico                # Site favicon
-│   ├── globals.css                # Tailwind + custom properties
-│   ├── layout.tsx                 # Root layout with metadata & fonts
-│   ├── page.tsx                   # Page entry point
-│   ├── robots.ts                  # robots.txt generation (crawl rules + sitemap)
-│   └── sitemap.ts                 # Dynamic sitemap.xml generation
+│   │   ├── actions/
+│   │   │   └── CopyEmailButton.tsx      # Email copy with visual feedback
+│   │   ├── background/
+│   │   │   └── VantaBackground.jsx      # 3D background effect wrapper
+│   │   ├── navigation/
+│   │   │   ├── LanguageToggle.tsx       # Language state toggle
+│   │   │   └── Navbar.tsx               # Navigation with active section tracking
+│   │   ├── sections/
+│   │   │   ├── BentoGrid.tsx            # Bento layout with cards
+│   │   │   ├── ContactCard.tsx          # Contact method cards
+│   │   │   ├── LocationCard.tsx         # Interactive map zoom with crossfade
+│   │   │   ├── ProjectsCard.tsx         # Project showcase card
+│   │   │   └── ProjectsCardTag.tsx      # Skill tags component
+│   │   ├── theme/
+│   │   │   └── DarkModeToggle.tsx       # Theme switcher
+│   │   └── ui/
+│   │       ├── Button.tsx               # Reusable button component
+│   │       ├── LogoButton.tsx           # Social links reusable button
+│   │       ├── NavbarButton.tsx         # Navigation button variant
+│   │       └── StatusBadge.tsx          # Availability status badge
+│   ├── content/
+│   │   └── translations.ts              # Language/text data (EN + PT-BR)
+│   ├── lib/
+│   │   └── StructuredData.tsx           # JSON-LD structured data (schema.org)
+│   ├── motion/
+│   │   └── animations.ts                # Framer Motion variants & reusable animations
+│   ├── favicon.ico                      # Site favicon
+│   ├── globals.css                      # Tailwind + custom properties
+│   ├── layout.tsx                       # Root layout with metadata & fonts
+│   ├── PageClient.tsx                   # Main client component (page container)
+│   ├── page.tsx                         # Page entry point
+│   ├── robots.ts                        # robots.txt generation (crawl rules + sitemap)
+│   └── sitemap.ts                       # Dynamic sitemap.xml generation
 ├── public/
-│   ├── map/                       # Map assets (zoom levels)
-|   |-- screenshots/               # Website screenshots for README
-│   ├── preview.png                # OG/Twitter preview image (1200×630)
-│   └── *.png                      # Project mockups & logos
-└── tsconfig.json                  # TypeScript strict mode enabled
+│   ├── map/                             # Map assets (zoom levels)
+│   ├── screenshots/                     # Website screenshots for README
+│   ├── preview.png                      # OG/Twitter preview image (1200×630)
+│   └── *.png                            # Project mockups & logos
+└── tsconfig.json                        # TypeScript strict mode enabled
 ```
 
 ## 💻 Local Development

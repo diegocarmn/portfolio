@@ -1,12 +1,12 @@
 import Image from "next/image";
-import Button from "./Button";
+import Button from "@/app/components/ui/Button";
 import { IoIosArrowForward } from "react-icons/io";
 import { BsStack } from "react-icons/bs";
 import { IoDocumentText } from "react-icons/io5";
 import LocationCard from "./LocationCard";
-import translations from "./content/translations";
+import translations from "@/app/content/translations";
 import { motion } from "framer-motion";
-import { animatedCard } from "./animations";
+import { animatedCard } from "@/app/motion/animations";
 
 const techStack = [
   "TypeScript",
@@ -21,8 +21,9 @@ const techStack = [
 ];
 
 const animatedList = {
-  hidden: { 
-    opacity: 0},
+  hidden: {
+    opacity: 0,
+  },
 
   visible: {
     opacity: 1,
@@ -31,17 +32,18 @@ const animatedList = {
       staggerChildren: 0.15,
     },
   },
-}
+};
 
 const animatedItem = {
-  hidden: { 
-    opacity: 0, 
-    y: 20 },
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
   visible: {
     opacity: 0.8,
     y: 0,
   },
-}
+};
 
 const BentoGrid = ({ lang }: { lang: "en" | "pt" }) => {
   return (
