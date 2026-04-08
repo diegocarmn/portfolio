@@ -26,9 +26,7 @@ Production-grade portfolio focused on **performance, accessibility, SEO, and mai
 
 ## 📸 Preview
 
-<p align="center">
-  <img src="./public/screenshots/desktop.png" width="900"/>
-</p>
+https://github.com/user-attachments/assets/fcc28b7f-86f0-462c-8977-241a3ad37582
 
 ## ⚙️ Technical Details
 
@@ -64,9 +62,8 @@ Production-grade portfolio focused on **performance, accessibility, SEO, and mai
 - Performance optimized with image compression and modern formats
 - Accessibility-first design with semantic HTML and ARIA support
 - SEO architecture using Next.js Metadata API and structured data
-</details>
-
 ---
+</details>
 
 <details>
   <summary><strong>📁 PROJECT STRUCTURE</strong></summary>
@@ -118,10 +115,8 @@ src/
 │   └── *.png                            # Project mockups & logos
 └── tsconfig.json                        # TypeScript strict mode enabled
 ```
-
-</details>
-
 ---
+</details>
 
 <details>
   <summary><strong>🔎 SEO</strong></summary>
@@ -134,10 +129,8 @@ src/
 - **Semantic HTML** — clean structure for crawlers and assistive tech
 
 > Indexed within hours of Search Console verification · 15+ organic clicks in first 28 days
-
-</details>
-
 ---
+</details>
 
 <details>
   <summary><strong>💻 LOCAL DEVELOPMENT</strong></summary>
@@ -176,7 +169,7 @@ npm start
 ```bash
 npm run lint
 ```
-
+---
 </details>
 
 ## 📄 License
