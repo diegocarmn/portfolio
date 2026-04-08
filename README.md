@@ -10,23 +10,25 @@
   <img src="https://img.shields.io/badge/Tailwind-v4-38B2AC" />
 </p>
 
-Production-grade portfolio focused on **performance, accessibility, SEO, and maintainability**.
+High-performance frontend portfolio built with Next.js, focused on real-world architecture, SEO, and user experience.
 
 🔗 **Live:** https://diegocarmona.me  
 📦 **Repo:** https://github.com/diegocarmn/portfolio
 
+## 📸 Preview
+
+<p align="center">
+  <video src="https://github.com/user-attachments/assets/fcc28b7f-86f0-462c-8977-241a3ad37582" width="1000" controls loop muted >
+</p>
+
 ## ✨ Features
 
-- Lighthouse 99/100 performance
-- Real Experience Score 100
+- Lighthouse: 99 Performance · 100 Accessibility · 100 SEO
+- Real Experience Score: 100 (Vercel Speed Insights)
 - Internationalization (EN / PT-BR)
 - Full SEO architecture (structured data, Open Graph, sitemap)
 - Framer Motion animations + Three.js/Vanta 3D background
 - Dark mode, responsive, PWA-ready & accessible
-
-## 📸 Preview
-
-https://github.com/user-attachments/assets/fcc28b7f-86f0-462c-8977-241a3ad37582
 
 ## ⚙️ Technical Details
 
