@@ -4,6 +4,7 @@ import Navbar from "./components/navigation/Navbar";
 import React from "react";
 import StatusBadge from "./components/ui/StatusBadge";
 import Button from "./components/ui/Button";
+import { useActiveSection } from "./hooks/useActiveSection";
 import ProjectsCard from "./components/sections/ProjectsCard";
 import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
 import { IoLocationSharp } from "react-icons/io5";
@@ -26,54 +27,19 @@ export default function PageClient() {
   const aboutRef = React.useRef<HTMLElement | null>(null);
   const contactRef = React.useRef<HTMLElement | null>(null);
 
-  const [activeSection, setActiveSection] = React.useState<string | null>(null);
   const [lang, setLang] = React.useState<"en" | "pt">("en");
+  const activeSection = useActiveSection(
+    homeRef,
+    projectsRef,
+    aboutRef,
+    contactRef,
+  );
 
   React.useEffect(() => {
     if (typeof document !== "undefined") {
       document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
     }
   }, [lang]);
-
-  React.useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY < 10) {
-        setActiveSection("home");
-        return;
-      }
-
-      const sections = [
-        { ref: homeRef, id: "home" },
-        { ref: projectsRef, id: "projects" },
-        { ref: aboutRef, id: "about" },
-        { ref: contactRef, id: "contact" },
-      ];
-
-      const viewportCenter = window.innerHeight / 2;
-      let closestSection = sections[0];
-      let closestDistance = Infinity;
-
-      sections.forEach(({ ref, id }) => {
-        if (!ref.current) return;
-
-        const rect = ref.current.getBoundingClientRect();
-        const sectionCenter = rect.top + rect.height / 2;
-        const distance = Math.abs(sectionCenter - viewportCenter);
-
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closestSection = { ref, id };
-        }
-      });
-
-      setActiveSection(closestSection.id);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <>
