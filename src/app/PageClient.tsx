@@ -225,7 +225,7 @@ export default function PageClient() {
                 setSelectedProject(translations[lang].projects.cineai)
               }
               mockupImage="/mockupcineai.webp"
-              logoImage="/logo-cineai.png"
+              logoImage={translations[lang].projects.cineai.media.logo}
               project={translations[lang].projects.cineai}
               spanText={translations[lang].ui.seeMore}
             />
@@ -234,7 +234,7 @@ export default function PageClient() {
                 setSelectedProject(translations[lang].projects.pitada)
               }
               mockupImage="/mockuppitada.webp"
-              logoImage="/logo-pitada.png"
+              logoImage={translations[lang].projects.pitada.media.logo}
               project={translations[lang].projects.pitada}
               spanText={translations[lang].ui.seeMore}
             />
@@ -242,7 +242,6 @@ export default function PageClient() {
               {selectedProject && (
                 <ProjectModal
                   project={selectedProject}
-                  logoImage={`/logo-${selectedProject.title}.png`}
                   onClose={() => setSelectedProject(null)}
                   lang={lang}
                 />

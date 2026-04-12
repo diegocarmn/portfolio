@@ -13,14 +13,12 @@ import { IoClose } from "react-icons/io5";
 
 interface ProjectModalProps {
   project: Project;
-  logoImage: string;
   onClose: () => void;
   lang: "en" | "pt";
 }
 
 export function ProjectModal({
   project,
-  logoImage,
   onClose,
   lang,
 }: ProjectModalProps) {
@@ -74,13 +72,13 @@ export function ProjectModal({
           className="grid xl:grid-cols-2 gap-4 md:gap-8 mx-auto"
         >
           <div className="flex flex-col gap-4 md:gap-8">
-            {/* Logo + ttle */}
+            {/* Logo + title */}
             <motion.div
               variants={modalItem}
               className="flex items-center gap-4"
             >
               <Image
-                src={logoImage}
+                src={project.media.logo}
                 alt={`${project.title} project logo`}
                 width={500}
                 height={500}

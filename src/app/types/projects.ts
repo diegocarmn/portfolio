@@ -18,5 +18,6 @@ export type Project = {
   media: {
     urls: string[];
     descriptions: string[];
+    logo: string;
   };
 };

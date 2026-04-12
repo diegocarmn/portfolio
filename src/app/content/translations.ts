@@ -71,6 +71,7 @@ export const translations = {
             "Favorites",
             "Watchlist",
           ],
+          logo: "/logo-cineai.png",
         },
       },
 
@@ -113,6 +114,7 @@ export const translations = {
             "/projects/pitada/theme.mp4",
           ],
           descriptions: ["Get recipes", "Smart error handling", "Dark theme"],
+          logo: "/logo-pitada.png",
         },
       },
     },
@@ -273,6 +275,7 @@ export const translations = {
             "Favoritos",
             "Watchlist",
           ],
+          logo: "/logo-cineai.png",
         },
       },
 
@@ -304,7 +307,7 @@ export const translations = {
             link: "https://github.com/diegocarmn/pitada",
           },
           website: {
-            text: "View Website",
+            text: "Ver Website",
             link: "https://pitada.vercel.app",
           },
         },
@@ -319,6 +322,7 @@ export const translations = {
             "Tratamento de erros",
             "Tema escuro",
           ],
+          logo: "/logo-pitada.png",
         },
       },
     },
