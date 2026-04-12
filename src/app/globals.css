@@ -5,6 +5,7 @@
 @theme {
   --animate-blob: blob 7s infinite;
   --animate-blob-slow: blob 10s infinite;
+  --animate-shimmer: shimmer 1s infinite;
 
   /* COLORS */
   --color-bglight: #f9d2b0;
@@ -150,5 +151,14 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(200%);
   }
 }
