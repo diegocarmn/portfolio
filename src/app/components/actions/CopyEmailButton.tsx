@@ -13,8 +13,19 @@ const CopyEmailButton = ({ lang }: { lang: "en" | "pt" }) => {
   };
 
   return (
-    <motion.button
-      className="font-bold text-white text-sm px-4 py-2 rounded-4xl mt-2 cursor-pointer w-fit flex items-center shadow-md border border-black/10 disabled:cursor-not-allowed"
+    <button
+      className={`
+        font-bold text-white text-sm px-4 py-2 rounded-4xl mt-2
+        cursor-pointer w-fit flex items-center
+        shadow-md border border-black/10
+        disabled:cursor-not-allowed
+        transition-colors duration-50
+        ${
+          copied
+            ? "bg-success"
+            : "bg-primary dark:bg-primarydark hover:bg-primary/90 dark:hover:bg-primarydark/90 transition-colors duration-50 ease-in-out"
+        }
+      `}
       onClick={handleCopy}
       type="button"
       aria-label={
@@ -23,14 +34,6 @@ const CopyEmailButton = ({ lang }: { lang: "en" | "pt" }) => {
           : translations[lang].contact.button.copy
       }
       disabled={copied}
-      animate={{
-        backgroundColor: copied ? "rgb(22, 163, 74)" : "rgb(26, 140, 216)",
-      }}
-      transition={{
-        duration: 0.25,
-        ease: [0.4, 0, 0.2, 1],
-      }}
-      whileHover={!copied ? { backgroundColor: "rgb(53, 111, 204)" } : {}}
     >
       <AnimatePresence mode="wait">
         {copied ? (
@@ -40,18 +43,12 @@ const CopyEmailButton = ({ lang }: { lang: "en" | "pt" }) => {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            transition={{
-              duration: 0.2,
-              ease: [0.4, 0, 0.2, 1],
-            }}
+            transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
           >
             <motion.div
               initial={{ rotate: -20 }}
               animate={{ rotate: 0 }}
-              transition={{
-                duration: 0.2,
-                ease: [0.4, 0, 0.2, 1],
-              }}
+              transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
             >
               <MdDone className="w-4 h-4" aria-hidden="true" />
             </motion.div>
@@ -64,17 +61,14 @@ const CopyEmailButton = ({ lang }: { lang: "en" | "pt" }) => {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            transition={{
-              duration: 0.2,
-              ease: [0.4, 0, 0.2, 1],
-            }}
+            transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
           >
             <MdContentCopy className="w-4 h-4" aria-hidden="true" />
             <span>{translations[lang].contact.button.copy}</span>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.button>
+    </button>
   );
 };
 

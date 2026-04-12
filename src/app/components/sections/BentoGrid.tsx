@@ -60,7 +60,7 @@ const BentoGrid = ({ lang }: { lang: "en" | "pt" }) => {
           <span className="flex flex-row items-center mx-auto gap-4">
             <div className="relative inline-flex items-center justify-center mx-auto">
               {/* static primary border */}
-              <div className="w-20 h-20 rounded-full border-3 border-primary relative z-10 overflow-hidden transition-colors duration-300 group-hover/card:border-transparent">
+              <div className="w-20 h-20 rounded-full border-3 border-primary dark:border-primarydark relative z-10 overflow-hidden transition-colors duration-300 group-hover/card:border-transparent">
                 <Image
                   src="/profile.webp"
                   alt="Profile Picture"

@@ -64,7 +64,9 @@ High-performance frontend portfolio built with Next.js, focused on real-world ar
 - Performance optimized with image compression and modern formats
 - Accessibility-first design with semantic HTML and ARIA support
 - SEO architecture using Next.js Metadata API and structured data
+
 ---
+
 </details>
 
 <details>
@@ -86,23 +88,26 @@ src/
 │   │   │   ├── BentoGrid.tsx            # Bento layout with cards
 │   │   │   ├── ContactCard.tsx          # Contact method cards
 │   │   │   ├── LocationCard.tsx         # Interactive map zoom with crossfade
-│   │   │   ├── ProjectsCard.tsx         # Project showcase card
-│   │   │   └── ProjectsCardTag.tsx      # Skill tags component
+│   │   │   ├── ProjectModal.tsx         # Expandable project details modal
+│   │   │   └── ProjectsCard.tsx         # Project showcase card
 │   │   ├── theme/
 │   │   │   └── DarkModeToggle.tsx       # Theme switcher
 │   │   └── ui/
 │   │       ├── Button.tsx               # Reusable button component
 │   │       ├── LogoButton.tsx           # Social links reusable button
+│   │       ├── MediaSlider.tsx          # Media navigation with video playback
 │   │       ├── NavbarButton.tsx         # Navigation button variant
 │   │       └── StatusBadge.tsx          # Availability status badge
 │   ├── content/
 │   │   └── translations.ts              # Language/text data (EN + PT-BR)
 │   ├── hooks/
-│   │   └── useActiveSection.ts          # Active section detection 
+│   │   └── useActiveSection.ts          # Active section detection
 │   ├── lib/
 │   │   └── StructuredData.tsx           # JSON-LD structured data (schema.org)
 │   ├── motion/
 │   │   └── animations.ts                # Framer Motion variants & reusable animations
+│   ├── types/
+│   │   └── projects.ts                  # TypeScript types (Project interface)
 │   ├── favicon.ico                      # Site favicon
 │   ├── globals.css                      # Tailwind + custom properties
 │   ├── layout.tsx                       # Root layout with metadata & fonts
@@ -112,12 +117,14 @@ src/
 │   └── sitemap.ts                       # Dynamic sitemap.xml generation
 ├── public/
 │   ├── map/                             # Map assets (zoom levels)
-│   ├── screenshots/                     # Website screenshots for README
-│   ├── preview.png                      # OG/Twitter preview image (1200×630)
-│   └── *.png                            # Project mockups & logos
+│   ├── projects/                        # Project preview videos & assets
+│   ├── screenshots/                     # Website screenshots for documentation
+│   └── preview.png                      # OG/Twitter preview image (1200×630)
 └── tsconfig.json                        # TypeScript strict mode enabled
 ```
+
 ---
+
 </details>
 
 <details>
@@ -131,7 +138,9 @@ src/
 - **Semantic HTML** — clean structure for crawlers and assistive tech
 
 > Indexed within hours of Search Console verification · 15+ organic clicks in first 28 days
+
 ---
+
 </details>
 
 <details>
@@ -171,7 +180,9 @@ npm start
 ```bash
 npm run lint
 ```
+
 ---
+
 </details>
 
 ## 📄 License

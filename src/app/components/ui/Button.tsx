@@ -6,6 +6,7 @@ interface ButtonProps {
   target?: string;
   ariaLabel?: string;
   icon?: React.ReactNode;
+  iconLeft?: boolean;
   variant?: "primary" | "secondary" | "primarySmall" | "secondarySmall";
   className?: string;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
@@ -17,18 +18,19 @@ const Button = ({
   target,
   ariaLabel,
   icon,
+  iconLeft,
   variant = "primary",
   className = "",
   onClick,
 }: ButtonProps) => {
   const baseStyles =
-    "relative overflow-hidden group/button rounded-full border active:scale-95 transition-transform duration-200 whitespace-nowrap text-center border-black/30 cursor-pointer shadow-sm";
+    "relative overflow-hidden group/button rounded-full border active:scale-95 transition-all duration-300 whitespace-nowrap text-center border-black/30 hover:border-black cursor-pointer shadow-sm";
 
   const variantStyles = {
     primary:
-      "inline-block dark:bg-primarydark bg-primary dark:text-white text-black font-bold text-sm sm:text-base w-full py-2 px-4 dark:border-white/30",
+      "inline-block dark:bg-primarydark bg-primary dark:text-white text-black font-bold text-sm sm:text-base w-fit py-2 px-4 dark:border-white/30",
     secondary:
-      "inline-block dark:bg-navyblack bg-white dark:text-white text-black font-bold text-sm sm:text-base w-full py-2 px-4 dark:border-white/30",
+      "inline-block dark:bg-navyblack bg-white dark:text-white text-black font-bold text-sm sm:text-base w-fit py-2 px-4 dark:border-white/30",
     primarySmall:
       "dark:bg-primarydark bg-primary font-bold text-sm sm:text-base min-w-fit text-sm sm:text-base pl-3 pr-2 py-1 sm:pl-4 sm:pr-3 sm:py-2 dark:border-white/30",
     secondarySmall:
@@ -62,13 +64,22 @@ const Button = ({
         type="button"
       >
         <span
-          className={`absolute inset-0 ${hoverBgStyles[variant]} -translate-x-full group-hover/button:translate-x-0 transition-transform duration-300`}
+          className={`absolute inset-0 ${hoverBgStyles[variant]} -translate-x-full group-hover/button:translate-x-0 transition-transform duration-250`}
         ></span>
         <span
-          className={`relative z-10 ${textColorStyles[variant]} transition-colors duration-300 inline-flex items-center gap-1`}
+          className={`relative z-10 ${textColorStyles[variant]} transition-colors duration-300 flex items-center gap-1`}
         >
-          {children}
-          {icon && <span className="inline-flex h-4 w-4">{icon}</span>}
+          {iconLeft ? (
+            <>
+              {icon && <span className="inline-flex h-4 w-4">{icon}</span>}
+              {children}
+            </>
+          ) : (
+            <>
+              {children}
+              {icon && <span className="inline-flex h-4 w-4">{icon}</span>}
+            </>
+          )}
         </span>
       </button>
     );
@@ -91,13 +102,22 @@ const Button = ({
         }}
       >
         <span
-          className={`absolute inset-0 ${hoverBgStyles[variant]} -translate-x-full group-hover/button:translate-x-0 transition-transform duration-300`}
+          className={`absolute inset-0 ${hoverBgStyles[variant]} -translate-x-full group-hover/button:translate-x-0 transition-transform duration-250`}
         ></span>
         <span
-          className={`relative z-10 ${textColorStyles[variant]} transition-colors duration-300 inline-flex items-center gap-1`}
+          className={`relative z-10 ${textColorStyles[variant]} transition-colors duration-300 flex items-center gap-1`}
         >
-          {children}
-          {icon && <span className="inline-flex h-4 w-4">{icon}</span>}
+          {iconLeft ? (
+            <>
+              {icon && <span className="inline-flex h-4 w-4">{icon}</span>}
+              {children}
+            </>
+          ) : (
+            <>
+              {children}
+              {icon && <span className="inline-flex h-4 w-4">{icon}</span>}
+            </>
+          )}
         </span>
       </a>
     );
@@ -117,10 +137,19 @@ const Button = ({
         className={`absolute inset-0 ${hoverBgStyles[variant]} -translate-x-full group-hover/button:translate-x-0 transition-transform duration-300`}
       ></span>
       <span
-        className={`relative z-10 ${textColorStyles[variant]} transition-colors duration-300 inline-flex items-center gap-1`}
+        className={`relative z-10 ${textColorStyles[variant]} transition-colors duration-300 flex items-center gap-1`}
       >
-        {children}
-        {icon && <span className="inline-flex h-4 w-4">{icon}</span>}
+        {iconLeft ? (
+          <>
+            {icon && <span className="inline-flex h-4 w-4">{icon}</span>}
+            {children}
+          </>
+        ) : (
+          <>
+            {children}
+            {icon && <span className="inline-flex h-4 w-4">{icon}</span>}
+          </>
+        )}
       </span>
     </Link>
   );

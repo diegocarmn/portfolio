@@ -7,16 +7,17 @@
   --animate-blob-slow: blob 10s infinite;
 
   /* COLORS */
-  --color-bglight: #eaeef4;
+  --color-bglight: #f9d2b0;
   --color-bgdark: #0a0913;
 
 
   --color-darkgray: #212031;
   --color-navyblack: #1a1825;
 
-  --color-primary: #2ba3ee;
+  --color-primary: #FD6B01;
   --color-primarydark: #1a8cd8;
-  --color-accent: #244afd;
+
+  --color-success: #20b558;
 
   @keyframes blob {
     0% {
@@ -101,6 +102,9 @@
 }
 
 @layer components {
+  .project-card {
+    @apply bg-white rounded-4xl dark:bg-navyblack  ;
+  }
   .bento-card {
     @apply flex flex-col bg-white rounded-4xl border-b-4 border-primary dark:border-primarydark dark:bg-navyblack  shadow-md text-center w-full h-full;
   }
@@ -113,6 +117,10 @@
   .card-text {
     @apply text-base opacity-90 sm:text-base md:text-lg font-medium sm:opacity-80 leading-relaxed;
   }
+  .icon-button {
+    @apply rounded-full bg-white dark:bg-navyblack grid place-items-center w-11 h-11 border border-black/30 dark:border-white/30 hover:scale-110 active:scale-90 transition-transform duration-200 cursor-pointer;
+  }
+
   .profile-image-ring {
     position: absolute;
     inset: -1px;

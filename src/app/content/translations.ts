@@ -1,4 +1,3 @@
-
 export const translations = {
   en: {
     navbar: {
@@ -47,6 +46,32 @@ export const translations = {
           "Groq/LLaMA",
           "Node.js",
         ],
+        buttons: {
+          github: {
+            text: "GitHub",
+            link: "https://github.com/diegocarmn/cineai",
+          },
+          website: {
+            text: "View Website",
+            link: "https://aicine.vercel.app",
+          },
+        },
+        media: {
+          urls: [
+            "/projects/cineai/landing.mp4",
+            "/projects/cineai/main.mp4",
+            "/projects/cineai/mood.mp4",
+            "/projects/cineai/favorites.mp4",
+            "/projects/cineai/watchlist.mp4",
+          ],
+          descriptions: [
+            "Landing page",
+            "Discover movies",
+            "Mood-based recommendations",
+            "Favorites",
+            "Watchlist",
+          ],
+        },
       },
 
       pitada: {
@@ -71,10 +96,24 @@ export const translations = {
           "Groq/LLaMA",
           "PWA",
         ],
-      },
-
-      projectscard: {
-        button: "View Website",
+        buttons: {
+          github: {
+            text: "GitHub",
+            link: "https://github.com/diegocarmn/pitada",
+          },
+          website: {
+            text: "View Website",
+            link: "https://pitada.vercel.app",
+          },
+        },
+        media: {
+          urls: [
+            "/projects/pitada/main.mp4",
+            "/projects/pitada/error.mp4",
+            "/projects/pitada/theme.mp4",
+          ],
+          descriptions: ["Get recipes", "Smart error handling", "Dark theme"],
+        },
       },
     },
 
@@ -145,9 +184,15 @@ export const translations = {
       source: "Source Code",
     },
 
+    ui: {
+      seeMore: "See more",
+      back: "Back",
+      close: "Close",
+      next: "Next",
+      previous: "Previous",
+    },
+
     accessibility: {
-      expandCard: "Expand",
-      collapseCard: "Collapse",
       darkMode: "Dark mode",
       lightMode: "Light mode",
       zoomIn: "Zoom in",
@@ -203,6 +248,32 @@ export const translations = {
           "Groq/LLaMA",
           "Node.js",
         ],
+        buttons: {
+          github: {
+            text: "GitHub",
+            link: "https://github.com/diegocarmn/cineai",
+          },
+          website: {
+            text: "Ver Website",
+            link: "https://aicine.vercel.app",
+          },
+        },
+        media: {
+          urls: [
+            "/projects/cineai/landing.mp4",
+            "/projects/cineai/main.mp4",
+            "/projects/cineai/mood.mp4",
+            "/projects/cineai/favorites.mp4",
+            "/projects/cineai/watchlist.mp4",
+          ],
+          descriptions: [
+            "Página inicial",
+            "Descobrir filmes",
+            "Recomendações por humor",
+            "Favoritos",
+            "Watchlist",
+          ],
+        },
       },
 
       pitada: {
@@ -227,10 +298,28 @@ export const translations = {
           "Groq/LLaMA",
           "PWA",
         ],
-      },
-
-      projectscard: {
-        button: "Ver site",
+        buttons: {
+          github: {
+            text: "GitHub",
+            link: "https://github.com/diegocarmn/pitada",
+          },
+          website: {
+            text: "View Website",
+            link: "https://pitada.vercel.app",
+          },
+        },
+        media: {
+          urls: [
+            "/projects/pitada/main.mp4",
+            "/projects/pitada/error.mp4",
+            "/projects/pitada/theme.mp4",
+          ],
+          descriptions: [
+            "Gerar receitas",
+            "Tratamento de erros",
+            "Tema escuro",
+          ],
+        },
       },
     },
 
@@ -301,9 +390,15 @@ export const translations = {
       source: "Código-fonte",
     },
 
+    ui: {
+      seeMore: "Ver mais",
+      back: "Voltar",
+      close: "Fechar",
+      next: "Próximo",
+      previous: "Anterior",
+    },
+
     accessibility: {
-      expandCard: "Expandir",
-      collapseCard: "Recolher",
       darkMode: "Modo escuro",
       lightMode: "Modo claro",
       zoomIn: "Aumentar zoom",

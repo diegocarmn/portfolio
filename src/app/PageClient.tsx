@@ -1,7 +1,7 @@
 "use client";
 
 import Navbar from "./components/navigation/Navbar";
-import React from "react";
+import {useRef, useState, useEffect} from "react";
 import StatusBadge from "./components/ui/StatusBadge";
 import Button from "./components/ui/Button";
 import { useActiveSection } from "./hooks/useActiveSection";
@@ -15,19 +15,22 @@ import CopyEmailButton from "./components/actions/CopyEmailButton";
 import ContactCard from "./components/sections/ContactCard";
 import translations from "./content/translations";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { blurUp, animatedCard } from "./motion/animations";
 import VantaBackground from "@/app/components/background/VantaBackground";
+import { ProjectModal } from "./components/sections/ProjectModal";
+import type { Project } from "./types/projects";
 
 const MotionLink = motion.create(Link);
 
 export default function PageClient() {
-  const homeRef = React.useRef<HTMLElement | null>(null);
-  const projectsRef = React.useRef<HTMLElement | null>(null);
-  const aboutRef = React.useRef<HTMLElement | null>(null);
-  const contactRef = React.useRef<HTMLElement | null>(null);
+  const homeRef = useRef<HTMLElement | null>(null);
+  const projectsRef = useRef<HTMLElement | null>(null);
+  const aboutRef = useRef<HTMLElement | null>(null);
+  const contactRef = useRef<HTMLElement | null>(null);
 
-  const [lang, setLang] = React.useState<"en" | "pt">("en");
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [lang, setLang] = useState<"en" | "pt">("en");
   const activeSection = useActiveSection(
     homeRef,
     projectsRef,
@@ -35,7 +38,7 @@ export default function PageClient() {
     contactRef,
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (typeof document !== "undefined") {
       document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
     }
@@ -81,7 +84,7 @@ export default function PageClient() {
                   Diego Carmona - {translations[lang].hero.title}
                 </p>
 
-                <p className="py-5 card-text text-balance">
+                <p className="py-5 card-text text-balance opacity-100 dark:opacity-75">
                   {translations[lang].hero.subtitle}
                 </p>
 
@@ -199,6 +202,7 @@ export default function PageClient() {
             </div>
           </section>
         </VantaBackground>
+
         <section
           ref={projectsRef}
           className="h-fit bg-bglight dark:bg-bgdark px-4 sm:px-8 flex flex-col items-center pt-4 md:pt-8 md:mt-20 xl:mt-30"
@@ -215,33 +219,35 @@ export default function PageClient() {
             {translations[lang].projects.title}
           </motion.h2>
 
-          <div className="flex flex-col md:flex-row gap-4 sm:gap-4 md:gap-8 md:max-w-full">
+          <div className="flex flex-col md:flex-row gap-4 sm:gap-8 lg:gap-10">
             <ProjectsCard
+              onClick={() =>
+                setSelectedProject(translations[lang].projects.cineai)
+              }
               mockupImage="/mockupcineai.webp"
               logoImage="/logo-cineai.png"
-              title={translations[lang].projects.cineai.title}
-              description={translations[lang].projects.cineai.description}
-              subtitle={translations[lang].projects.cineai.subtitle}
-              overview={translations[lang].projects.cineai.overview}
-              features={translations[lang].projects.cineai.features}
-              tags={translations[lang].projects.cineai.tags}
-              websiteLink="https://aicine.vercel.app"
-              githubLink="https://github.com/diegocarmn/cineai"
-              lang={lang}
+              project={translations[lang].projects.cineai}
+              spanText={translations[lang].ui.seeMore}
             />
             <ProjectsCard
+              onClick={() =>
+                setSelectedProject(translations[lang].projects.pitada)
+              }
               mockupImage="/mockuppitada.webp"
               logoImage="/logo-pitada.png"
-              title={translations[lang].projects.pitada.title}
-              description={translations[lang].projects.pitada.description}
-              subtitle={translations[lang].projects.pitada.subtitle}
-              overview={translations[lang].projects.pitada.overview}
-              features={translations[lang].projects.pitada.features}
-              tags={translations[lang].projects.pitada.tags}
-              websiteLink="https://pitada.vercel.app"
-              githubLink="https://github.com/diegocarmn/pitada"
-              lang={lang}
+              project={translations[lang].projects.pitada}
+              spanText={translations[lang].ui.seeMore}
             />
+            <AnimatePresence>
+              {selectedProject && (
+                <ProjectModal
+                  project={selectedProject}
+                  logoImage={`/logo-${selectedProject.title}.png`}
+                  onClose={() => setSelectedProject(null)}
+                  lang={lang}
+                />
+              )}
+            </AnimatePresence>
           </div>
         </section>
         <section

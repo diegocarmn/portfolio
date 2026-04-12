@@ -7,11 +7,12 @@ import { motion } from "framer-motion";
 import { slideDown } from "@/app/motion/animations";
 
 const lightColors = {
-  highlightColor: 0x9f9eff,
-  midtoneColor: 0xccfffd,
-  lowlightColor: 0xffffff,
-  baseColor: 0xffffff,
+  highlightColor: 0xffbb00,
+  midtoneColor: 0xff2000, 
+  lowlightColor: 0x2d00ff, 
+  baseColor: 0xffdcdc,
 };
+
 const darkColors = {
   highlightColor: 0x000000,
   midtoneColor: 0x74008e,
