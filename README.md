@@ -18,7 +18,7 @@ High-performance frontend portfolio built with Next.js, focused on real-world ar
 ## 📸 Preview
 
 <p align="center">
-  <video src="https://github.com/user-attachments/assets/fcc28b7f-86f0-462c-8977-241a3ad37582" width="1000" controls loop muted >
+  <video src="https://github.com/user-attachments/assets/8fee534d-340d-4462-b07b-68c7f75549c3" width="1000" controls loop muted >
 </p>
 
 ## ✨ Features
