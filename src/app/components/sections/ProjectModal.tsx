@@ -127,7 +127,7 @@ export function ProjectModal({
               >
                 {project.features.map((feature, index) => (
                   <li key={index} className="flex items-center gap-2">
-                    <FaCheckCircle className="mb-0.5 text-accent shrink-0" />
+                    <FaCheckCircle className="mt-1 text-accent shrink-0 self-start" />
                     <span>{feature}</span>
                   </li>
                 ))}
