@@ -24,7 +24,7 @@ export const slideDown = {
 };
 
 export const slideUp = {
-  initial: { opacity: 0, y: 5},
+  initial: { opacity: 0, y: 5 },
   animate: {
     opacity: 1,
     y: 0,
@@ -48,13 +48,11 @@ export const modal = {
     opacity: 0,
     scale: 0.92,
     y: 20,
-    filter: "blur(8px)",
   },
   animate: {
     opacity: 1,
     scale: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 0.5,
       ease: [0.25, 0.46, 0.45, 0.94],
@@ -76,7 +74,6 @@ export const modal = {
     opacity: 0,
     scale: 0.95,
     y: 10,
-    filter: "blur(4px)",
     transition: {
       duration: 0.25,
       ease: [0.4, 0, 1, 1],
@@ -87,11 +84,10 @@ export const modal = {
 };
 
 export const blurUp = {
-  initial: { opacity: 0, y: 60, filter: "blur(12px)" },
+  initial: { opacity: 0, y: 60 },
   animate: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: { duration: 0.5 },
   },
 };
@@ -100,23 +96,19 @@ export const animatedCard = {
   hidden: {
     opacity: 0,
     y: 20,
-    filter: "blur(12px)",
   },
-
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: { duration: 0.5 },
   },
 };
 
 export const mediaSlide = (direction: 1 | -1) => ({
-  initial: { opacity: 0, x: direction * 40, filter: "blur(8px)" },
+  initial: { opacity: 0, x: direction * 40 },
   animate: {
     opacity: 1,
     x: 0,
-    filter: "blur(0px)",
     transition: {
       duration: TRANSITION_DURATION,
       ease: [0.25, 0.46, 0.45, 0.94],
@@ -126,7 +118,6 @@ export const mediaSlide = (direction: 1 | -1) => ({
   exit: {
     opacity: 0,
     x: direction * -30,
-    filter: "blur(4px)",
     transition: {
       duration: EXIT_DURATION,
       ease: [0.4, 0, 1, 1],
@@ -167,11 +158,10 @@ export const modalContainer = {
 };
 
 export const modalItem = {
-  hidden: { opacity: 0, y: 16, filter: "blur(6px)" },
+  hidden: { opacity: 0, y: 16 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 0.4,
       ease: [0.25, 0.46, 0.45, 0.94],

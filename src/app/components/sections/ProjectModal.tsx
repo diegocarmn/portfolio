@@ -126,8 +126,8 @@ export function ProjectModal({
                 className="card-text opacity-100 flex flex-col gap-2 px-3 sm:px-3"
               >
                 {project.features.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <FaCheckCircle className="mt-0.5 text-accent shrink-0" />
+                  <li key={index} className="flex items-center gap-2">
+                    <FaCheckCircle className="mb-0.5 text-accent shrink-0" />
                     <span>{feature}</span>
                   </li>
                 ))}
