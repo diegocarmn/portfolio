@@ -19,19 +19,20 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://diegocarmona.me"),
-  title: "Diego Carmona | Frontend Developer",
+  title: "Diego Carmona | Full Stack Developer",
   description:
-    "Frontend Developer specializing in React, Next.js and TypeScript. Building production-ready web applications with AI integrations, high performance, accessibility and modern architecture.",
+    "Full Stack Developer specializing in React, Next.js, and TypeScript. I build production-ready web applications with scalable backend architectures, AI integrations, authentication systems, and a strong focus on performance, accessibility, and user experience.",
   alternates: {
     canonical: "https://diegocarmona.me",
   },
   keywords: [
     "Diego Carmona",
     "Diego Carmona developer",
-    "Frontend Developer Portfolio",
     "Frontend Developer",
-    "React Developer",
-    "Next.js Developer",
+    "Full Stack Developer Portfolio",
+    "Full Stack Web Developer",
+    "React Full Stack Developer",
+    "Next.js Full Stack Developer",
     "TypeScript Developer",
     "Node.js Developer",
     "JavaScript Developer",
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     "Diego Carmona desenvolvedor",
     "Diego Carmona dev",
     "Porto Alegre developer",
-    "desenvolvedor frontend Porto Alegre",
+    "Desenvolvedor Full Stack Porto Alegre",
     "AI developer",
     "LLM integration",
   ],
@@ -59,9 +60,9 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Diego Carmona | Frontend Developer",
+    title: "Diego Carmona | Full Stack Developer",
     description:
-      "Frontend Developer specializing in React, Next.js and TypeScript. Building production-ready web applications with AI integrations, high performance, accessibility and modern architecture.",
+      "Full Stack Developer specializing in React, Next.js, and TypeScript. I build production-ready web applications with scalable backend architectures, AI integrations, authentication systems, and a strong focus on performance, accessibility, and user experience.",
     url: "https://diegocarmona.me",
     siteName: "Diego Carmona Portfolio",
     locale: "en_US",
@@ -78,9 +79,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Diego Carmona | Frontend Developer",
+    title: "Diego Carmona | Full Stack Developer",
     description:
-      "Frontend Developer specializing in React, Next.js and TypeScript. Building production-ready web applications with AI integrations, high performance, accessibility and modern architecture.",
+      "Full Stack Developer specializing in React, Next.js, and TypeScript. I build production-ready web applications with scalable backend architectures, AI integrations, authentication systems, and a strong focus on performance, accessibility, and user experience.",
     images: ["https://diegocarmona.me/preview.png"],
   },
   robots: {

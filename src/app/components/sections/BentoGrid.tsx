@@ -13,10 +13,10 @@ const techStack = [
   "React",
   "Next.js",
   "Tailwind CSS",
+  "Node.js",
   "TanStack Query",
   "Prisma",
   "PostgreSQL",
-  "Node.js",
   "Git",
 ];
 

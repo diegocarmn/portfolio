@@ -10,7 +10,7 @@ export const translations = {
     hero: {
       tag: "Available for projects",
       name: "Diego Carmona.",
-      title: "Frontend Developer.",
+      title: "Full Stack Developer.",
       subtitle:
         "Building production-ready web apps with performance and accessibility in mind.",
       button: "Contact me",
@@ -126,7 +126,7 @@ export const translations = {
         intro: "Hi, there!",
         intro2: "I'm Diego",
         description:
-          "I'm a frontend developer focused on building real, production-ready products. My background in technical support shaped how I work: I care deeply about reliability, ownership, and what happens after something goes live. I focus on the frontend, but I'm comfortable going deeper into the stack when the product needs it.",
+          "I'm a fullstack developer focused on building real, production-ready products. With a background in technical support, I bring a strong sense of ownership, reliability, and attention to what happens after deployment. I work across the stack, crafting performant frontends and robust backends, always focused on scalability, clean architecture, and delivering real value to users.",
         button: {
           text: "View Resume",
           link: "/resume.pdf",
@@ -212,9 +212,9 @@ export const translations = {
     },
 
     hero: {
-      tag: "Disponível para oportunidades",
+      tag: "Disponível",
       name: "Diego Carmona.",
-      title: "Desenvolvedor Frontend.",
+      title: "Desenvolvedor Full Stack.",
       subtitle:
         "Construindo aplicações web prontas para produção, com foco em performance e acessibilidade.",
       button: "Fale comigo",
@@ -334,7 +334,7 @@ export const translations = {
         intro: "Olá! Eu",
         intro2: "sou Diego",
         description:
-          "Sou um desenvolvedor frontend focado em construir produtos reais prontos para produção. Minha experiência em suporte técnico moldou a forma como eu trabalho: me importo com confiabilidade, responsabilidade e com o que acontece depois que algo entra em produção. Foco no frontend, mas fico à vontade para ir mais fundo na stack quando o produto precisa.",
+          "Sou um desenvolvedor fullstack focado em construir produtos reais prontos para produção. Com background em suporte técnico, trago um forte senso de responsabilidade, confiabilidade e atenção ao que acontece após o deploy. Atuo em toda a stack, desenvolvendo frontends de alta performance e backends robustos, sempre com foco em escalabilidade, arquitetura limpa e agregar valor real para os usuários.",
         button: {
           text: "Ver currículo",
           link: "/curriculo.pdf",

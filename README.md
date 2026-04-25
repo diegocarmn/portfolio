@@ -1,6 +1,6 @@
 <h1 >
   <img src="./src/app/favicon.ico" width="28" style="vertical-align: -4px; margin-right:8px;" />
-  Diego Carmona — Frontend Developer Portfolio
+  Diego Carmona — Full Stack Developer Portfolio
 </h1>
 
 <p>
@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/Tailwind-v4-38B2AC" />
 </p>
 
-High-performance frontend portfolio built with Next.js, focused on real-world architecture, SEO, and user experience.
+High-performance developer portfolio built with Next.js, focused on real-world architecture, SEO, and user experience.
 
 🔗 **Live:** https://diegocarmona.me  
 📦 **Repo:** https://github.com/diegocarmn/portfolio
@@ -195,7 +195,7 @@ See the [`LICENSE`](./LICENSE.md) file for full details.
 
 ## 👤 Author
 
-**Diego Carmona** - Frontend Developer
+**Diego Carmona** - Full Stack Developer
 
 - 🔗 [LinkedIn](https://linkedin.com/in/diegocarmn)
 - 🔗 [GitHub](https://github.com/diegocarmn)
