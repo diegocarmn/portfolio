@@ -18,7 +18,7 @@ High-performance developer portfolio built with Next.js, focused on real-world a
 ## 📸 Preview
 
 <p align="center">
-  <video src="https://github.com/user-attachments/assets/8fee534d-340d-4462-b07b-68c7f75549c3" width="1000" controls loop muted >
+  <video src="https://github.com/user-attachments/assets/b6c79819-aa41-4335-bae1-5db6c52b11d3" width="1000" controls loop muted >
 </p>
 
 ## ✨ Features
