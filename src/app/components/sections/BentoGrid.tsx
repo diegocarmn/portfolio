@@ -18,6 +18,7 @@ const techStack = [
   "Prisma",
   "PostgreSQL",
   "Git",
+  "LLMs",
 ];
 
 const animatedList = {

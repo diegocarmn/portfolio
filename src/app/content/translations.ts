@@ -12,7 +12,7 @@ export const translations = {
       name: "Diego Carmona.",
       title: "Full Stack Developer.",
       subtitle:
-        "Building production-ready web apps with performance and accessibility in mind.",
+        "Building AI-powered web apps with performance and accessibility in mind.",
       button: "Contact me",
       buttonAriaLabel: "Go to contact section",
       scrollDown: "Scroll down to see my projects",
@@ -126,7 +126,7 @@ export const translations = {
         intro: "Hi, there!",
         intro2: "I'm Diego",
         description:
-          "I'm a fullstack developer focused on building real, production-ready products. With a background in technical support, I bring a strong sense of ownership, reliability, and attention to what happens after deployment. I work across the stack, crafting performant frontends and robust backends, always focused on scalability, clean architecture, and delivering real value to users.",
+          "I'm a fullstack developer focused on building production-ready AI-powered products. I bring a strong sense of ownership, reliability, and attention to what happens after deployment. I work across the stack, crafting performant frontends and robust backends, always focused on scalability, clean architecture, and delivering real value to users.",
         button: {
           text: "View Resume",
           link: "/resume.pdf",
@@ -216,7 +216,7 @@ export const translations = {
       name: "Diego Carmona.",
       title: "Desenvolvedor Full Stack.",
       subtitle:
-        "Construindo aplicações web prontas para produção, com foco em performance e acessibilidade.",
+        "Construindo aplicações web integrando IA com foco em performance e acessibilidade.",
       button: "Fale comigo",
       buttonAriaLabel: "Ir à seção de contato",
       scrollDown: "Desça para ver meus projetos",
@@ -334,7 +334,7 @@ export const translations = {
         intro: "Olá! Eu",
         intro2: "sou Diego",
         description:
-          "Sou um desenvolvedor fullstack focado em construir produtos reais prontos para produção. Com background em suporte técnico, trago um forte senso de responsabilidade, confiabilidade e atenção ao que acontece após o deploy. Atuo em toda a stack, desenvolvendo frontends de alta performance e backends robustos, sempre com foco em escalabilidade, arquitetura limpa e agregar valor real para os usuários.",
+          "Sou um desenvolvedor full stack focado em construir aplicações web com integrações de Inteligência Artificial. Trago um forte senso de responsabilidade, confiabilidade e atenção ao que acontece após o deploy. Atuo em toda a stack, desenvolvendo frontends de alta performance e backends robustos, sempre com foco em escalabilidade, arquitetura limpa e agregar valor real para os usuários.",
         button: {
           text: "Ver currículo",
           link: "/curriculo.pdf",
